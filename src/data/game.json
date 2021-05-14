@@ -1,0 +1,149 @@
+[
+    {
+       "title":"Capdesk Startup Simulator",
+       "body":"Welcome to the Capdesk startup simulator.  #You've got a billion dollar idea and a plan for turning it into a reality so you're starting your own business. What role will you take?",
+       "choices":[
+          {
+             "title":"I'm the CEO",
+             "feedback":"Fantastic! The role of chief executive officer is a natural choice putting you squarely at the helm of the business. CEOs tend to be open and trustworthy by nature and able to inspire confidence in others.",
+             "extra":""
+          },
+          {
+             "title":"I'm the CFO",
+             "feedback":"Great! The CFO has the highest financial oversight and responsibility for the whole organisation. Chief financial officers are typically practical resourceful leaders with a detail-oriented working style.",
+             "extra":""
+          },
+          {
+             "title":"I'm the CTO",
+             "feedback":"Strong choice . If you're building a tech powered business. Chief technology officer is arguably the most important position. CTOs tend to be good at making decisions and highly driven to innovate.",
+             "extra":""
+          }
+       ]
+    },
+    {
+       "title":"Picking your cofounders",
+       "body":"Time to pick co-founders (or not).#Now you know what you what role you'll play  you've got another key decision to make: do you want to run the business singlehandedly  or bring on people to found the business alongside you?#Having co-founders eases the burden of founding a business on many levels  but means you share the success with others including financial success. #Founding a company alone lets you pursue your vision without interruption  but may leave you feeling lonely or unsupported especially in tougher times.",
+       "choices":[
+          {
+             "title":"I'm a solo Founder",
+             "feedback":"You're striking out solo! Well �fortune favours the brave. It's time to bring some people onboard.",
+             "extra":""
+          },
+          {
+             "title":"I have one co-founder",
+             "feedback":"You've found someone who shares your vision and passion but brings new skills to the table. An ideal co-founder.  Time to start building your team.",
+             "extra":""
+          },
+          {
+             "title":"I have two co-founders",
+             "feedback":"Strength in numbers! Your three-person founding team spans a range of skills and experience but is perfectly aligned on vision. Time to start hiring.",
+             "extra":""
+          }
+       ]
+    },
+    {
+       "title":"Making your first hires",
+       "body":"It's time to hire your core team: two developers one salesperson and one account manager.#Once recruitment begins you run into a dilemma: your hiring budget only covers 80% of each role's market rate. #What do you do?",
+       "choices":[
+          {
+             "title":"Give share options to all four hires",
+             "feedback":"Your generous approach to share options wins you favours among your employees so you continue it as you grow your team to 15. Be careful though you might hit the bottom of your option pool pretty quickly.",
+             "extra":""
+          },
+          {
+             "title":"Change all hires from senior to junior",
+             "feedback":"Your junior team are enthusiastic and hard-working but don't have in-depth experience. Within a year you'll probably accumulate management debt and have to make some hard decisions.",
+             "extra":""
+          },
+          {
+             "title":"Change two hires to junior and give share options to the others",
+             "feedback":"This is a smart compromise but success of this plan hangs in the balance. There are no guarantees that both your junior hires will rise to the challenge and may be demotivated by the lack of equity.",
+             "extra":""
+          }
+       ]
+    },
+    {
+       "title":"Dealing with performance issues",
+       "body":"One year on from assembling your core team (however you chose to do so) you run into some performance issues. # Half of your employees perform on target while the other half excel and out-perform their counterparts ��they want to be recognised for this. How do you manage the situation?",
+       "choices":[
+          {
+             "title":"By allocating them additional share options",
+             "feedback":"Great! Just make sure you communicate them effectively to give them appropriate meaning",
+             "extra":""
+          },
+          {
+             "title":"By giving them a healthy end of year bonus",
+             "feedback":"This works best as a short-term incentive and unless you address underlying issues your higher-performing employees wait for their bonus and then resign.",
+             "extra":""
+          },
+          {
+             "title":"By giving them a raise",
+             "feedback":"They accept but start looking around. Within a year both of them get a higher offer elsewhere and leave your business.",
+             "extra":""
+          }
+       ]
+    },
+    {
+       "title":"Setting up your employee share scheme",
+       "body":"You notice that long-term talent retention is a problem for your company. By now you are able to pay relatively competitive salaries but you find the average employee tenure is 20 months so you decide to launch an employee share scheme Who qualifies?",
+       "choices":[
+          {
+             "title":"All employees",
+             "feedback":"",
+             "extra":""
+          },
+          {
+             "title":"Early and senior hires",
+             "feedback":"",
+             "extra":""
+          },
+          {
+             "title":"Those who negotiate for it",
+             "feedback":"",
+             "extra":""
+          }
+       ]
+    },
+    {
+       "title":"Launching your ESS",
+       "body":"After many hours of planning and design the employee share scheme is ready to be launched. How do you communicate it to the business?",
+       "choices":[
+          {
+             "title":"You send a company-wide memo",
+             "feedback":"So as to avoid uncomfortable questions about share allocations you send a memo. It doesn't motivate in the way a face-to-face exchange will and doesn't allow for a dialogue around the topic. Pro: less pushback less work Con: may stir up some resentment",
+             "extra":""
+          },
+          {
+             "title":"Managers explain the scheme 1:1 with reports",
+             "feedback":"Managers are tasked with explaining the scheme in one-to-one conversations with employees. Risk of lacking vision/big picture/alignment. Secretive. No forum to ask questions of mgmt.",
+             "extra":""
+          },
+          {
+             "title":"The CEO presents the scheme at an all-hands meeting",
+             "feedback":"Great! So long as you have a robust fair and structured system for allocating equity this is a clever route. Beware inexperienced managers fielding follow-up questions however ��you don't want middle management to confuse/conflict messaging so ensure they are fully briefed and bought in.",
+             "extra":""
+          }
+       ]
+    },
+    {
+       "title":"Managing option pools and investors",
+       "body":"You're speaking with potential investors ahead of a fundraise and they're not happy with the size of your option pool. What do you do?",
+       "choices":[
+          {
+             "title":"Don't increase pool and make investors happy",
+             "feedback":"",
+             "extra":""
+          },
+          {
+             "title":"Do increase pool and find new investors",
+             "feedback":"",
+             "extra":""
+          },
+          {
+             "title":"Launch employee buyback scheme",
+             "feedback":"",
+             "extra":""
+          }
+       ]
+    }
+ ]
