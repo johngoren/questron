@@ -1,15 +1,14 @@
-import Menu from './Menu';  
+import Menu from './Menu';
+import parse from 'html-react-parser';
 
 export default function Question(props) {
     return (
         <div>
             
         <h1>{props.chapterNum}. {props.title}</h1>
-        <p>
-            {parse(body)}
-        </p>
-
-        <Menu choices={choices} onChoose={(choice) => {
+        {parse(props.body)}
+        
+        <Menu choices={props.choices} onChoose={(choice) => {
             props.onChoose(choice);
         }
         }/>

@@ -1,31 +1,44 @@
-import logo from './logo.svg';
 import './App.css';
 import React, { useState } from 'react';
 import Scene from './Scene';
+import Endgame from './Endgame';
 import gameScript from './data/game.json';
 
 function App() {
 
-  const [currentIndex, setIndex] = useState(0);
+  const [index, setIndex] = useState(0);
   const [choice, setChoice] = useState(null);
+  const [didChoose, setDidChoose] = useState(false);
 
-  const nextScene = () => setIndex(currentIndex + 1);
-  const scene = gameScript[currentIndex];
+  const scene = gameScript[index];
+  if (!scene) {
+    return (
+      <Endgame/>
+    )
+  }
+  
   const onChoose = (choiceIndex) => {
     setChoice(choiceIndex);
+    setDidChoose(true);
   }
+
   const onClickFeedback = () => {
     clearForNextQuestion();
-    nextScene();
+    setIndex(index + 1);
   }
+
   const getFeedback = () => {
     if (choice) {
-      return getFeedbackForChoice(choice);
+      const scene = gameScript[index];
+      const choices = scene["choices"];
+      const text = choices[choice].feedback;
+      return text;
     }
     return null;
   }
   const clearForNextQuestion = () => {
     setChoice(null);
+    setDidChoose(false);
   }
 
   return (
@@ -33,7 +46,8 @@ function App() {
       <header className="App-header">
         <Scene
           choice={choice}
-          currentIndex={currentIndex}
+          didChoose={didChoose}
+          index={index}
           feedback={getFeedback()}
           scene={scene}
           onChoose={onChoose}
@@ -43,10 +57,6 @@ function App() {
       </header>
     </div>
   );
-}
-
-function getFeedbackForChoice(currentChoice, currentIndex) {
-  return gameScript[currentIndex]["choices"][currentChoice];
 }
 
 
