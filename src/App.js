@@ -3,12 +3,14 @@ import React, { useState } from 'react';
 import Scene from './Scene';
 import Endgame from './Endgame';
 import gameScript from './data/game.json';
+const DELAY_LENGTH = 2000;
 
 function App() {
 
   const [index, setIndex] = useState(0);
   const [choice, setChoice] = useState(null);
   const [didChoose, setDidChoose] = useState(false);
+  const [shouldShowSceneIntro, setShouldShowSceneIntro] = useState(true);
 
   const scene = gameScript[index];
   if (!scene) {
@@ -25,6 +27,7 @@ function App() {
   const onClickFeedback = () => {
     clearForNextQuestion();
     setIndex(index + 1);
+    resetIntro();
   }
 
   const getFeedback = () => {
@@ -37,9 +40,21 @@ function App() {
     }
     return null;
   }
+  
   const clearForNextQuestion = () => {
     setChoice(null);
     setDidChoose(false);
+  }
+
+  const removeIntroAfterDelay = () => {
+    setTimeout(() => {
+      console.log("Later...");
+      setShouldShowSceneIntro(false);
+    }, DELAY_LENGTH);
+  }
+
+  const resetIntro = () => {
+    setShouldShowSceneIntro(true);
   }
 
   return (
@@ -51,6 +66,8 @@ function App() {
           index={index}
           feedback={getFeedback()}
           scene={scene}
+          removeIntroAfterDelay={removeIntroAfterDelay}
+          shouldShowSceneIntro={shouldShowSceneIntro}
           onChoose={onChoose}
           onClickFeedback={onClickFeedback}
         />

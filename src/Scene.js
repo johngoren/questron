@@ -1,10 +1,17 @@
 import React from 'react';
+import Intro from './Intro';
 import Question from './Question';
 import Feedback from './Feedback';
 
 export default function Scene(props) {
+    const scene = props.scene;
+
+    if (props.shouldShowSceneIntro) {
+        props.removeIntroAfterDelay();
+        return <Intro text={scene.title}/>
+    }
+
     if (!props.didChoose) {
-        const scene = props.scene;
         const title = scene.title;
         const body = prepareBodyText(scene.body);
         const choices = scene.choices;
