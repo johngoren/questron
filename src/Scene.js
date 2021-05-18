@@ -6,9 +6,12 @@ import Feedback from './Feedback';
 export default function Scene(props) {
     const scene = props.scene;
 
+  
     if (props.shouldShowSceneIntro) {
-        props.removeIntroAfterDelay();
-        return <Intro text={scene.title}/>
+        if (props.index > 0) {
+            props.removeIntroAfterDelay();
+            return <Intro text={scene.title}/>  
+        }
     }
 
     if (!props.didChoose) {
@@ -16,7 +19,7 @@ export default function Scene(props) {
         const body = prepareBodyText(scene.body);
         const choices = scene.choices;
         const chapterNum = props.index + 1;
-        return <Question chapterNum={chapterNum} title={title} body={body} choices={choices} onChoose={props.onChoose}/>
+        return <Question chapterNum={chapterNum} body={body} title={title} choices={choices} onChoose={props.onChoose}/>
     }
     else {
         const feedback = props.feedback;
@@ -24,6 +27,8 @@ export default function Scene(props) {
     }
     
 }
+
+
 
 // TODO: Instead perform this at the import to JSON stage.
 

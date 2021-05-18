@@ -4,12 +4,16 @@ Gray: 566E82
 Green: 00F5A9
 */
 
-.App {
-    background-color: red;
-}
+
 
 h1 {
     font-family: Impact;
+}
+
+.headline {
+    animation: fadeIn 2s;
+    animation-fill-mode: backwards;
+    animation-delay: 2s;
 }
 
 .menuOption button {
@@ -28,18 +32,18 @@ h1 {
 .button0 {
     animation: fadeIn 2s;
     animation-fill-mode: backwards;
-    animation-delay: 2s;
+    animation-delay: 4s;
 }
 
 .button1 {
     animation: fadeIn 2s;
-    animation-delay: 3s;
+    animation-delay: 5s;
     animation-fill-mode: backwards;
 }
 
 .button2 {
     animation: fadeIn 2s;
-    animation-delay: 4s;
+    animation-delay: 6s;
     animation-fill-mode: backwards;
 }
 
@@ -66,4 +70,12 @@ h1 {
   @-ms-keyframes fadeIn {
     0% {opacity:0;}
     100% {opacity:1;}
+  }
+
+  /**
+  Teletype
+  */
+
+  #teletype {
+      height: 150px;
   }
