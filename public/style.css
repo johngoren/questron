@@ -1,0 +1,69 @@
+/**
+Navy: 002545
+Gray: 566E82
+Green: 00F5A9
+*/
+
+.App {
+    background-color: red;
+}
+
+h1 {
+    font-family: Impact;
+}
+
+.menuOption button {
+    width: 100%;
+    background: #566e82;
+    color: white;
+    font-family: "Impact";
+    font-size: 36px;
+    font-weight: bold;
+    text-align: left;
+    border: none;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+.button0 {
+    animation: fadeIn 2s;
+    animation-fill-mode: backwards;
+    animation-delay: 2s;
+}
+
+.button1 {
+    animation: fadeIn 2s;
+    animation-delay: 3s;
+    animation-fill-mode: backwards;
+}
+
+.button2 {
+    animation: fadeIn 2s;
+    animation-delay: 4s;
+    animation-fill-mode: backwards;
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }

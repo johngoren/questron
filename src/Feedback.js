@@ -1,8 +1,8 @@
 export default function Feedback(props) {
     return (
-        <div>
+        <div className="menuOption">
             <p>{props.text}</p>
-            <button onClick={props.onClickFeedback}>OK</button>
+            <button onClick={props.onClickFeedback}>Next</button>
         </div>
     )
 }

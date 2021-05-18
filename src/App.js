@@ -35,7 +35,6 @@ function App() {
       const scene = gameScript[index];
       const choices = scene["choices"];
       const text = choices[choice].feedback;
-      console.log(text);
       return text;
     }
     return null;
@@ -48,7 +47,6 @@ function App() {
 
   const removeIntroAfterDelay = () => {
     setTimeout(() => {
-      console.log("Later...");
       setShouldShowSceneIntro(false);
     }, DELAY_LENGTH);
   }
