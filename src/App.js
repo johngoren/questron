@@ -28,10 +28,11 @@ function App() {
   }
 
   const getFeedback = () => {
-    if (choice) {
+    if (choice != null) {
       const scene = gameScript[index];
       const choices = scene["choices"];
       const text = choices[choice].feedback;
+      console.log(text);
       return text;
     }
     return null;
