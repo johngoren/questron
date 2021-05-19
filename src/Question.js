@@ -7,23 +7,25 @@ export default function Question(props) {
     useEffect(() => {
         setTimeout(() => {
             populateWithTypewriterEffect(props.body);
-          }, 3000);
+          }, 1200);
     });
 
 
     return (
-        <div>
-            
-        <h1 className="headline">{props.chapterNum}. {props.title}</h1>
-        <div id="teletype"></div>
-        
-        <Menu choices={props.choices} onChoose={(choice) => {
-            props.onChoose(choice);
-        }
-        }/>
-        
+        <>
+        <div className="question">
+            <h1 className="headline">{props.chapterNum}. {props.title}</h1>
+            <div id="teletype"></div>
         </div>
 
+        <div className="menu">
+            <Menu choices={props.choices} onChoose={(choice) => {
+                props.onChoose(choice);
+            }
+            }/>
+        
+        </div>
+        </>
     )
 }
 
@@ -33,8 +35,14 @@ function populateWithTypewriterEffect(text) {
 
     let i = 0;
     const animation = setInterval(function() {
-        div.innerHTML += chars[i];
+        const newChar = chars[i];
+        if (newChar === "#") {
+            div.innerHTML += "<br/><br/>";
+        }
+        else {
+            div.innerHTML += chars[i];
+        }
         i++;
         if (i == text.length) { clearInterval(animation); }
-    }, 25);
+    }, 15);
 }

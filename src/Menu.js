@@ -1,9 +1,9 @@
 export default function Menu(props) {
     const choices = props.choices;
-    const choicesAsMenu = choices.map(function(choice, index) {
+    const ChoicesAsMenu = choices.map(function(choice, index) {
         return <MenuOption key={index} choiceNum={index} choice={choice} onChoose={props.onChoose}/>
     });
-    return choicesAsMenu;
+    return ChoicesAsMenu;
 }
 
 function MenuOption(props) {

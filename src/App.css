@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: #002545;
+  padding: 100px;
 }
 
 .App-logo {
@@ -14,15 +16,17 @@
 }
 
 .App-header {
-  background-color: #002545;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding-left: 60px;
+  padding-right: 60px;
 }
+
 
 .App-link {
   color: #61dafb;
@@ -35,4 +39,26 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.menu {
+  width: 75vw;
+  padding-bottom: 20px;
+}
+
+#teletype {
+  height: 150px;
+  text-align: left;
+}
+
+.question {
+  width: 75vw;
+}
+
+.slidecontainer {
+  padding-bottom: 200px;
+}
+
+.slidecontainer input {
+  width: 75vw;
 }

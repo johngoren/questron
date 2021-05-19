@@ -6,27 +6,75 @@ Green: 00F5A9
 
 
 
+/**
+Fonts
+*/
+
+@font-face {
+  font-family: 'Trim';
+  src: url('Trim-Bold.woff2') format('woff2'),
+      url('Trim-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('Inter-Regular.woff2') format('woff2'),
+      url('Inter-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+/**
+Typography and animated text
+*/
+
 h1 {
-    font-family: Impact;
+    font-family: "Trim";
 }
 
 .headline {
-    animation: fadeIn 2s;
-    animation-fill-mode: backwards;
-    animation-delay: 2s;
+  animation: fadeIn 2s;
+  text-align: left;
+    /* animation-fill-mode: backwards;
+    animation-delay: 2s; */
+}
+
+h1.intro {
+  position: relative;
+  animation-timing-function: ease-in-out;
+  animation: 5s slideIn;
+}
+
+@keyframes slideIn {
+  0% { left: -2000px; }
+  10% { left: 0px; }
+  60% { left: 0px; }
+  70% { left: 2000px; }
+  100% { left: 2000px; }
 }
 
 .menuOption button {
     width: 100%;
     background: #566e82;
     color: white;
-    font-family: "Impact";
+    font-family: "Trim";
     font-size: 36px;
     font-weight: bold;
     text-align: left;
     border: none;
     border-radius: 6px;
     margin-bottom: 8px;
+    transition: background 500ms;
+}
+
+.menuOption button:hover {
+  background: #A99;
 }
 
 .button0 {
@@ -72,10 +120,3 @@ h1 {
     100% {opacity:1;}
   }
 
-  /**
-  Teletype
-  */
-
-  #teletype {
-      height: 150px;
-  }

@@ -2,8 +2,9 @@ import './App.css';
 import React, { useState } from 'react';
 import Scene from './Scene';
 import Endgame from './Endgame';
+import Slider from './Slider';
 import gameScript from './data/game.json';
-const DELAY_LENGTH = 2000;
+const DELAY_LENGTH = 4000;
 
 function App() {
 
@@ -69,7 +70,10 @@ function App() {
           onChoose={onChoose}
           onClickFeedback={onClickFeedback}
         />
-
+        <Slider
+          index={index}
+          maxIndex={gameScript.length}
+        />
       </header>
     </div>
   );

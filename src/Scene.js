@@ -16,7 +16,7 @@ export default function Scene(props) {
 
     if (!props.didChoose) {
         const title = scene.title;
-        const body = prepareBodyText(scene.body);
+        const body = scene.body;
         const choices = scene.choices;
         const chapterNum = props.index + 1;
         return <Question chapterNum={chapterNum} body={body} title={title} choices={choices} onChoose={props.onChoose}/>

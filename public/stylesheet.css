@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Trim';
+    src: url('Trim-Bold.woff2') format('woff2'),
+        url('Trim-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('Inter-Regular.woff2') format('woff2'),
+        url('Inter-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
