@@ -19,11 +19,14 @@ export default function Scene(props) {
         const body = scene.body;
         const choices = scene.choices;
         const chapterNum = props.index + 1;
-        return <Question chapterNum={chapterNum} body={body} title={title} choices={choices} onChoose={props.onChoose}/>
+        const index = props.index;
+        const maxIndex = props.maxIndex;
+
+        return <Question chapterNum={chapterNum} body={body} title={title} choices={choices} onChoose={props.onChoose} index={index} maxIndex={maxIndex}/>
     }
     else {
         const feedback = props.feedback;
-        return <Feedback text={feedback} onClickFeedback={props.onClickFeedback} isFadingOut={props.isFadingOut}/>
+        return <Feedback text={feedback} onClickFeedback={props.onClickFeedback} isFadingOut={props.isFadingOut} index={props.index} maxIndex={props.maxIndex}/>
     }
     
 }

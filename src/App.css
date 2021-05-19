@@ -43,11 +43,11 @@
 
 .menu {
   width: 75vw;
-  padding-bottom: 20px;
+  padding-bottom: 200px;
 }
 
 #teletype {
-  height: 150px;
+  min-height: 150px;
   text-align: left;
 }
 
@@ -55,10 +55,3 @@
   width: 75vw;
 }
 
-.slidecontainer {
-  padding-bottom: 200px;
-}
-
-.slidecontainer input {
-  width: 75vw;
-}

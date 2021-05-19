@@ -2,7 +2,6 @@ import './App.css';
 import React, { useState } from 'react';
 import Scene from './Scene';
 import Endgame from './Endgame';
-import Slider from './Slider';
 import gameScript from './data/game.json';
 const DELAY_LENGTH = 4000;
 
@@ -70,6 +69,7 @@ function App() {
           choice={choice}
           didChoose={didChoose}
           index={index}
+          maxIndex={gameScript.length}
           isFadingOut={isFadingOut}
           feedback={getFeedback()}
           scene={scene}
@@ -77,10 +77,6 @@ function App() {
           shouldShowSceneIntro={shouldShowSceneIntro}
           onChoose={onChoose}
           onClickFeedback={onClickFeedback}
-        />
-        <Slider
-          index={index}
-          maxIndex={gameScript.length}
         />
       </header>
     </div>

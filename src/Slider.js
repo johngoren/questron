@@ -1,8 +1,12 @@
 export default function Slider(props) {
 
+    const progress = props.index + 1;
+    const max = props.maxIndex + 1;
+    const widthPercentage = (progress / max * 100) + "%";
+
     return (
-        <div class="slidecontainer">
-            <input type="range" min="0" max={props.maxIndex} value={props.index} class="slider" id="myRange"/>
+        <div class="slider">
+            <div class="progress" style={{width: widthPercentage}}></div>
         </div>
     )
 

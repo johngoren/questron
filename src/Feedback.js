@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import Slider from './Slider';
 
 export default function Feedback(props) {
     useEffect(() => {
@@ -23,6 +24,10 @@ export default function Feedback(props) {
             <div className="menuOption">
                 <button onClick={props.onClickFeedback}>Next</button>
             </div>
+            <Slider
+              index={props.index}
+              maxIndex={props.maxIndex}
+            />       
         </div>
         </>
     )

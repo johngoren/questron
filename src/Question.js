@@ -1,6 +1,6 @@
 import Menu from './Menu';
 import React, { useEffect } from 'react';
-import parse from 'html-react-parser';
+import Slider from './Slider';
 
 export default function Question(props) {
     
@@ -23,7 +23,10 @@ export default function Question(props) {
                 props.onChoose(choice);
             }
             }/>
-        
+         <Slider
+              index={props.index}
+              maxIndex={props.maxIndex}
+        />        
         </div>
         </>
     )

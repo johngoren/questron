@@ -2,6 +2,9 @@
 Navy: 002545
 Gray: 566E82
 Green: 00F5A9
+SliderBackground: 00427B;
+SliderForeground: 00F5A9;
+
 */
 
 
@@ -48,7 +51,8 @@ h1 {
 h1.intro {
   position: relative;
   animation-timing-function: ease-in-out;
-  animation: 5s slideIn;
+  animation: 4s slideIn;
+  animation-fill-mode: forwards;
 }
 
 @keyframes slideIn {
@@ -128,4 +132,21 @@ h1.intro {
 @keyframes fadeOut {
   0% { opacity:1; }
   100% { opacity:0; }
+}
+
+/** 
+Slider 
+*/
+
+.slider {
+  background:  #00427B;
+  width: 75vw;
+  height: 20px;
+  margin-top: 10px;
+}
+
+.progress {
+  background: #00F5A9;
+  height: 100%;
+  transition: width 1s;
 }
