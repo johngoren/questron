@@ -7,12 +7,19 @@ export default function Feedback(props) {
           }, 0);
     });
 
+    let questionClassName = "question";
+    let menuClassName = "menu";
+    if (props.isFadingOut) {
+        questionClassName += " fadeOut";
+        menuClassName += " fadeOut";
+    }
+
     return (
         <>
-        <div className="question">
+        <div className={questionClassName}>
             <div id="teletype"></div>
         </div>
-        <div class="menu">
+        <div class={menuClassName}>
             <div className="menuOption">
                 <button onClick={props.onClickFeedback}>Next</button>
             </div>
@@ -23,8 +30,12 @@ export default function Feedback(props) {
 
 function populateWithTypewriterEffect(text) {
     if (!text) { return; }
-
+    
     const div = document.querySelector("#teletype");
+    if (!div) { return; }
+
+    if (div.innerHTML.length > 0) { return; }
+
     const chars = text.split("");
 
     let i = 0;

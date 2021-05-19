@@ -30,7 +30,13 @@ export default function Question(props) {
 }
 
 function populateWithTypewriterEffect(text) {
+    if (!text) {
+        return;
+    }
+
     const div = document.querySelector("#teletype");
+    if (!div) { return; }
+
     const chars = text.split("");
 
     let i = 0;

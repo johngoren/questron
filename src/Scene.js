@@ -23,7 +23,7 @@ export default function Scene(props) {
     }
     else {
         const feedback = props.feedback;
-        return <Feedback text={feedback} onClickFeedback={props.onClickFeedback}/>
+        return <Feedback text={feedback} onClickFeedback={props.onClickFeedback} isFadingOut={props.isFadingOut}/>
     }
     
 }

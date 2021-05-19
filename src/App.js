@@ -12,6 +12,7 @@ function App() {
   const [choice, setChoice] = useState(null);
   const [didChoose, setDidChoose] = useState(false);
   const [shouldShowSceneIntro, setShouldShowSceneIntro] = useState(true);
+  const [isFadingOut, setIsFadingOut] = useState(false);
 
   const scene = gameScript[index];
   if (!scene) {
@@ -21,14 +22,19 @@ function App() {
   }
   
   const onChoose = (choiceIndex) => {
+    setIsFadingOut(false);
     setChoice(choiceIndex);
     setDidChoose(true);
   }
 
   const onClickFeedback = () => {
-    clearForNextQuestion();
-    setIndex(index + 1);
-    resetIntro();
+    setIsFadingOut(true);
+    setTimeout(() => {
+      clearForNextQuestion();
+      setIndex(index + 1);
+      resetIntro(); 
+    }, 2000)
+
   }
 
   const getFeedback = () => {
@@ -54,6 +60,7 @@ function App() {
 
   const resetIntro = () => {
     setShouldShowSceneIntro(true);
+    setIsFadingOut(false);
   }
 
   return (
@@ -63,6 +70,7 @@ function App() {
           choice={choice}
           didChoose={didChoose}
           index={index}
+          isFadingOut={isFadingOut}
           feedback={getFeedback()}
           scene={scene}
           removeIntroAfterDelay={removeIntroAfterDelay}
