@@ -4,9 +4,12 @@ import Question from './Question';
 import Feedback from './Feedback';
 import Slider from './Slider';
 import Journey from './Journey';
+import Menu from './Menu';
 
 export default function Scene(props) {
     const scene = props.scene;
+    const didChoose = props.didChoose;
+
     let Content;
 
     if (props.shouldShowSceneIntro) {
@@ -16,19 +19,18 @@ export default function Scene(props) {
         }
     }
 
-    if (!props.didChoose) {
+    if (!didChoose) {
         const title = scene.title;
         const body = scene.body;
-        const choices = scene.choices;
         const chapterNum = props.index + 1;
         const index = props.index;
         const maxIndex = props.maxIndex;
 
-        Content = <Question chapterNum={chapterNum} body={body} title={title} choices={choices} onChoose={props.onChoose} index={index} maxIndex={maxIndex} isFeedback={false}/>
+        Content = <Question chapterNum={chapterNum} body={body} title={title} onChoose={props.onChoose} index={index} maxIndex={maxIndex}/>
     }
     else {
         const feedback = props.feedback;
-        Content = <Feedback body={feedback} onClickFeedback={props.onClickFeedback} isFadingOut={props.isFadingOut} index={props.index} maxIndex={props.maxIndex} isFeedback={true}/>
+        Content = <Feedback body={feedback} isFadingOut={props.isFadingOut} index={props.index} maxIndex={props.maxIndex}/>
     }
 
     return (
@@ -42,9 +44,17 @@ export default function Scene(props) {
             </div>
         </div>
         <div className="footer">
+            <Menu
+                isFeedback={didChoose}
+                choices={scene.choices}
+                onChoose={(choice) => {
+                    props.onChoose(choice);
+                }}
+                onClickFeedback={props.onClickFeedback} 
+            />
             <Slider
-              index={props.index}
-              maxIndex={props.maxIndex}
+                index={props.index}
+                maxIndex={props.maxIndex}
             />
             </div>
         </>

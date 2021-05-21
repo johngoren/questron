@@ -1,9 +1,18 @@
 export default function Menu(props) {
-    const choices = props.choices;
-    const ChoicesAsMenu = choices.map(function(choice, index) {
-        return <MenuOption key={index} choiceNum={index} choice={choice} onChoose={props.onChoose}/>
-    });
-    return ChoicesAsMenu;
+    if (props.isFeedback) {
+        return (
+            <div className="menuOption">
+                <button onClick={props.onClickFeedback}>Next</button>
+            </div>  
+        )
+    }
+    else {
+        const choices = props.choices;
+        const ChoicesAsMenu = choices.map(function(choice, index) {
+            return <MenuOption key={index} choiceNum={index} choice={choice} onChoose={props.onChoose}/>
+        });
+        return ChoicesAsMenu;  
+    }
 }
 
 function MenuOption(props) {
@@ -15,3 +24,4 @@ function MenuOption(props) {
         </div>
     )
 }
+

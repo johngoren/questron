@@ -7,7 +7,7 @@ export default function Feedback(props) {
 
     useEffect(fadeIn);
 
-    let questionClassName = "question";
+    let questionClassName = "question feedback";
     let menuClassName = "menu";
     if (props.isFadingOut) {
         questionClassName += " fadeOut";
@@ -15,15 +15,8 @@ export default function Feedback(props) {
     }
 
     return (
-        <>
         <div className={questionClassName}>
             <div className="teletype">{text}</div>
         </div>
-        <div className={menuClassName}>
-            <div className="menuOption">
-                <button onClick={props.onClickFeedback}>Next</button>
-            </div>  
-        </div>
-        </>
     )
 }

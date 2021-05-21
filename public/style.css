@@ -156,3 +156,33 @@ Teletype effect
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
+
+@-moz-keyframes teletypeFade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes teletypeFade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-ms-keyframes teletypeFade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+
+/**
+Journey marks
+*/
+
+ul {
+  list-style-type: none;
+}
+
+.journey img {
+  width: 25%;
+  height: auto;
+}
