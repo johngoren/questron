@@ -89,17 +89,17 @@
        "choices":[
           {
              "title":"All employees",
-             "feedback":"TODO",
+             "feedback":"TEXT TK",
              "extra":""
           },
           {
              "title":"Early and senior hires",
-             "feedback":"TODO",
+             "feedback":"TEXT TK",
              "extra":""
           },
           {
              "title":"Those who negotiate for it",
-             "feedback":"TODO",
+             "feedback":"TEXT TK",
              "extra":""
           }
        ]
@@ -131,17 +131,17 @@
        "choices":[
           {
              "title":"Don't increase pool and make investors happy",
-             "feedback":"TODO",
+             "feedback":"TEXT TK",
              "extra":""
           },
           {
              "title":"Do increase pool and find new investors",
-             "feedback":"TODO",
+             "feedback":"TEXT TK",
              "extra":""
           },
           {
              "title":"Launch employee buyback scheme",
-             "feedback":"TODO",
+             "feedback":"TEXT TK",
              "extra":""
           }
        ]
@@ -152,17 +152,17 @@
       "choices":[
          {
             "title":"HR",
-            "feedback":"TODO",
+            "feedback":"TEXT TK",
             "extra":""
          },
          {
             "title":"Finance",
-            "feedback":"TODO",
+            "feedback":"TEXT TK",
             "extra":""
          },
          {
             "title":"Manager, informed by HR/finance",
-            "feedback":"TODO",
+            "feedback":"TEXT TK",
             "extra":""
          }
       ]
@@ -173,17 +173,17 @@
       "choices":[
          {
             "title":"Early investors",
-            "feedback":"TODO",
+            "feedback":"TEXT TK",
             "extra":""
          },
          {
             "title":"Employees fully vested",
-            "feedback":"TODO",
+            "feedback":"TEXT TK",
             "extra":""
          },
          {
             "title":"Both investors and employees",
-            "feedback":"TODO",
+            "feedback":"TEXT TK",
             "extra":""
          }
       ]
@@ -194,17 +194,17 @@
       "choices":[
          {
             "title":"Stop issuing equity",
-            "feedback":"TODO",
+            "feedback":"TEXT TK",
             "extra":""
          },
          {
             "title":"Issue more equity",
-            "feedback":"TODO",
+            "feedback":"TEXT TK",
             "extra":""
          },
          {
             "title":"Make equity an active perk",
-            "feedback":"TODO",
+            "feedback":"TEXT TK",
             "extra":""
          }
       ]

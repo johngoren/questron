@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Scene from './Scene';
 import Endgame from './Endgame';
 import gameScript from './data/game.json';
@@ -12,6 +12,7 @@ function App() {
   const [didChoose, setDidChoose] = useState(false);
   const [shouldShowSceneIntro, setShouldShowSceneIntro] = useState(true);
   const [isFadingOut, setIsFadingOut] = useState(false);
+  const [answers, setAnswers] = useState([]);
 
   const scene = gameScript[index];
   if (!scene) {
@@ -23,6 +24,7 @@ function App() {
   const onChoose = (choiceIndex) => {
     setIsFadingOut(false);
     setChoice(choiceIndex);
+    setAnswers(answers.push(choiceIndex));
     setDidChoose(true);
   }
 
@@ -33,7 +35,6 @@ function App() {
       setIndex(index + 1);
       resetIntro(); 
     }, 2000)
-
   }
 
   const getFeedback = () => {
@@ -69,12 +70,12 @@ function App() {
           choice={choice}
           didChoose={didChoose}
           index={index}
-          maxIndex={gameScript.length}
           isFadingOut={isFadingOut}
-          feedback={getFeedback()}
           scene={scene}
-          removeIntroAfterDelay={removeIntroAfterDelay}
           shouldShowSceneIntro={shouldShowSceneIntro}
+          maxIndex={gameScript.length}
+          removeIntroAfterDelay={removeIntroAfterDelay}
+          feedback={getFeedback()}
           onChoose={onChoose}
           onClickFeedback={onClickFeedback}
         />

@@ -1,21 +1,23 @@
 import Menu from './Menu';
 import React, { useEffect } from 'react';
 import Slider from './Slider';
+import { spannifyForFading, fadeIn } from './effects';
+import parse from 'html-react-parser';
 
 export default function Question(props) {
+
+    const fadeable = spannifyForFading(props.body);
+    const parsed = parse(fadeable);
     
     useEffect(() => {
-        setTimeout(() => {
-            populateWithTypewriterEffect(props.body);
-          }, 1200);
+        fadeIn();
     });
-
 
     return (
         <>
         <div className="question">
             <h1 className="headline">{props.chapterNum}. {props.title}</h1>
-            <div id="teletype"></div>
+            <div className="teletype">{parsed}</div>
         </div>
 
         <div className="menu">
@@ -30,28 +32,4 @@ export default function Question(props) {
         </div>
         </>
     )
-}
-
-function populateWithTypewriterEffect(text) {
-    if (!text) {
-        return;
-    }
-
-    const div = document.querySelector("#teletype");
-    if (!div) { return; }
-
-    const chars = text.split("");
-
-    let i = 0;
-    const animation = setInterval(function() {
-        const newChar = chars[i];
-        if (newChar === "#") {
-            div.innerHTML += "<br/><br/>";
-        }
-        else {
-            div.innerHTML += chars[i];
-        }
-        i++;
-        if (i == text.length) { clearInterval(animation); }
-    }, 15);
 }

@@ -150,3 +150,25 @@ Slider
   height: 100%;
   transition: width 1s;
 }
+
+/**
+Teletype effect
+*/
+
+.teletype {
+  text-align: left;
+  opacity: 1.0;
+}
+
+.fadeIn {
+  opacity: 0;
+  animation-name: teletypeFade;
+  animation-duration: 400ms;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes teletypeFade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

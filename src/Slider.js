@@ -5,8 +5,8 @@ export default function Slider(props) {
     const widthPercentage = (progress / max * 100) + "%";
 
     return (
-        <div class="slider">
-            <div class="progress" style={{width: widthPercentage}}></div>
+        <div className="slider">
+            <div className="progress" style={{width: widthPercentage}}></div>
         </div>
     )
 

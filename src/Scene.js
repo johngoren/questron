@@ -5,7 +5,6 @@ import Feedback from './Feedback';
 
 export default function Scene(props) {
     const scene = props.scene;
-
   
     if (props.shouldShowSceneIntro) {
         if (props.index > 0) {
@@ -28,14 +27,6 @@ export default function Scene(props) {
         const feedback = props.feedback;
         return <Feedback text={feedback} onClickFeedback={props.onClickFeedback} isFadingOut={props.isFadingOut} index={props.index} maxIndex={props.maxIndex}/>
     }
+
     
-}
-
-
-
-// TODO: Instead perform this at the import to JSON stage.
-
-function prepareBodyText(text) {
-    return text
-        .replaceAll("#", "</p><p>");
 }
