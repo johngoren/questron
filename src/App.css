@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   background-color: #002545;
-  padding: 100px;
+  /* padding: 100px; */
 }
 
 .App-logo {
@@ -43,15 +43,37 @@
 
 .menu {
   width: 75vw;
+  padding-top: 60px;
   padding-bottom: 200px;
-}
-
-#teletype {
-  min-height: 150px;
-  text-align: left;
 }
 
 .question {
   width: 75vw;
 }
 
+.main {
+  display: flex;
+}
+
+.journey {
+  padding-right: 60px;
+}
+
+
+/** 
+Slider 
+*/
+
+.slider {
+  background:  #00427B;
+  width: 75vw;
+  height: 20px;
+  margin-top: 10px;
+  margin-bottom: 60px;
+}
+
+.progress {
+  background: #00F5A9;
+  height: 100%;
+  transition: width 1s;
+}

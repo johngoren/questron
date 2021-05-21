@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Scene from './Scene';
 import Endgame from './Endgame';
 import gameScript from './data/game.json';
@@ -24,8 +24,14 @@ function App() {
   const onChoose = (choiceIndex) => {
     setIsFadingOut(false);
     setChoice(choiceIndex);
-    setAnswers(answers.push(choiceIndex));
+    updateAnswers(choiceIndex);
     setDidChoose(true);
+  }
+
+  const updateAnswers = (choiceIndex) => {
+    const newAnswers = answers;
+    newAnswers.push(choiceIndex);
+    setAnswers(newAnswers);
   }
 
   const onClickFeedback = () => {
@@ -78,6 +84,7 @@ function App() {
           feedback={getFeedback()}
           onChoose={onChoose}
           onClickFeedback={onClickFeedback}
+          answers={answers}
         />
       </header>
     </div>

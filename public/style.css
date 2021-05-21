@@ -134,22 +134,6 @@ h1.intro {
   100% { opacity:0; }
 }
 
-/** 
-Slider 
-*/
-
-.slider {
-  background:  #00427B;
-  width: 75vw;
-  height: 20px;
-  margin-top: 10px;
-}
-
-.progress {
-  background: #00F5A9;
-  height: 100%;
-  transition: width 1s;
-}
 
 /**
 Teletype effect

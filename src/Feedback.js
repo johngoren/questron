@@ -1,7 +1,12 @@
 import React, { useEffect } from 'react';
-import Slider from './Slider';
+import { fadeIn } from './effects';
+import { prepareText } from './textUtils';
 
 export default function Feedback(props) {
+    const text = prepareText(props.body);
+
+    useEffect(fadeIn);
+
     let questionClassName = "question";
     let menuClassName = "menu";
     if (props.isFadingOut) {
@@ -12,16 +17,12 @@ export default function Feedback(props) {
     return (
         <>
         <div className={questionClassName}>
-            <div className="teletype">{props.body}</div>
+            <div className="teletype">{text}</div>
         </div>
-        <div class={menuClassName}>
+        <div className={menuClassName}>
             <div className="menuOption">
                 <button onClick={props.onClickFeedback}>Next</button>
-            </div>
-            <Slider
-              index={props.index}
-              maxIndex={props.maxIndex}
-            />       
+            </div>  
         </div>
         </>
     )

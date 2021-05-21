@@ -1,28 +1,13 @@
-const DURATION_TELETYPE = 25;
+// Teletype effect
 
-export function spannifyForFading(text) {
-    let newText = "";
-    const chars = text.split("");
-    for (var i=0; i<chars.length; i++) {
-        const char = chars[i];
-        if (char === "#") {
-            newText += "<br/><br/>";
-        }
-        else {
-            newText += `<span class="fadeIn">${char}</span>`
-        }
-    }
-
-    return newText;
-}
+const DURATION_TELETYPE = 15;
 
 export function fadeIn() {
     const fadeSpans = document.getElementsByClassName("fadeIn");
 
-    for (var i=0; i<fadeSpans.length; i++) {       
+    for (let i=0; i<fadeSpans.length; i++) {       
         const fadeSpan = fadeSpans[i];
         fadeSpan.style.animationDelay = getAnimationDelayForIndex(i);
-
     }
 }
 
