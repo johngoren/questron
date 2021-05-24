@@ -2,6 +2,10 @@
 
 const DURATION_TELETYPE = 15;
 
+export function fadeInGame(completion) {
+
+}
+
 export function fadeIn() {
     const fadeSpans = document.getElementsByClassName("fadeIn");
 
