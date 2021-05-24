@@ -33,11 +33,8 @@
   padding-bottom: 200px;
 }
 
-.question {
-  width: 75vw;
-}
-
 .main {
+  width: 75vw;
   display: flex;
 }
 

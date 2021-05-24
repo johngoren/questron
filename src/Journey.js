@@ -1,10 +1,11 @@
 export default function Journey(props) {
     const answers = props.answers;
     const JourneyMarks = getJourneyMarks(answers);
-    const Hidden = getClassname(answers);
+    const JourneyClassName = getJourneyClassName(answers);
+    const Hidden = getClassName(answers);
 
     return (
-        <div className="journey">
+        <div className={JourneyClassName}>
            <ul className={Hidden}>{JourneyMarks}</ul>
        </div>
     )
@@ -30,7 +31,16 @@ function getIconForAnswer(answer, index) {
     return <img src="/ceo.png"/>;
 }
 
-function getClassname(answers) {
+function getJourneyClassName(answers) {
+    if (answers.length === 0) {
+        return "hidden"
+    }
+    else {
+        return "journey"
+    }
+}
+
+function getClassName(answers) {
     if (answers.length === 0) {
         return "hidden"
     }

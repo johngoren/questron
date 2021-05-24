@@ -9,6 +9,7 @@ import Menu from './Menu';
 export default function Scene(props) {
     const scene = props.scene;
     const didChoose = props.didChoose;
+    const answers = props.answers;
 
     let Content;
 
@@ -37,7 +38,7 @@ export default function Scene(props) {
         <>
         <div className="main">
             <Journey 
-                answers={props.answers}            
+                answers={answers}            
             />
             <div className="content">
                 {Content}

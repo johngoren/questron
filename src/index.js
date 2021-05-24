@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const PREVIEW_MODE = true;
+const PREVIEW_MODE = false;
 let password;
 
 if (PREVIEW_MODE) {
