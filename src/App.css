@@ -1,6 +1,15 @@
+:root {
+  --navy: #002545;
+  --gray: #566e82;
+  --green: #00f5a9;
+  --sliderBackground: #00427b;
+  --aqua: #00bdb4;  
+}
+
+
 .App {
   text-align: center;
-  background-color: #002545;
+  background-color: var(--navy);
   /* padding: 100px; */
 }
 
@@ -46,24 +55,3 @@
   padding-top: 60px;
 }
 
-/** 
-Slider 
-*/
-
-.slider {
-  background:  #00427B;
-  width: 75vw;
-  height: 20px;
-  margin-top: 10px;
-  margin-bottom: 60px;
-}
-
-.progress {
-  background: #00F5A9;
-  height: 100%;
-  transition: width 1s;
-}
-
-.hidden {
-  display: none;
-}

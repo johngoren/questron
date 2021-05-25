@@ -55,6 +55,7 @@ export default function Scene(props) {
             />
             <Slider
                 index={props.index}
+                isFadingOut={props.isFadingOut}
                 maxIndex={props.maxIndex}
             />
             </div>

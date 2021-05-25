@@ -8,10 +8,8 @@ export default function Feedback(props) {
     useEffect(fadeIn);
 
     let questionClassName = "question feedback";
-    let menuClassName = "menu";
     if (props.isFadingOut) {
         questionClassName += " fadeOut";
-        menuClassName += " fadeOut";
     }
 
     return (

@@ -4,10 +4,16 @@ Gray: 566E82
 Green: 00F5A9
 SliderBackground: 00427B;
 SliderForeground: 00F5A9;
-
+Headlines: 00bdb4;
 */
 
-
+:root {
+  --navy: #002545;
+  --gray: #566e82;
+  --green: #00f5a9;
+  --sliderBackground: #00427b;
+  --aqua: #00bdb4;  
+}
 
 /**
 Fonts
@@ -31,6 +37,23 @@ Fonts
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Trim Poster Lanky';
+  src: url('TrimPoster-Lanky.woff2') format('woff2'),
+      url('TrimPoster-Lanky.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Trim Poster Slender';
+  src: url('TrimPoster-Slender.woff2') format('woff2'),
+      url('TrimPoster-Slender.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
 
 
 /**
@@ -38,8 +61,40 @@ Typography and animated text
 */
 
 h1 {
-    font-family: "Trim";
+    font-family: "Trim Poster Lanky";
+    color: var(--aqua);
+    font-weight: 100;
+    font-size: 108px;
+    text-transform:uppercase;
+    line-height: 100px;
 }
+
+h2 {
+  font-family: "Trim";
+  text-align: left;
+}
+
+.banner {
+  display: flex;
+}
+
+.banner h1 {
+  margin-top: 2px;
+}
+
+.banner h2 {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.garnish {
+  text-decoration: underline;
+}
+
+.banner img {
+  height: 250px;
+}
+
 
 .headline {
   animation: fadeIn 2s;
@@ -47,6 +102,7 @@ h1 {
     /* animation-fill-mode: backwards;
     animation-delay: 2s; */
 }
+
 
 h1.intro {
   position: relative;
@@ -186,4 +242,89 @@ ul {
   width: 100px;
   height: auto;
   padding-right: 60px;
+}
+
+
+/**
+Slider
+*/
+
+
+.slider {
+  background:  var(--sliderBackground);
+  width: 75vw;
+  height: 20px;
+  margin-top: 10px;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.progress {
+  background: var(--green);
+  height: 100%;
+  transition: width 1s;
+}
+
+.hidden {
+  display: none;
+}
+
+
+@media (max-width: 480px) {
+  .text {
+    font-size: 16px;
+  }
+}
+
+.sliderIsLeaving {
+  animation-name: sliderExit;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}  
+
+@keyframes sliderExit {
+  0% { top: 0px; }
+  100% { top: 1000px; }
+}
+
+
+
+/*
+Screen sizes
+*/
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  /* Styles */
+  }
+  
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) {
+/* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 480px) {
+/* Styles */
+  .journey {
+    display: none;
+  }
+
+  .banner img {
+    display: none;
+  }
+
+}
+
+@media only screen and (max-width: 1000px) {
+
+  .menuOption button {
+    font-size: 28px;
+  }
+
+  .App-header {
+    font-size: 16px;
+  }
+
 }

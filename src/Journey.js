@@ -28,7 +28,7 @@ function getJourneyMarks(answers) {
 
 // TODO: Real icons
 function getIconForAnswer(answer, index) {
-    return <img src="/ceo.png"/>;
+    return <img src="/ceo.png" alt="your progress"/>;
 }
 
 function getJourneyClassName(answers) {

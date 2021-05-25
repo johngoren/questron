@@ -1,9 +1,8 @@
 import './App.css';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Scene from './Scene';
 import Endgame from './Endgame';
 import gameScript from './data/game.json';
-import { fadeIn, fadeInGame } from './effects';
 const DELAY_LENGTH = 4000;
 
 function App() {
@@ -14,7 +13,6 @@ function App() {
   const [shouldShowSceneIntro, setShouldShowSceneIntro] = useState(true);
   const [isFadingOut, setIsFadingOut] = useState(false);
   const [answers, setAnswers] = useState([]);
-  const [hasStarted, setHasStarted] = useState(false);
 
   const scene = gameScript[index];
   if (!scene) {
