@@ -1,9 +1,11 @@
-import './App.css';
+import './style/App.css';
 import React, { useState } from 'react';
 import Scene from './Scene';
-import Endgame from './Endgame';
+import Journey from './Journey';
 import gameScript from './data/game.json';
-const DELAY_LENGTH = 4000;
+import scoreAnswers from './scores';
+
+const DELAY_MS_BEFORE_NEXT_QUESTION = 2000;
 
 function App() {
 
@@ -11,18 +13,19 @@ function App() {
   const [choice, setChoice] = useState(null);
   const [didChoose, setDidChoose] = useState(false);
   const [shouldShowSceneIntro, setShouldShowSceneIntro] = useState(true);
-  const [isFadingOut, setIsFadingOut] = useState(false);
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnding, setIsEnding] = useState(false);
   const [answers, setAnswers] = useState([]);
 
   const scene = gameScript[index];
-  if (!scene) {
-    return (
-      <Endgame/>
-    )
-  }
   
   const onChoose = (choiceIndex) => {
-    setIsFadingOut(false);
+    if (gameIsOver) {
+      reset();
+      return;
+    }
+
+    setIsEnding(false); // TODO: Right?
     setChoice(choiceIndex);
     updateAnswers(choiceIndex);
     setDidChoose(true);
@@ -35,13 +38,18 @@ function App() {
   }
 
   const onClickFeedback = () => {
-    setIsFadingOut(true);
-    setTimeout(() => {
-      clearForNextQuestion();
-      setIndex(index + 1);
-      resetIntro(); 
-    }, 2000)
-  }
+    setIsEnding(true);
+
+    if (gameIsOver) {
+      reset();
+    }
+    else {
+      setTimeout(() => {
+        clearForNextQuestion();
+        setIndex(index + 1);
+      }, DELAY_MS_BEFORE_NEXT_QUESTION) 
+    }
+ }
 
   const getFeedback = () => {
     if (choice != null) {
@@ -58,29 +66,25 @@ function App() {
     setDidChoose(false);
   }
 
-  const removeIntroAfterDelay = () => {
-    setTimeout(() => {
-      setShouldShowSceneIntro(false);
-    }, DELAY_LENGTH);
-  }
 
-  const resetIntro = () => {
-    setShouldShowSceneIntro(true);
-    setIsFadingOut(false);
-  }
+  const gameIsOver = isGameOver(index, gameScript.length);
 
   return (
     <div className="App">
-      <header className="App-header">
+      <Journey
+        answers={answers}            
+      />
+      <header className="App-container">
         <Scene
           choice={choice}
           didChoose={didChoose}
+          gameIsOver={gameIsOver}
           index={index}
-          isFadingOut={isFadingOut}
+          isBeginning={isBeginning}
+          isEnding={isEnding}
           scene={scene}
           shouldShowSceneIntro={shouldShowSceneIntro}
           maxIndex={gameScript.length}
-          removeIntroAfterDelay={removeIntroAfterDelay}
           feedback={getFeedback()}
           onChoose={onChoose}
           onClickFeedback={onClickFeedback}
@@ -89,6 +93,15 @@ function App() {
       </header>
     </div>
   );
+}
+
+function reset() {
+  window.location.reload();
+}
+
+function isGameOver(index, maxIndex) {
+  const gameIsOver = (index +1 === maxIndex);
+  return gameIsOver;
 }
 
 

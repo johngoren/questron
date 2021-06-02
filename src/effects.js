@@ -2,7 +2,7 @@
 
 const DURATION_TELETYPE = 15;
 
-export function fadeIn() {
+export function fadeInLetters() {
     const fadeSpans = document.getElementsByClassName("fadeIn");
 
     for (let i=0; i<fadeSpans.length; i++) {       

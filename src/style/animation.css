@@ -1,0 +1,284 @@
+/**
+Animation classes
+*/
+
+
+.sliderIsLeaving {
+    animation-name: sliderExit;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}  
+  
+/**
+Teletype effect
+*/
+
+.teletype {
+  text-align: left;
+  opacity: 1.0;
+}
+
+.fadeIn {
+  opacity: 0;
+  animation-name: teletypeFade;
+  animation-duration: 400ms;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+  
+/**
+Keyframes
+*/
+
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+@keyframes fadeOut {
+  0% { opacity:1; }
+  100% { opacity:0; }
+}
+
+
+@keyframes teletypeFade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-moz-keyframes teletypeFade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-webkit-keyframes teletypeFade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-ms-keyframes teletypeFade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  
+@keyframes sliderExit {
+    0% { top: 0px; }
+    100% { top: 1000px; }
+  }
+  
+  @-moz-keyframes sliderExit {
+    0% { top: 0px; }
+    100% { top: 1000px; }
+  }
+  
+  @-webkit-keyframes sliderExit {
+    0% { top: 0px; }
+    100% { top: 1000px; }
+  }
+  
+  @-ms-keyframes sliderExit {
+    0% { top: 0px; }
+    100% { top: 1000px; }
+  }
+  
+  
+
+@keyframes journeysEnd {
+    0% {
+      right: 0px;
+    }
+    100% {
+      right: 500px;
+    }
+  }
+  
+  @keyframes journeysEnd {
+    0% {
+      right: 0px;
+    }
+    100% {
+      right: 500px;
+    }
+  }
+  
+  @-moz-keyframes journeysEnd {
+    0% {
+      right: 0px;
+    }
+    100% {
+      right: 500px;
+    }
+  }
+  
+  @-webkit-keyframes journeysEnd {
+    0% {
+      right: 0px;
+    }
+    100% {
+      right: 500px;
+    }
+  }
+
+  
+@keyframes slideIn {
+    0% { 
+      left: -3000px;
+      opacity: 0;
+    }
+    10% { 
+      left: 0px; 
+      opacity: 1;
+    }
+    60% { 
+      left: 0px; 
+      opacity: 1;
+    }
+    70% { 
+      left: 3000px;
+      opacity: 1; 
+    }
+    100% { 
+      left: 3000px; 
+      opacity: 0;
+    }
+  }
+  
+  
+  @-moz-keyframes slideIn {
+    0% { 
+      left: -3000px;
+      opacity: 0;
+    }
+    10% { 
+      left: 0px; 
+      opacity: 1;
+    }
+    60% { 
+      left: 0px; 
+      opacity: 1;
+    }
+    70% { 
+      left: 3000px;
+      opacity: 1; 
+    }
+    100% { 
+      left: 3000px; 
+      opacity: 0;
+    }
+  }
+  
+  @-webkit-keyframes slideIn {
+    0% { 
+      left: -3000px;
+      opacity: 0;
+    }
+    10% { 
+      left: 0px; 
+      opacity: 1;
+    }
+    60% { 
+      left: 0px; 
+      opacity: 1;
+    }
+    70% { 
+      left: 3000px;
+      opacity: 1; 
+    }
+    100% { 
+      left: 3000px; 
+      opacity: 0;
+    }
+  }
+  
+  @-o-keyframes slideIn {
+    0% { 
+      left: -3000px;
+      opacity: 0;
+    }
+    10% { 
+      left: 0px; 
+      opacity: 1;
+    }
+    60% { 
+      left: 0px; 
+      opacity: 1;
+    }
+    70% { 
+      left: 3000px;
+      opacity: 1; 
+    }
+    100% { 
+      left: 3000px; 
+      opacity: 0;
+    }
+  }
+  
+  @-ms-keyframes slideIn {
+    0% { 
+      left: -3000px;
+      opacity: 0;
+    }
+    10% { 
+      left: 0px; 
+      opacity: 1;
+    }
+    60% { 
+      left: 0px; 
+      opacity: 1;
+    }
+    70% { 
+      left: 3000px;
+      opacity: 1; 
+    }
+    100% { 
+      left: 3000px; 
+      opacity: 0;
+    }
+  }
+  
+  @keyframes slideIn {
+    0% { 
+      left: -3000px;
+      opacity: 0;
+    }
+    10% { 
+      left: 0px; 
+      opacity: 1;
+    }
+    60% { 
+      left: 0px; 
+      opacity: 1;
+    }
+    70% { 
+      left: 3000px;
+      opacity: 1; 
+    }
+    100% { 
+      left: 3000px; 
+      opacity: 0;
+    }
+  }
+  

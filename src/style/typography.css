@@ -1,0 +1,30 @@
+h1 {
+    font-family: "Trim Poster Lanky";
+    color: var(--aqua);
+    font-weight: 100;
+    font-size: 108px;
+    text-transform:uppercase;
+    line-height: 100px;
+}
+
+h2 {
+  font-family: "Trim";
+  text-align: left;
+}
+
+.banner {
+  display: flex;
+}
+
+.banner h1 {
+  margin-top: 2px;
+}
+
+.banner h2 {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.garnish {
+  text-decoration: underline;
+}

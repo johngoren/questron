@@ -1,3 +1,8 @@
+@import "fonts.css";
+@import "typography.css";
+@import "animation.css";
+@import "responsive.css";
+
 :root {
   --navy: #002545;
   --gray: #566e82;
@@ -10,7 +15,7 @@
 .App {
   text-align: center;
   background-color: var(--navy);
-  /* padding: 100px; */
+  display: flex;
 }
 
 .App-logo {
@@ -18,7 +23,7 @@
   pointer-events: none;
 }
 
-.App-header {
+.App-container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -28,13 +33,13 @@
   color: white;
   padding-left: 60px;
   padding-right: 60px;
+  padding-top: 2em;
 }
 
 
 .App-link {
   color: #61dafb;
 }
-
 
 .menu {
   width: 75vw;
@@ -47,11 +52,10 @@
   display: flex;
 }
 
-.journey {
-  padding-right: 60px;
-}
 
 .feedback {
   padding-top: 60px;
 }
+
+
 

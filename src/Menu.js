@@ -1,8 +1,10 @@
 export default function Menu(props) {
     if (props.isFeedback) {
+        const nextButtonText = getNextButtonText(props.gameIsOver);
+        const menuClass = getMenuClass(props.isEnding);
         return (
-            <div className="menuOption">
-                <button onClick={props.onClickFeedback}>Next</button>
+            <div className={menuClass}>
+                <button onClick={props.onClickFeedback}>{nextButtonText}</button>
             </div>  
         )
     }
@@ -25,3 +27,20 @@ function MenuOption(props) {
     )
 }
 
+function getNextButtonText(gameIsOver) {
+    if (gameIsOver) {
+        return "Play Again"
+    }
+    else {
+        return "Next";
+    }
+}
+
+function getMenuClass(isEnding) {
+    if (isEnding) {
+        return "menuOption fadeOut";
+    }
+    else {
+        return "menuOption";
+    }
+}

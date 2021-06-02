@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-import { fadeIn } from './effects';
+import { fadeInLetters } from './effects';
 import { prepareText } from './textUtils';
 
 export default function Feedback(props) {
     const text = prepareText(props.body);
 
-    useEffect(fadeIn);
+    useEffect(fadeInLetters);
 
     let questionClassName = "question feedback";
     if (props.isFadingOut) {

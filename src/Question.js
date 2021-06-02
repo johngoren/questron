@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { fadeIn } from './effects';
+import { fadeInLetters } from './effects';
 import { prepareText } from './textUtils';
 import { getIconForChapter } from './iconUtils';
 
@@ -7,7 +7,7 @@ export default function Question(props) {
 
     const text = prepareText(props.body);
     const Icon = getIconForChapter(props.chapterNum);
-    useEffect(fadeIn);
+    useEffect(fadeInLetters);
 
     return (
         <div className="question">
@@ -23,5 +23,4 @@ export default function Question(props) {
         </div>
     )
 }
-
 
