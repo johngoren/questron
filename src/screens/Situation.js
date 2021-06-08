@@ -3,7 +3,7 @@ import { fadeInLetters } from './effects';
 import { prepareText } from './textUtils';
 import { getIconForChapter } from './iconUtils';
 
-export default function Question(props) {
+export default function Situation(props) {
 
     const text = prepareText(props.body);
     const Icon = getIconForChapter(props.chapterNum);

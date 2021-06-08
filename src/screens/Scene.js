@@ -1,8 +1,9 @@
 import React from 'react';
-import Question from './Question';
-import Feedback from './Feedback';
+import Situation from './Situation';
+import Decision from './Decision';
 import Slider from './Slider';
 import Menu from './Menu';
+import Situation from './Situation';
 
 export default function Scene(props) {
     const scene = props.scene;
@@ -19,7 +20,7 @@ export default function Scene(props) {
         const chapterNum = props.index + 1;
 
         Content = 
-            <Question 
+            <Situation 
                 chapterNum={chapterNum} 
                 body={body} 
                 title={title} 
@@ -34,7 +35,7 @@ export default function Scene(props) {
         // TODO: Incorporate user choice as title.
 
         Content = 
-            <Feedback 
+            <Decision 
                 body={feedback} 
                 isEnding={props.isEnding} 
                 index={props.index} 

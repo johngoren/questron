@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { fadeInLetters } from './effects';
 import { prepareText } from './textUtils';
 
-export default function Feedback(props) {
+export default function Decision(props) {
     const text = prepareText(props.body);
 
     useEffect(fadeInLetters);
