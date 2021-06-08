@@ -1,0 +1,1 @@
+export const DELAY_MS_BEFORE_NEXT_QUESTION = 2000;

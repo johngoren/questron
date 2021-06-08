@@ -1,14 +1,21 @@
 import React from 'react';
+import Welcome from './Welcome';
 import Situation from './Situation';
 import Decision from './Decision';
 import Slider from '../ui/Slider';
 import Menu from '../ui/Menu';
 
 export default function Scene(props) {
+    const welcome = props.welcome;
+    if (welcome) {
+        return (
+            <Welcome/>
+        )
+    }
+
     const scene = props.scene;
     const didChoose = props.didChoose;
     const index = props.index;
-    const maxIndex = props.maxIndex;
     const gameIsOver = props.gameIsOver;
     
     let Content;
@@ -25,7 +32,6 @@ export default function Scene(props) {
                 title={title} 
                 onChoose={props.onChoose} 
                 index={index} 
-                maxIndex={maxIndex}
             />
     }
     else {
@@ -38,7 +44,6 @@ export default function Scene(props) {
                 body={feedback} 
                 isEnding={props.isEnding} 
                 index={props.index} 
-                maxIndex={props.maxIndex}
             />
     }
 
@@ -63,7 +68,6 @@ export default function Scene(props) {
             <Slider
                 index={props.index}
                 isEnding={props.isEnding}
-                maxIndex={props.maxIndex}
             />
             </div>
         </>
