@@ -4,7 +4,6 @@ import { prepareText } from '../helpers/textUtils';
 import { getIconForChapter } from '../helpers/iconUtils';
 
 export default function Situation(props) {
-
     const text = prepareText(props.body);
     const Icon = getIconForChapter(props.chapterNum);
     useEffect(fadeInLetters);

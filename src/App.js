@@ -2,64 +2,67 @@ import './style/App.css';
 import React, { useState } from 'react';
 import Scene from './screens/Scene';
 import Journey from './ui/Journey';
-import { isGameOnLastQuestion, isGameOver, getSceneForIndex, getReactionText, replay } from './story/game';
-import { DELAY_MS_BEFORE_NEXT_QUESTION } from './config/settings';
+import { isGameOnLastQuestion, isGameOver, replay } from './story/game';
+import { DELAY_MS_BEFORE_NEXT_QUESTION } from './constants/settings';
+import { WELCOME, NEW_SITUATION, USER_MADE_DECISION, GAME_IS_ON_LAST_QUESTION } from './constants/modes';
+
+// TODO: "Learn more" feature
+// TODO: Should animating transitions be part of the mode?
 
 function App() {
 
-  const [shouldShowWelcomeScreen] = useState(true);
+  const [mode, setMode] = useState(WELCOME);
   const [index, setIndex] = useState(0);
   const [currentChoice, setCurrentChoice] = useState(null);
-  const [didChoose, setDidChoose] = useState(false);
   const [isAnimatingExit, setIsAnimatingExit] = useState(false);
   const [answers, setAnswers] = useState([]);
   
-  const scene = getSceneForIndex(index);
 
-  // User makes a choice
-  function onMakeDecision(choiceIndex) {
-    if (gameIsOver) {
+  function onClickWelcome() {
+    setMode(NEW_SITUATION);
+  }
+
+  function onUserMakesChoice(choiceIndex) {
+    if (gameIsOnLastQuestion()) {
       replay();
       return;
     }
-    setIsAnimatingExit(false);
+    setIsAnimatingExit(false);  // TODO: Replace with enum mode?
     setCurrentChoice(choiceIndex);
     updateAnswerRecords(choiceIndex);
-    setDidChoose(true);
+    setMode(USER_MADE_DECISION);
   }
-
-  function updateAnswerRecords(choiceIndex) {
-    const newAnswers = answers;
-    newAnswers.push(choiceIndex);
-    setAnswers(newAnswers);
-  }
-
 
   // User continues to the next screen after reading decision text
 
   function onClickFeedback(completion) {
     setIsAnimatingExit(true);
 
-    if (gameIsOver) {
-      replay();
-    }
-    else {
-      setTimeout(() => {
+    setTimeout(() => {
         completion();
         setIndex(index + 1);
       }, DELAY_MS_BEFORE_NEXT_QUESTION) 
-    }
+  }
+  
+  function updateAnswerRecords(choiceIndex) {
+    const newAnswers = answers;
+    newAnswers.push(choiceIndex);
+    setAnswers(newAnswers);
+  }
+
+  function gameIsOnLastQuestion() {
+    return (mode === GAME_IS_ON_LAST_QUESTION);
   }
 
   function clearForNextQuestion() {
       setCurrentChoice(null);
-      setDidChoose(false);
+      setMode(NEW_SITUATION);
   } 
 
-  const gameIsOnLastQuestion = isGameOnLastQuestion(index);
-  const gameIsOver = isGameOver(index);
-  const decisionFeedbackText = getReactionText(index, currentChoice);
-
+  if (gameIsOnLastQuestion(index)) {
+    setMode(GAME_IS_ON_LAST_QUESTION);
+  }
+  
   return (
     <div className="App">
       <Journey
@@ -67,19 +70,15 @@ function App() {
       />
       <header className="App-container">
         <Scene
-          scene={scene}
-          welcome={shouldShowWelcomeScreen}
-          currentChoice={currentChoice}
-          didChoose={didChoose}
-          gameIsOnLastQuestion={gameIsOnLastQuestion}
-          gameIsOver={gameIsOver}
           index={index}
+          mode={mode}
+          currentChoice={currentChoice}
           isAnimatingExit={isAnimatingExit}
-          feedback={decisionFeedbackText}
-          onChoose={() => onMakeDecision()}
-          onClickFeedback={() => onClickFeedback(clearForNextQuestion)}
           answers={answers}
-        />
+          onChoose={() => onUserMakesChoice()}
+          onClickFeedback={() => onClickFeedback(clearForNextQuestion)}
+          onClickWelcomeButton={() => onClickWelcome() }
+      />
       </header>
     </div>
   );

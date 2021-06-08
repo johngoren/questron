@@ -3,49 +3,29 @@ import Welcome from './Welcome';
 import Situation from './Situation';
 import Decision from './Decision';
 import Menu from '../ui/Menu';
+import { WELCOME, NEW_SITUATION, USER_MADE_DECISION, GAME_IS_ON_LAST_QUESTION } from '../constants/modes';
+import { getSceneForIndex } from '../story/game';
 
 export default function Scene(props) {
-    const welcome = props.welcome;
-    if (welcome) {
-        return (
-            <Welcome/>
-        )
-    }
+    const mode = props.mode;
+    if (mode === WELCOME) { return <Welcome onClickWelcomeButton={props.onClickWelcomeButton}/> }
 
-    const scene = props.scene;
-    const didChoose = props.didChoose;
-    const index = props.index;
+    const scene = getSceneForIndex(props.index);
     const gameIsOver = props.gameIsOver;
-    const currentChoice = props.currentChoice;
     
     let Content;
 
-    if (!didChoose) {
-        const title = scene.title;
-        const body = scene.body;
-        const chapterNum = props.index + 1;
-
-        Content = 
-            <Situation 
-                chapterNum={chapterNum} 
-                body={body} 
-                title={title} 
-                onChoose={props.onChoose} 
-                index={index} 
-            />
+    switch(mode) {
+        case NEW_SITUATION, GAME_IS_ON_LAST_QUESTION:
+            Content = getQuestionContent(props);
+            break;
+        case USER_MADE_DECISION:
+            Content = getDecisionContent(props);
+            break;
+        default:
+            throw new Error("Invalid mode.");
+            break;
     }
-    else {
-        const feedback = props.feedback;
-
-        // TODO: Incorporate user choice as title.
-
-        Content = 
-            <Decision 
-                body={feedback} 
-                index={props.index} 
-                currentChoice={currentChoice}
-            />
-}
 
     return (
         <>
@@ -57,7 +37,6 @@ export default function Scene(props) {
         <div className="footer">
             <Menu
                 isAnimatingExit={props.isAnimatingExit}
-                isFeedback={didChoose}
                 choices={scene.choices}
                 onChoose={(choice) => {
                     props.onChoose(choice);
@@ -68,4 +47,38 @@ export default function Scene(props) {
             </div>
         </>
     )   
+
+}
+
+function getQuestionContent(props) {
+    const index = props.index;
+    const title = scene.title;
+    const body = scene.body;
+    const chapterNum = index + 1;
+
+    return (
+        <Situation 
+            chapterNum={chapterNum} 
+            body={body} 
+            title={title} 
+            onChoose={props.onChoose} 
+            index={index} 
+        />
+    )
+}
+
+function getDecisionContent(props) {
+    const feedback = props.feedback;
+
+    Content = (
+        <Decision 
+            body={feedback} 
+            index={props.index} 
+            currentChoice={currentChoice}
+        />
+    )
+}
+
+function getGameOverContent(props) {
+    // TODO bring this in.
 }

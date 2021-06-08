@@ -1,4 +1,5 @@
-[
+{
+   "scenes": [
     {
        "label":"Welcome to the Capdesk startup simulator",
        "body":"You've got a billion dollar idea and a plan for turning it into a reality, so you're starting your own business. What role will you take?",
@@ -295,4 +296,8 @@
          }
       ]
    }
+ ],
+ "about": [
+    
  ]
+}

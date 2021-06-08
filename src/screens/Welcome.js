@@ -1,6 +1,6 @@
 export default function Welcome(props) {
     return <div>
         <p>Welcome!</p>
-        <button>Ok</button>
+        <button onClick={onClickWelcomeButton}>Ok</button>
     </div>
 }

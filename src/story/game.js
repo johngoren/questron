@@ -1,13 +1,27 @@
 import gameScript from './game.json';
+import { prepareText } from '../helpers/textUtils';
 
+export function getSceneForIndex(index) {
+  return gameScript.scenes[index];
+}  
 
-export function getDecisionTitle(index, choice) {
-  const choice = getChoice(index, choice);
-  return choice.title ?? choice.label;
+export function getMaxIndex() {
+  return gameScript.scenes.length;
 }
 
-export function getDecisionText(index, choice) {
-  return getChoice(index, choice).feedback;
+export function getDecisionTitle(choice, index) {
+  const decision = getChoice(index, choice);
+  if (decision != null) {
+    return decision.title ?? decision.label;
+  }
+}
+
+export function getDecisionText(choice, index) {
+  const decision = getChoice(index, choice);
+  if (decision != null) {
+    const body = getChoice(index, choice).feedback;
+    return prepareText(body);
+  }
 }
 
 function getChoice(index, choiceNum) {
@@ -18,14 +32,6 @@ function getChoice(index, choiceNum) {
 function getChoicesForIndex(index) {
   const scene = getSceneForIndex(index);
   return scene.choices;
-}
-
-export function getSceneForIndex(index) {
-  return gameScript[index];
-}  
-
-export function getMaxIndex() {
-  return gameScript.length;
 }
 
 export function isGameOver(index) {
@@ -41,3 +47,4 @@ export function isGameOnLastQuestion(index) {
 export function replay() {
   window.location.reload();
 }
+
