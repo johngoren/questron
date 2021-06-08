@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { fadeInLetters } from './effects';
-import { prepareText } from './textUtils';
-import { getIconForChapter } from './iconUtils';
+import { fadeInLetters } from '../effects/effects';
+import { prepareText } from '../helpers/textUtils';
+import { getIconForChapter } from '../helpers/iconUtils';
 
 export default function Situation(props) {
 

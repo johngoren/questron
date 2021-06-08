@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { fadeInLetters } from './effects';
-import { prepareText } from './textUtils';
+import { fadeInLetters } from '../effects/effects';
+import { prepareText } from '../helpers/textUtils';
 
 export default function Decision(props) {
     const text = prepareText(props.body);

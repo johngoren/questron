@@ -1,9 +1,8 @@
 import React from 'react';
 import Situation from './Situation';
 import Decision from './Decision';
-import Slider from './Slider';
-import Menu from './Menu';
-import Situation from './Situation';
+import Slider from '../ui/Slider';
+import Menu from '../ui/Menu';
 
 export default function Scene(props) {
     const scene = props.scene;

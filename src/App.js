@@ -1,11 +1,12 @@
 import './style/App.css';
 import React, { useState } from 'react';
-import Scene from './Scene';
-import Journey from './Journey';
-import gameScript from './data/game.json';
-import scoreAnswers from './scores';
+import Scene from './screens/Scene';
+import Journey from './ui/Journey';
+import gameScript from './story/game.json';
+import { getFeedback } from './story/content';
+import { onMakeDecision, onClickFeedback } from './logic/choice';
+import { isGameOver } from './helpers/gameState';
 
-const DELAY_MS_BEFORE_NEXT_QUESTION = 2000;
 
 function App() {
 
@@ -16,60 +17,18 @@ function App() {
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnding, setIsEnding] = useState(false);
   const [answers, setAnswers] = useState([]);
-
+  
   const scene = gameScript[index];
-  
-  const onChoose = (choiceIndex) => {
-    if (gameIsOver) {
-      reset();
-      return;
-    }
 
-    setIsEnding(false); // TODO: Right?
-    setChoice(choiceIndex);
-    updateAnswers(choiceIndex);
-    setDidChoose(true);
-  }
-
-  const updateAnswers = (choiceIndex) => {
-    const newAnswers = answers;
-    newAnswers.push(choiceIndex);
-    setAnswers(newAnswers);
-  }
-
-  const onClickFeedback = () => {
-    setIsEnding(true);
-
-    if (gameIsOver) {
-      reset();
-    }
-    else {
-      setTimeout(() => {
-        clearForNextQuestion();
-        setIndex(index + 1);
-      }, DELAY_MS_BEFORE_NEXT_QUESTION) 
-    }
- }
-
-  const getFeedback = () => {
-    if (choice != null) {
-      const scene = gameScript[index];
-      const choices = scene["choices"];
-      const text = choices[choice].feedback;
-      return text;
-    }
-    return null;
-  }
-  
   const clearForNextQuestion = () => {
     setChoice(null);
     setDidChoose(false);
-  }
-
-
+  } 
   const gameIsOver = isGameOver(index, gameScript.length);
+  const decisionFeedbackText = getFeedback(index);
 
   return (
+
     <div className="App">
       <Journey
         answers={answers}            
@@ -85,23 +44,14 @@ function App() {
           scene={scene}
           shouldShowSceneIntro={shouldShowSceneIntro}
           maxIndex={gameScript.length}
-          feedback={getFeedback()}
-          onChoose={onChoose}
-          onClickFeedback={onClickFeedback}
+          feedback={decisionFeedbackText}
+          onChoose={onMakeDecision}
+          onClickFeedback={() => onClickFeedback(clearForNextQuestion)}
           answers={answers}
         />
       </header>
     </div>
   );
-}
-
-function reset() {
-  window.location.reload();
-}
-
-function isGameOver(index, maxIndex) {
-  const gameIsOver = (index +1 === maxIndex);
-  return gameIsOver;
 }
 
 

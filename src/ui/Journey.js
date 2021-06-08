@@ -1,4 +1,4 @@
-import { getIconForAnswer } from "./iconUtils.js";
+import { getIconForAnswer } from "../helpers/iconUtils";
 
 export default function Journey(props) {
     const answers = props.answers;
