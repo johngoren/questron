@@ -1,15 +1,4 @@
-/**
-Animation classes
-*/
 
-
-.sliderIsLeaving {
-    animation-name: sliderExit;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-in-out;
-}  
-  
 /**
 Teletype effect
 */
@@ -83,26 +72,6 @@ Keyframes
     100% { opacity: 1; }
   }
   
-  
-@keyframes sliderExit {
-    0% { top: 0px; }
-    100% { top: 1000px; }
-  }
-  
-  @-moz-keyframes sliderExit {
-    0% { top: 0px; }
-    100% { top: 1000px; }
-  }
-  
-  @-webkit-keyframes sliderExit {
-    0% { top: 0px; }
-    100% { top: 1000px; }
-  }
-  
-  @-ms-keyframes sliderExit {
-    0% { top: 0px; }
-    100% { top: 1000px; }
-  }
   
   
 

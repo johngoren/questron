@@ -1,14 +1,23 @@
 import gameScript from './game.json';
 
 
-export function getReactionText(index, choice) {
-    if (choice != null) {
-      const scene = gameScript[index];
-      const choices = scene["choices"];
-      const text = choices[choice].feedback;
-      return text;
-    }
-    return null;
+export function getDecisionTitle(index, choice) {
+  const choice = getChoice(index, choice);
+  return choice.title ?? choice.label;
+}
+
+export function getDecisionText(index, choice) {
+  return getChoice(index, choice).feedback;
+}
+
+function getChoice(index, choiceNum) {
+  const choices = getChoicesForIndex(index);
+  return choices[choiceNum];
+}
+
+function getChoicesForIndex(index) {
+  const scene = getSceneForIndex(index);
+  return scene.choices;
 }
 
 export function getSceneForIndex(index) {

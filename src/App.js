@@ -9,9 +9,9 @@ function App() {
 
   const [shouldShowWelcomeScreen] = useState(true);
   const [index, setIndex] = useState(0);
-  const [choice, setChoice] = useState(null);
+  const [currentChoice, setCurrentChoice] = useState(null);
   const [didChoose, setDidChoose] = useState(false);
-  const [isEnding, setIsEnding] = useState(false);
+  const [isAnimatingExit, setIsAnimatingExit] = useState(false);
   const [answers, setAnswers] = useState([]);
   
   const scene = getSceneForIndex(index);
@@ -22,14 +22,13 @@ function App() {
       replay();
       return;
     }
-
-    setIsEnding(false); // TODO: Right?
-    setChoice(choiceIndex);
-    updateAnswers(choiceIndex);
+    setIsAnimatingExit(false);
+    setCurrentChoice(choiceIndex);
+    updateAnswerRecords(choiceIndex);
     setDidChoose(true);
   }
 
-  function updateAnswers (choiceIndex) {
+  function updateAnswerRecords(choiceIndex) {
     const newAnswers = answers;
     newAnswers.push(choiceIndex);
     setAnswers(newAnswers);
@@ -39,7 +38,7 @@ function App() {
   // User continues to the next screen after reading decision text
 
   function onClickFeedback(completion) {
-    setIsEnding(true);
+    setIsAnimatingExit(true);
 
     if (gameIsOver) {
       replay();
@@ -53,13 +52,13 @@ function App() {
   }
 
   function clearForNextQuestion() {
-      setChoice(null);
+      setCurrentChoice(null);
       setDidChoose(false);
   } 
 
   const gameIsOnLastQuestion = isGameOnLastQuestion(index);
   const gameIsOver = isGameOver(index);
-  const decisionFeedbackText = getReactionText(index, choice);
+  const decisionFeedbackText = getReactionText(index, currentChoice);
 
   return (
     <div className="App">
@@ -68,15 +67,14 @@ function App() {
       />
       <header className="App-container">
         <Scene
+          scene={scene}
           welcome={shouldShowWelcomeScreen}
-          choice={choice}
+          currentChoice={currentChoice}
           didChoose={didChoose}
           gameIsOnLastQuestion={gameIsOnLastQuestion}
           gameIsOver={gameIsOver}
           index={index}
-          isBeginning={isBeginning}
-          isEnding={isEnding}
-          scene={scene}
+          isAnimatingExit={isAnimatingExit}
           feedback={decisionFeedbackText}
           onChoose={() => onMakeDecision()}
           onClickFeedback={() => onClickFeedback(clearForNextQuestion)}

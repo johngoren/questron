@@ -2,7 +2,6 @@
   --navy: #002545;
   --gray: #566e82;
   --green: #00f5a9;
-  --sliderBackground: #00427b;
   --aqua: #00bdb4;  
 }
 
@@ -98,26 +97,6 @@ Journey boxes
   padding-right: 60px;
 }
 
-
-/**
-Slider
-*/
-
-
-.slider {
-  background:  var(--sliderBackground);
-  width: 75vw;
-  height: 20px;
-  margin-top: 10px;
-  margin-bottom: 60px;
-  position: relative;
-}
-
-.progress {
-  background: var(--green);
-  height: 100%;
-  transition: width 1s;
-}
 
 /**
 Helpers

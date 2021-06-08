@@ -2,7 +2,6 @@ import React from 'react';
 import Welcome from './Welcome';
 import Situation from './Situation';
 import Decision from './Decision';
-import Slider from '../ui/Slider';
 import Menu from '../ui/Menu';
 
 export default function Scene(props) {
@@ -17,6 +16,7 @@ export default function Scene(props) {
     const didChoose = props.didChoose;
     const index = props.index;
     const gameIsOver = props.gameIsOver;
+    const currentChoice = props.currentChoice;
     
     let Content;
 
@@ -42,10 +42,10 @@ export default function Scene(props) {
         Content = 
             <Decision 
                 body={feedback} 
-                isEnding={props.isEnding} 
                 index={props.index} 
+                currentChoice={currentChoice}
             />
-    }
+}
 
     return (
         <>
@@ -56,7 +56,7 @@ export default function Scene(props) {
         </div>
         <div className="footer">
             <Menu
-                isEnding={props.isEnding}
+                isAnimatingExit={props.isAnimatingExit}
                 isFeedback={didChoose}
                 choices={scene.choices}
                 onChoose={(choice) => {
@@ -64,10 +64,6 @@ export default function Scene(props) {
                 }}
                 onClickFeedback={props.onClickFeedback} 
                 gameIsOver={gameIsOver}
-            />
-            <Slider
-                index={props.index}
-                isEnding={props.isEnding}
             />
             </div>
         </>
