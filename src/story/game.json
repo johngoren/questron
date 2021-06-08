@@ -6,62 +6,67 @@
           {
              "title": "I'm the CEO",
              "label":"You've chosen CEO",
-             "feedback":"Strong choice – if you're building a tech-powered business, chief technology officer is arguably the most important position. CTOs tend to be good at making decisions and highly driven to innovate.",
-             "extra":""
+             "feedback":"Fantastic! The role of chief executive officer is a natural choice, putting you squarely at the helm of the business. CEOs tend to be open and trustworthy by nature, and able to inspire confidence in others.",
+             "value":""
           },
           {
              "title": "You've chosen CFO",
-             "label":"I'm the CFO",
-             "feedback":"Fantastic! The role of chief executive officer is a natural choice, putting you squarely at the helm of the business. CEOs tend to be open and trustworthy by nature, and able to inspire confidence in others.",
-             "extra":""
+             "label": "I'm the CFO",
+             "feedback":"Great! The CFO has the highest financial oversight and responsibility for the whole organisation. Chief financial officers are typically practical, resourceful leaders with a detail-oriented working style.",
+             "value":""
           },
           {
              "title": "You've chosen CTO",
              "label":"I'm the CTO",
              "feedback":"Strong choice – if you're building a tech-powered business, chief technology officer is arguably the most important position. CTOs tend to be good at making decisions and highly driven to innovate.",
-             "extra":""
+             "value":""
           }
        ]
     },
     {
        "label":"Time to pick co-founders (or not)",
-       "body":"Now you know what you what role you'll play, you've got another key decision to make: do you want to run the business singlehandedly, or bring on people to found the business alongside you?#Having co-founders eases the burden of founding a business on many levels  but means you share the success with others including financial success. #Founding a company alone lets you pursue your vision without interruption  but may leave you feeling lonely or unsupported especially in tougher times.",
+       "body":"Now you know what you what role you'll play, you've got another key decision to make: do you want to run the business singlehandedly, or bring on people to found the business alongside you?",
+       "about": 15,
        "choices":[
           {
-             "label":"I'm a solo Founder",
+             "label":"I'm a solo founder",
              "feedback":"You're striking out solo! Well, fortune favours the brave.#It's time to bring some people onboard.",
-             "extra":""
+             "value":""
           },
           {
              "label":"I have one co-founder",
              "feedback":"You've found someone who shares your vision and passion but brings new skills to the table – an ideal co-founder.#Time to start building your team.",
-             "extra":""
+             "value":""
           },
           {
              "label":"I have two co-founders",
              "feedback":"Strength in numbers! Your three-person founding team spans a range of skills and experience but is perfectly aligned on vision.#Time to start hiring.",
-             "extra":""
+             "value":""
           }
        ]
     },
     {
        "label":"Making your first hires",
-       "body":"It's time to hire your core team: two developers, one salesperson and one account manager.#Once recruitment begins you run into a dilemma: your hiring budget only covers 80% of each role's market rate. [[Find out more->Find out more_01]]",
+       "body":"It's time to hire your core team: two developers, one salesperson and one account manager.#Once recruitment begins you run into a dilemma: your hiring budget only covers 80% of each role's market rate.",
+       "about": 1,
        "choices":[
           {
              "label":"Give share options to all four hires",
              "feedback":"Your generous approach to share options wins you favours among your employees so you continue it as you grow your team to 15. Be careful though, you might hit the bottom of your option pool pretty quickly.",
-             "extra":""
+             "value":"",
+             "about": 2
           },
           {
              "label":"Change all hires from senior to junior",
              "feedback":"Your junior team are enthusiastic and hard-working, but don't have in-depth experience. Within a year, you'll probably accumulate management debt and have to make some hard decisions.",
-             "extra":""
+             "value":"",
+             "about": 3
           },
           {
              "label":"Change two hires to junior and give share options to the others",
              "feedback":"This is a smart compromise, but success of this plan hangs in the balance – there are no guarantees that both your junior hires will rise to the challenge, and may be demotivated by the lack of equity.",
-             "extra":""
+             "value":"",
+             "about": 4
           }
        ]
     },
@@ -71,18 +76,18 @@
       "choices":[
          {
             "label":"Employees can work from wherever they like",
-            "feedback":"Your generous approach to share options wins you favours among your employees so you continue it as you grow your team to 15. Be careful though, you might hit the bottom of your option pool pretty quickly.",
-            "extra":""
+            "feedback":"Nice! A remote-first policy gives you access to a much wider talent pool, and it gives your employees the freedom to travel or relocate while working for you.",
+            "value":""
          },
          {
             "label":"Employees must work from the company office",
-            "feedback":"Your junior team are enthusiastic and hard-working, but don't have in-depth experience. Within a year, you'll probably accumulate management debt and have to make some hard decisions.",
-            "extra":""
+            "feedback":"The benefits of office work are well-known – collaboration comes naturally, socialising is straightforward and it's easy to maintain oversight of team challenges, successes and productvity levels.",
+            "value":""
          },
          {
             "label":"Employees must spend at least two days per week in the office",
-            "feedback":"This is a smart compromise, but success of this plan hangs in the balance – there are no guarantees that both your junior hires will rise to the challenge, and may be demotivated by the lack of equity.",
-            "extra":""
+            "feedback":"Smart decision – combining remote and in-office work gives your team flexibility while also allowing for face-to-face meetings and collaboration.",
+            "value":""
          }
       ]
    },
@@ -93,17 +98,17 @@
           {
              "label":"By allocating them additional share options",
              "feedback":"Great! Just make sure you communicate them effectively to give them appropriate meaning.",
-             "extra":""
+             "value":""
           },
           {
              "label":"By giving them a healthy end of year bonus",
              "feedback":"This works best as a short-term incentive and unless you address underlying issues your higher-performing employees wait for their bonus and then resign.",
-             "extra":""
+             "value":""
           },
           {
              "label":"By giving them a raise",
-             "feedback":"They accept but start looking around. Within a year both of them get a higher offer elsewhere and leave your business.",
-             "extra":""
+             "feedback":"They gladly accept but start looking around. Within a year both high-performers them get a higher offer elsewhere and leave your business.",
+             "value":""
           }
        ]
     },
@@ -113,18 +118,18 @@
       "choices":[
          {
             "label":"Hire a People Operations Manager",
-            "feedback":"Great! Just make sure you communicate them effectively to give them appropriate meaning.",
-            "extra":""
+            "feedback":"Dedicated People Operations resource in a team of 25 is a bold move - it shows your dedication to improving staff happiness at work.",
+            "value":""
          },
          {
             "label":"Send team leads on a management course",
-            "feedback":"This works best as a short-term incentive and unless you address underlying issues your higher-performing employees wait for their bonus and then resign.",
-            "extra":""
+            "feedback":"Culture is set from the top, so arranging training for all team leaders is a smart first step towards increasing staff satisfaction.",
+            "value":""
          },
          {
             "label":"Make a company-wide speech about company culture",
-            "feedback":"They accept but start looking around. Within a year both of them get a higher offer elsewhere and leave your business.",
-            "extra":""
+            "feedback":"You give an inspiring speech about the reasons your team and company culture are so specials. It gives everyone a short-term morale boost but the long-term impact is questionable.",
+            "value":""
          }
       ]
    },
@@ -134,81 +139,87 @@
       "choices":[
          {
             "label":"Full salary transparency",
-            "feedback":"TEXT TK",
-            "extra":""
+            "feedback":"You embrace your employees' radical idea and provide full visibility over salary, which helps to tackle gender and race pay gaps.",
+            "value":""
          },
          {
             "label":"Transparent salary bands",
-            "feedback":"TEXT TK",
-            "extra":""
+            "feedback":"You decide to set salary bands, and communicate which employees sit within which. It gives a degree of transparency without disclosing individual circumstances.",
+            "value":""
          },
          {
             "label":"No visibility on salaries",
-            "feedback":"TEXT TK",
-            "extra":""
+            "feedback":"You decide that salaries should remain confidential information at work, and pledge to work behind the scenes to ensure fairness.",
+            "value":""
          }
       ]
    },
     {
        "label":"Setting up your employee share scheme",
-       "body":"You notice that long-term talent retention is a problem for your company. By now you are able to pay relatively competitive salaries, but you find the average employee tenure is 20 months, so you decide to launch an employee share scheme. [[Find out more->Find out more_08]]#Who qualifies?",
+       "body":"You notice that long-term talent retention is a problem for your company. By now you are able to pay relatively competitive salaries, but you find the average employee tenure is 20 months, so you decide to launch an employee share scheme.#Who qualifies?",
+       "about": 8,
        "choices":[
           {
              "label":"All employees",
-             "feedback":"TEXT TK",
-             "extra":""
+             "feedback":"It might be uncommon, but giving equity to every employee makes a lot of sense – after all, everyone has a part to play in the company's success. However, it carries a risk that you spend time and effort giving equity to people who don't fully appreciate its value.#Nonetheless, your employees are pleased to learn of your democratic, progressive approach.",
+             "value":""
           },
           {
              "label":"Early and senior hires",
-             "feedback":"TEXT TK",
-             "extra":""
+             "feedback":"This is a tried-and-tested strategy, which aligns with the thinking that these employees will contribute the most overall to business growth and should therefore receive equity.#It also accommodates for the likelihood that senior hires are paid below market rate.",
+             "value":""
           },
           {
              "label":"Those who negotiate for it",
-             "feedback":"TEXT TK",
-             "extra":""
+             "feedback":"By giving equity out only to those who successfully negotiate for it, you advantage those who are experienced and confident in this area and risk shutting others out.#On the plus side, you ensure only those that //really// want it end up with a stake in the business. You can also use equity as a lever to compromise on salary and save some budget.",
+             "value":""
           }
        ]
     },
     {
        "label":"Communicating your share scheme to employees",
-       "body":"After many hours of planning and design, the employee share scheme is ready to be rolled out. When announcing it, how much detail do you include?[[Find out more->Find out more_15]]",
+       "body":"After many hours of planning and design, the employee share scheme is ready to be rolled out. When announcing it, how much detail do you include?",
+       "about": 15,
        "choices":[
           {
              "label":"Just the essentials",
-             "feedback":"So as to avoid uncomfortable questions about share allocations, you send a memo. It doesn't motivate in the way a face-to-face exchange will, and doesn't allow for a dialogue around the topic. Pro: less pushback, less work, Con: may stir up some resentment",
-             "extra":""
+             "feedback":"By sticking to the need-to-know information only you avoid confusing your employees with too many new terms and concepts. On the other hand, they may be left with unanswered questions or incomplete knowledge.",
+             "value":"",
+             "about": 9
           },
           {
              "label":"Go into some detail",
-             "feedback":"Managers are tasked with explaining the scheme in one-to-one conversations with employees. Risk of lacking vision/big picture/alignment. Secretive. No forum to ask questions of mgmt.",
-             "extra":""
+             "feedback":"You explain to employees how they can help the company achieve a higher valuation, making their impact on the business clear and increasing individual motivation. Good work.",
+             "value":"",
+             "about": 10
           },
           {
              "label":"Unpack and explain the terms of the entire scheme",
-             "feedback":"Great! So long as you have a robust, fair and structured system for allocating equity this is a clever route. Beware inexperienced managers fielding follow-up questions, however - you don't want middle management to confuse/conflict messaging so ensure they are fully briefed and bought in.",
-             "extra":""
+             "feedback":"This is no mean feat, but the payoff could be huge. In giving your employees the full story, you equip them with a greater understanding of their relationship to company equity. On the other hand, you risk overloading some employees that have only a passing interest in the scheme.",
+             "value":"",
+             "about": 105
           }
        ]
     },
     {
       "label":"Negotiating option pools and equity",
       "body":"You’re deep in the fundraising process, and discussing terms with prospective investors. They’re offering investment based on a pre-money valuation, which will significantly dilute the value of your equity, but includes a sizeable increase to your employee option pool. [[//Find out more//->Find out more_12]]#What do you do?",
+      "about": 12,
       "choices":[
          {
             "label":"Push back and protect your equity",
-            "feedback":"So as to avoid uncomfortable questions about share allocations, you send a memo. It doesn't motivate in the way a face-to-face exchange will, and doesn't allow for a dialogue around the topic. Pro: less pushback, less work, Con: may stir up some resentment",
-            "extra":""
+            "feedback":"Bold move. You're not willing to significantly dilute your stake in the business, so you reject the pre-money offer and reach an agreement based on a post-money valuation. This agreement comes with a restricted option pool, which negatively impacts equity available to employees in future.",
+            "value":""
          },
          {
             "label":"Accept the offer for the good of the business",
-            "feedback":"Managers are tasked with explaining the scheme in one-to-one conversations with employees. Risk of lacking vision/big picture/alignment. Secretive. No forum to ask questions of mgmt.",
-            "extra":""
+            "feedback":"Good job – you're thinking big. While this offer means taking a short-term hit to your equity, it maximises benefits for employees and has a positive impact on long-term value creation for your company.",
+            "value":""
          },
          {
             "label":"Drive a hard negotiation and find a middle ground",
-            "feedback":"Great! So long as you have a robust, fair and structured system for allocating equity this is a clever route. Beware inexperienced managers fielding follow-up questions, however - you don't want middle management to confuse/conflict messaging so ensure they are fully briefed and bought in.",
-            "extra":""
+            "feedback":"There's nothing wrong with finding a safe middle ground. You've negotiated terms that you feel optimise your company's chances of success without denting your personal equity too much.",
+            "value":""
          }
       ]
    },
@@ -218,18 +229,18 @@
       "choices":[
          {
             "label":"HR",
-            "feedback":"TEXT TK",
-            "extra":""
+            "feedback":"",
+            "value":""
          },
          {
             "label":"Finance",
-            "feedback":"TEXT TK",
-            "extra":""
+            "feedback":"",
+            "value":""
          },
          {
             "label":"Manager, informed by HR/finance",
-            "feedback":"TEXT TK",
-            "extra":""
+            "feedback":"",
+            "value":""
          }
       ]
    },
@@ -239,18 +250,18 @@
       "choices":[
          {
             "label":"Early investors",
-            "feedback":"TEXT TK",
-            "extra":""
+            "feedback":"",
+            "value":""
          },
          {
             "label":"Employees fully vested",
-            "feedback":"TEXT TK",
-            "extra":""
+            "feedback":"",
+            "value":""
          },
          {
             "label":"Both investors and employees",
-            "feedback":"TEXT TK",
-            "extra":""
+            "feedback":"",
+            "value":""
          }
       ]
    },
@@ -260,18 +271,18 @@
       "choices":[
          {
             "label":"Stop issuing equity",
-            "feedback":"TEXT TK",
-            "extra":""
+            "feedback":"",
+            "value":""
          },
          {
             "label":"Issue more equity",
-            "feedback":"TEXT TK",
-            "extra":""
+            "feedback":"",
+            "value":""
          },
          {
             "label":"Make equity an active perk",
-            "feedback":"TEXT TK",
-            "extra":""
+            "feedback":"",
+            "value":""
          }
       ]
    },

@@ -6,13 +6,10 @@ import { getDecisionTitle } from '../story/game';
 export default function Decision(props) {
     const title = getDecisionTitle(props.currentChoice, props.currentIndex);
     const text = prepareText(props.body);
+    const questionClassName = getQuestionClassName(props.isAnimatingExit);
 
     useEffect(fadeInLetters);
 
-    let questionClassName = "question feedback";
-    if (props.isFadingOut) {
-        questionClassName += " fadeOut";
-    }
 
     return (
         <div className={questionClassName}>
@@ -20,4 +17,9 @@ export default function Decision(props) {
             <div className="teletype">{text}</div>
         </div>
     )
+}
+
+function getQuestionClassName(isAnimatingExit) {
+    const baseClassName = "question feedback";
+    return isAnimatingExit ? baseClassName + " fadeOut" : baseClassName;
 }
