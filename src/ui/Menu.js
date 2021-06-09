@@ -15,7 +15,7 @@ function MenuOption(props) {
     const index = props.choiceNum;
 
     return (
-        <div key={index} className={'menuOption button' + index}>
+        <div key={index} className={'menuOption button'}>
             <button key={props.index} onClick={() => props.onChoose(props.choiceNum)}>{props.choice.label}</button>
         </div>
     )

@@ -1,0 +1,46 @@
+
+.menuOption button {
+    width: 100%;
+    background: #566e82;
+    color: white;
+    font-family: "Trim";
+    font-size: 42px;
+    font-weight: bold;
+    text-align: left;
+    border: none;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+.menuOption button:hover {
+  background: #A99;
+}
+
+.button {
+    transition: opacity;
+    opacity: 0;
+    animation-fill-mode: forwards
+}
+
+/* .button0 {
+    animation: fadeIn 2s;
+    animation-fill-mode: backwards;
+    animation-delay: 4s;
+}
+
+.button1 {
+    animation: fadeIn 2s;
+    animation-delay: 5s;
+    animation-fill-mode: backwards;
+}
+
+.button2 {
+    animation: fadeIn 2s;
+    animation-delay: 6s;
+    animation-fill-mode: backwards;
+} */
+
+.fadeOut {
+  animation: fadeOut 1s;
+  animation-fill-mode: forwards;
+}

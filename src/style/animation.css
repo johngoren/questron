@@ -16,10 +16,10 @@ Teletype effect
   animation-fill-mode: forwards;
 }
   
+
 /**
 Keyframes
 */
-
 
 @keyframes fadeIn {
     0% {opacity:0;}

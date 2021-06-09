@@ -18,7 +18,6 @@ function App() {
   const [answers, setAnswers] = useState([]);
 
   function setNewMode(mode) {
-    console.log("New mode:");
     console.log(mode);
     setMode(mode);
   }
@@ -66,7 +65,6 @@ function App() {
   }
 
   function clearForNextQuestion() {
-    console.log("Clearing for next question.");
       setNewMode(CHOICES_SCREEN);
   } 
  
