@@ -24,6 +24,7 @@ function App() {
   }
 
   function onClickWelcome() {
+    document.getElementById('audio').play();
     setNewMode(CHOICES_SCREEN);
   }
 
