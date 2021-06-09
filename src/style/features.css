@@ -44,6 +44,14 @@
     padding-right: 60px;
   }
   
+
+  /**
+  Welcome screen
+  */
+
+  .play {
+    cursor: pointer;
+  }
   
   /**
   Helpers
