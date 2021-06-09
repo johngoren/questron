@@ -12,7 +12,6 @@ export default function Scene(props) {
 
     const scene = getSceneForIndex(props.index);
     const gameIsOver = props.gameIsOver;
-    
     let Content;
 
     switch(mode) {
@@ -33,6 +32,7 @@ export default function Scene(props) {
         </div>
         <div className="footer">
             <Menu
+                mode={mode}
                 isAnimatingExit={props.isAnimatingExit}
                 choices={scene.choices}
                 onChoose={(choice) => {
@@ -67,17 +67,25 @@ function getQuestionContent(props) {
 
 function getDecisionContent(props) {
     const feedback = props.feedback;
+    const index = props.index;
+    const choiceNum = props.choiceNum;
 
-   return (
+    if (index === null) {
+        throw new Error("No index number available while serving decision.");
+    }
+
+    if (choiceNum === null) {
+        throw new Error("No choice number available while serving decision");
+    }
+
+    return (
         <Decision 
             body={feedback} 
-            index={props.index} 
-            currentChoice={props.currentChoice}
+            index={index} 
+            choiceNum={choiceNum}
         />
     )
 }
-
-
 
 function getModeName(mode) {
     return mode ?? "NULL_MODE";

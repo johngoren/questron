@@ -13,7 +13,7 @@ function App() {
 
   const [mode, setMode] = useState(WELCOME);
   const [index, setIndex] = useState(0);
-  const [currentChoice, setCurrentChoice] = useState(null);
+  const [choiceNum, setChoiceNum] = useState(null);
   const [isAnimatingExit, setIsAnimatingExit] = useState(false);
   const [answers, setAnswers] = useState([]);
 
@@ -27,15 +27,20 @@ function App() {
     setNewMode(USER_NEEDS_TO_CHOOSE);
   }
 
-  function onUserMakesChoice(choiceIndex) {
-    if (gameIsOnLastQuestion()) {
-      replay();
-      return;
+  function onUserMakesChoice(choiceNum) {
+    if (choiceNum != null) {
+      if (gameIsOnLastQuestion()) {
+        replay();
+        return;
+      }
+      setIsAnimatingExit(false);  // TODO: Replace with enum mode?
+      setChoiceNum(choiceNum);
+      updateAnswerRecords(choiceNum);
+      setNewMode(USER_MADE_DECISION);  
     }
-    setIsAnimatingExit(false);  // TODO: Replace with enum mode?
-    setCurrentChoice(choiceIndex);
-    updateAnswerRecords(choiceIndex);
-    setNewMode(USER_MADE_DECISION);
+    else {
+      throw new Error("User's choice was null.");
+    }
   }
 
   // User continues to the next screen after reading decision text
@@ -60,7 +65,7 @@ function App() {
   }
 
   function clearForNextQuestion() {
-      setCurrentChoice(null);
+    console.log("Clearing for next question.");
       setNewMode(USER_NEEDS_TO_CHOOSE);
   } 
  
@@ -71,12 +76,12 @@ function App() {
       />
       <header className="App-container">
         <Scene
-          index={index}
           mode={mode}
-          currentChoice={currentChoice}
+          index={index}
+          choiceNum={choiceNum}
           isAnimatingExit={isAnimatingExit}
           answers={answers}
-          onChoose={() => onUserMakesChoice()}
+          onChoose={(choiceNum) => onUserMakesChoice(choiceNum)}
           onClickFeedback={() => onClickFeedback(clearForNextQuestion)}
           onClickWelcomeButton={() => onClickWelcome() }
       />

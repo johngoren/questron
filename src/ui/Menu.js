@@ -1,19 +1,14 @@
+import { getDefaultNormalizer } from "@testing-library/dom";
+import { USER_NEEDS_TO_CHOOSE, USER_MADE_DECISION } from "../constants/modes";
+
 export default function Menu(props) {
-    if (props.isFeedback) {
-        const nextButtonText = getNextButtonText(props.gameIsOver);
-        const menuClass = getMenuClass(props.isAnimatingExit);
-        return (
-            <div className={menuClass}>
-                <button onClick={props.onClickFeedback}>{nextButtonText}</button>
-            </div>  
-        )
-    }
-    else {
-        const choices = props.choices;
-        const ChoicesAsMenu = choices.map(function(choice, index) {
-            return <MenuOption key={index} choiceNum={index} choice={choice} onChoose={props.onChoose}/>
-        });
-        return ChoicesAsMenu;  
+    switch(props.mode) {
+        case USER_MADE_DECISION:
+            return getGoToNextScreenUI(props);
+        case USER_NEEDS_TO_CHOOSE:
+            return getChoicesUI(props);
+        default:
+            throw new Error("Tried to display menu on inappropriate screen");
     }
 }
 
@@ -27,6 +22,24 @@ function MenuOption(props) {
     )
 }
 
+function getChoicesUI(props) {
+    const choices = props.choices;
+    const ChoicesAsMenu = choices.map(function(choice, index) {
+        return <MenuOption key={index} choiceNum={index} choice={choice} onChoose={props.onChoose}/>
+    });
+    return ChoicesAsMenu;  
+}
+
+function getGoToNextScreenUI(props) {
+    const nextButtonText = getNextButtonText(props.gameIsOver);
+    const menuClass = getMenuAnimationClass(props.isAnimatingExit);
+    return (
+        <div className={menuClass}>
+            <button onClick={props.onClickFeedback}>{nextButtonText}</button>
+        </div>  
+    )
+}
+
 function getNextButtonText(gameIsOver) {
     if (gameIsOver) {
         return "Play Again"
@@ -36,7 +49,7 @@ function getNextButtonText(gameIsOver) {
     }
 }
 
-function getMenuClass(isAnimatingExit) {
+function getMenuAnimationClass(isAnimatingExit) {
     if (isAnimatingExit) {
         return "menuOption fadeOut";
     }

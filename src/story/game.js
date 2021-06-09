@@ -17,19 +17,25 @@ export function getDecisionTitle(choice, index) {
 }
 
 export function getDecisionText(choice, index) {
-  const decision = getChoice(index, choice);
-  if (decision != null) {
-    const body = getChoice(index, choice).feedback;
-    return prepareText(body);
+  if (choice != null && index != null) {
+    const decision = getChoice(index, choice);
+    if (decision != null) {
+      const body = getChoice(index, choice).feedback;
+      return prepareText(body);
+    } 
   }
+  throw Error("Was asked for decision text, but was missing information.");
 }
 
 function getChoice(index, choiceNum) {
-  const choices = getChoicesForIndex(index);
-  return choices[choiceNum];
+  if (choiceNum != null && index != null) {
+    const choices = getChoicesForIndex(index);
+    return choices[choiceNum];
+  }
+  throw Error("Was asked for a choice, but was missing information.");
 }
 
-function getChoicesForIndex(index) {
+export function getChoicesForIndex(index) {
   const scene = getSceneForIndex(index);
   return scene.choices;
 }
