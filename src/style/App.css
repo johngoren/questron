@@ -1,3 +1,4 @@
+@import "features.css";
 @import "fonts.css";
 @import "typography.css";
 @import "animation.css";
@@ -50,7 +51,6 @@
   width: 75vw;
   display: flex;
 }
-
 
 .feedback {
   padding-top: 60px;
