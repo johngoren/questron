@@ -1,7 +1,9 @@
+// TODO: Lots of magic
+
 export function getIconForChapter(chapterNum) {
-    return <img src="/ceo.png" alt="chapter icon"/>;
+    return <img class="chapter" src="/images/ceo.png" alt="chapter icon"/>;
 }
 
 export function getIconForAnswer(answer, index) {
-    return <img src="/ceo.png" alt="your progress"/>;
+    return <img class="answer" src="/images/ceo.png" alt="your progress"/>;
 }

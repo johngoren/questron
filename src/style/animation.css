@@ -16,10 +16,10 @@ Teletype effect
   animation-fill-mode: forwards;
 }
   
-
 /**
 Keyframes
 */
+
 
 @keyframes fadeIn {
     0% {opacity:0;}
@@ -111,7 +111,6 @@ Keyframes
     }
   }
 
-/* slideIn */
   
 @keyframes slideIn {
     0% { 
@@ -127,15 +126,38 @@ Keyframes
       opacity: 1;
     }
     70% { 
-      left: 0;
+      left: 0px;
       opacity: 1; 
     }
     100% { 
-      left: 0; 
+      left: 0px; 
       opacity: 1;
     }
   }
   
+  
+  @-moz-keyframes slideIn {
+    0% { 
+      left: -3000px;
+      opacity: 0;
+    }
+    10% { 
+      left: 0px; 
+      opacity: 1;
+    }
+    60% { 
+      left: 0px; 
+      opacity: 1;
+    }
+    70% { 
+      left: 0px;
+      opacity: 1; 
+    }
+    100% { 
+      left: 0px; 
+      opacity: 1;
+    }
+  }
   
   @-webkit-keyframes slideIn {
     0% { 
@@ -151,59 +173,60 @@ Keyframes
       opacity: 1;
     }
     70% { 
-      left: 0;
+      left: 0px;
       opacity: 1; 
     }
     100% { 
-      left: 0; 
+      left: 0px; 
       opacity: 1;
     }
   }
   
-    
- @-moz-keyframes slideIn {
-  0% { 
-    left: -3000px;
-    opacity: 0;
+  @-o-keyframes slideIn {
+    0% { 
+      left: -3000px;
+      opacity: 0;
+    }
+    10% { 
+      left: 0px; 
+      opacity: 1;
+    }
+    60% { 
+      left: 0px; 
+      opacity: 1;
+    }
+    70% { 
+      left: 0px;
+      opacity: 1; 
+    }
+    100% { 
+      left: 0px; 
+      opacity: 1;
+    }
   }
-  10% { 
-    left: 0px; 
-    opacity: 1;
+  
+  @-ms-keyframes slideIn {
+    0% { 
+      left: -3000px;
+      opacity: 0;
+    }
+    10% { 
+      left: 0px; 
+      opacity: 1;
+    }
+    60% { 
+      left: 0px; 
+      opacity: 1;
+    }
+    70% { 
+      left: 0px;
+      opacity: 1; 
+    }
+    100% { 
+      left: 0px; 
+      opacity: 1;
+    }
   }
-  60% { 
-    left: 0px; 
-    opacity: 1;
-  }
-  70% { 
-    left: 0;
-    opacity: 1; 
-  }
-  100% { 
-    left: 0; 
-    opacity: 1;
-  }
-}
+  
 
-    
-@-o-keyframes slideIn {
-  0% { 
-    left: -3000px;
-    opacity: 0;
-  }
-  10% { 
-    left: 0px; 
-    opacity: 1;
-  }
-  60% { 
-    left: 0px; 
-    opacity: 1;
-  }
-  70% { 
-    left: 0;
-    opacity: 1; 
-  }
-  100% { 
-    left: 0; 
-    opacity: 1;
-  }
-}
+  

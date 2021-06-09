@@ -33,7 +33,7 @@ function App() {
         replay();
         return;
       }
-      setIsAnimatingExit(false);  // TODO: Replace with enum mode?
+      setIsAnimatingExit(false);  
       setChoiceNum(choiceNum);
       updateAnswerRecords(choiceNum);
       setNewMode(FEEDBACK_SCREEN);  

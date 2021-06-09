@@ -39,7 +39,7 @@ h2 {
 
 .headline {
   position: relative;
-  animation: slideIn 4s;
+  animation: slideIn 6s;
   text-align: left;
   animation-fill-mode: forwards;
   animation-timing-function: ease-in-out;

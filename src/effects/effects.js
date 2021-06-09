@@ -24,7 +24,7 @@ function fadeInButtons(initialDelay) {
         const button = buttons[i];
         const newDelayMs = initialDelay + (i * 1000);
         const newDelayValue = `${newDelayMs}ms`; 
-        button.style.animation = "fadeIn 2s forwards";
+        button.style.animation = "fadeIn 2s ease-in-out forwards";
         button.style.animationDelay = newDelayValue;
     }
 }

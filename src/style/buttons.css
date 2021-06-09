@@ -12,15 +12,16 @@
     margin-bottom: 8px;
 }
 
+.menuOption {
+    opacity: 0;
+    transition: opacity;
+    animation-fill-mode: forwards;
+}
+
 .menuOption button:hover {
   background: #A99;
 }
 
-.button {
-    transition: opacity;
-    opacity: 0;
-    animation-fill-mode: forwards
-}
 
 /* .button0 {
     animation: fadeIn 2s;
