@@ -10,32 +10,32 @@ Fonts
     font-weight: bold;
     font-style: normal;
     font-display: swap;
-  }
+}
   
-  @font-face {
+@font-face {
     font-family: 'Inter';
     src: url('Inter-Regular.woff2') format('woff2'),
         url('Inter-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
-  }
+}
   
-  @font-face {
+@font-face {
     font-family: 'Trim Poster Lanky';
     src: url('TrimPoster-Lanky.woff2') format('woff2'),
         url('TrimPoster-Lanky.woff') format('woff');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
-  }
+}
   
-  @font-face {
+@font-face {
     font-family: 'Trim Poster Slender';
     src: url('TrimPoster-Slender.woff2') format('woff2'),
         url('TrimPoster-Slender.woff') format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
-  }
+}
   

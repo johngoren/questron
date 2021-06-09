@@ -2,9 +2,9 @@ import './style/App.css';
 import React, { useState } from 'react';
 import Scene from './screens/Scene';
 import Journey from './ui/Journey';
-import { isGameOnLastQuestion, isGameOver, replay } from './story/game';
+import { replay } from './story/game';
 import { DELAY_MS_BEFORE_NEXT_QUESTION } from './constants/settings';
-import { WELCOME, NEW_SITUATION, USER_MADE_DECISION, GAME_IS_ON_LAST_QUESTION } from './constants/modes';
+import { WELCOME, USER_NEEDS_TO_CHOOSE, USER_MADE_DECISION } from './constants/modes';
 
 // TODO: "Learn more" feature
 // TODO: Should animating transitions be part of the mode?
@@ -16,10 +16,15 @@ function App() {
   const [currentChoice, setCurrentChoice] = useState(null);
   const [isAnimatingExit, setIsAnimatingExit] = useState(false);
   const [answers, setAnswers] = useState([]);
-  
+
+  function setNewMode(mode) {
+    console.log("New mode:");
+    console.log(mode);
+    setMode(mode);
+  }
 
   function onClickWelcome() {
-    setMode(NEW_SITUATION);
+    setNewMode(USER_NEEDS_TO_CHOOSE);
   }
 
   function onUserMakesChoice(choiceIndex) {
@@ -30,7 +35,7 @@ function App() {
     setIsAnimatingExit(false);  // TODO: Replace with enum mode?
     setCurrentChoice(choiceIndex);
     updateAnswerRecords(choiceIndex);
-    setMode(USER_MADE_DECISION);
+    setNewMode(USER_MADE_DECISION);
   }
 
   // User continues to the next screen after reading decision text
@@ -50,19 +55,15 @@ function App() {
     setAnswers(newAnswers);
   }
 
-  function gameIsOnLastQuestion() {
-    return (mode === GAME_IS_ON_LAST_QUESTION);
+  function gameIsOnLastQuestion(index) {
+    return false; // TODO: Implement
   }
 
   function clearForNextQuestion() {
       setCurrentChoice(null);
-      setMode(NEW_SITUATION);
+      setNewMode(USER_NEEDS_TO_CHOOSE);
   } 
-
-  if (gameIsOnLastQuestion(index)) {
-    setMode(GAME_IS_ON_LAST_QUESTION);
-  }
-  
+ 
   return (
     <div className="App">
       <Journey

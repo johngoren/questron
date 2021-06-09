@@ -3,7 +3,7 @@ import Welcome from './Welcome';
 import Situation from './Situation';
 import Decision from './Decision';
 import Menu from '../ui/Menu';
-import { WELCOME, NEW_SITUATION, USER_MADE_DECISION, GAME_IS_ON_LAST_QUESTION } from '../constants/modes';
+import { WELCOME, USER_NEEDS_TO_CHOOSE, USER_MADE_DECISION } from '../constants/modes';
 import { getSceneForIndex } from '../story/game';
 
 export default function Scene(props) {
@@ -16,14 +16,11 @@ export default function Scene(props) {
     let Content;
 
     switch(mode) {
-        case NEW_SITUATION, GAME_IS_ON_LAST_QUESTION:
+        case USER_NEEDS_TO_CHOOSE:
             Content = getQuestionContent(props);
             break;
         case USER_MADE_DECISION:
             Content = getDecisionContent(props);
-            break;
-        default:
-            throw new Error("Invalid mode.");
             break;
     }
 
@@ -52,6 +49,7 @@ export default function Scene(props) {
 
 function getQuestionContent(props) {
     const index = props.index;
+    const scene = getSceneForIndex(props.index);
     const title = scene.title;
     const body = scene.body;
     const chapterNum = index + 1;
@@ -70,15 +68,17 @@ function getQuestionContent(props) {
 function getDecisionContent(props) {
     const feedback = props.feedback;
 
-    Content = (
+   return (
         <Decision 
             body={feedback} 
             index={props.index} 
-            currentChoice={currentChoice}
+            currentChoice={props.currentChoice}
         />
     )
 }
 
-function getGameOverContent(props) {
-    // TODO bring this in.
+
+
+function getModeName(mode) {
+    return mode ?? "NULL_MODE";
 }
