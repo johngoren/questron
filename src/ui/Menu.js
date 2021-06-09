@@ -1,11 +1,10 @@
-import { getDefaultNormalizer } from "@testing-library/dom";
-import { USER_NEEDS_TO_CHOOSE, USER_MADE_DECISION } from "../constants/modes";
+import { CHOICES_SCREEN, FEEDBACK_SCREEN } from "../constants/modes";
 
 export default function Menu(props) {
     switch(props.mode) {
-        case USER_MADE_DECISION:
+        case FEEDBACK_SCREEN:
             return getGoToNextScreenUI(props);
-        case USER_NEEDS_TO_CHOOSE:
+        case CHOICES_SCREEN:
             return getChoicesUI(props);
         default:
             throw new Error("Tried to display menu on inappropriate screen");

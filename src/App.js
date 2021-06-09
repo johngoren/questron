@@ -4,14 +4,14 @@ import Scene from './screens/Scene';
 import Journey from './ui/Journey';
 import { replay } from './story/game';
 import { DELAY_MS_BEFORE_NEXT_QUESTION } from './constants/settings';
-import { WELCOME, USER_NEEDS_TO_CHOOSE, USER_MADE_DECISION } from './constants/modes';
+import { WELCOME_SCREEN, CHOICES_SCREEN, FEEDBACK_SCREEN, SCORING_SCREEN } from './constants/modes';
 
 // TODO: "Learn more" feature
 // TODO: Should animating transitions be part of the mode?
 
 function App() {
 
-  const [mode, setMode] = useState(WELCOME);
+  const [mode, setMode] = useState(WELCOME_SCREEN);
   const [index, setIndex] = useState(0);
   const [choiceNum, setChoiceNum] = useState(null);
   const [isAnimatingExit, setIsAnimatingExit] = useState(false);
@@ -24,7 +24,7 @@ function App() {
   }
 
   function onClickWelcome() {
-    setNewMode(USER_NEEDS_TO_CHOOSE);
+    setNewMode(CHOICES_SCREEN);
   }
 
   function onUserMakesChoice(choiceNum) {
@@ -36,7 +36,7 @@ function App() {
       setIsAnimatingExit(false);  // TODO: Replace with enum mode?
       setChoiceNum(choiceNum);
       updateAnswerRecords(choiceNum);
-      setNewMode(USER_MADE_DECISION);  
+      setNewMode(FEEDBACK_SCREEN);  
     }
     else {
       throw new Error("User's choice was null.");
@@ -66,7 +66,7 @@ function App() {
 
   function clearForNextQuestion() {
     console.log("Clearing for next question.");
-      setNewMode(USER_NEEDS_TO_CHOOSE);
+      setNewMode(CHOICES_SCREEN);
   } 
  
   return (

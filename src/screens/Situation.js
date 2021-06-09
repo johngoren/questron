@@ -4,6 +4,7 @@ import { prepareText } from '../helpers/textUtils';
 import { getIconForChapter } from '../helpers/iconUtils';
 
 export default function Situation(props) {
+    const title = props.title ?? "NO_TITLE";
     const text = prepareText(props.body);
     const Icon = getIconForChapter(props.chapterNum);
     useEffect(fadeInLetters);
@@ -14,7 +15,7 @@ export default function Situation(props) {
                 {Icon}
                 <div className="text">
                     <h2 className="company">Capdes<span className="garnish">k</span></h2>
-                    <h1 className="headline">{props.title}</h1>
+                    <h1 className="headline">{title}</h1>
                 </div>
             </div>
           

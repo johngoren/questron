@@ -11,6 +11,9 @@
   --aqua: #00bdb4;  
 }
 
+/**
+Structure 
+*/
 
 .App {
   text-align: center;
@@ -52,9 +55,6 @@
   display: flex;
 }
 
-.feedback {
-  padding-top: 60px;
+.footer {
+  margin-bottom: 100px;
 }
-
-
-
