@@ -266,11 +266,7 @@
    {
       "title":"Thanks for playing",
       "body": "Your equity style is...(TODO: IMPLEMENT SCORING SCREEN)",
-      "choices": [
-         {
-            "label":"Play again"
-         }
-      ]
+      "scoring": true
    }
  ],
  "about": [
