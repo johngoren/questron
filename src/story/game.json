@@ -201,7 +201,7 @@
     },
     {
       "title":"Negotiating option pools and equity",
-      "body":"You’re deep in the fundraising process, and discussing terms with prospective investors. They’re offering investment based on a pre-money valuation, which will significantly dilute the value of your equity, but includes a sizeable increase to your employee option pool. [[//Find out more//->Find out more_12]]#What do you do?",
+      "body":"You’re deep in the fundraising process, and discussing terms with prospective investors. They’re offering investment based on a pre-money valuation, which will significantly dilute the value of your equity, but includes a sizeable increase to your employee option pool.#What do you do?",
       "about": 12,
       "choices":[
          {
@@ -221,72 +221,51 @@
          }
       ]
    },
-    {
-      "title":"Owning your ESS",
-      "body":"Who is in charge of managing your employee equity scheme?",
+   {
+      "title":"Equity and employee motivation",
+      "body":"Two years after launching your employee share scheme, you conduct a staff survey and learn that nobody describes themselves as highly motivated by equity – a disappointing discovery.",
       "choices":[
          {
-            "label":"HR",
-            "feedback":"",
+            "label":"Stop issuing equity",
+            "feedback":"Bold move! The logic is clear though. If nobody is motivated by equity, there's no real reason to give it away – especially when doing so takes time and effort. You decide to look for other ways to motivate your employees instead.",
             "value":""
          },
          {
-            "label":"Finance",
-            "feedback":"",
+            "label":"Issue more equity",
+            "feedback":"You've deduced the reason people aren't motivated by equity is because they haven't been given enough. If that's true, awarding more equity is a progressive way to address the problem, and shows your commitment to sharing success with your employees.",
             "value":""
          },
          {
-            "label":"Manager, informed by HR/finance",
-            "feedback":"",
+            "label":"Run an employee equity seminar",
+            "feedback":"This is a smart choice, based on the logic that employees don't understand their equity or options scheme in enough detail to see its value, and therefore be motivated by this.#Make sure you reassess employee attitudes a few months down the line to see whether this approach has worked.",
             "value":""
          }
       ]
    },
    {
       "title":"Running your first secondary",
-      "body":"Who's invited to participate in your first secondary auction/sale/transaction?  [[Find out more->Find out more_016]]",
+      "body":"You are four years into building your company and things are going well. You've just secured terms for another big round, and one of the investors is happy for some of their equity to come in the form of a secondary sale.",
       "choices":[
          {
-            "label":"Early investors",
-            "feedback":"",
+            "label":"You and any other Founders",
+            "feedback":"At this point, you and your Co-Founders (if you have any) have arguably sacrificed more than anyone else to make this business succeed – it's only right that you are the first to see the material dividends of your hard work.#It's also an opportunity to split with your Co-Founders, should they want to cash out and move on.",
             "value":""
          },
          {
-            "label":"Employees fully vested",
-            "feedback":"",
+            "label":"Founders and investors only",
+            "feedback":"It makes sense that you want to use this chance to liquidate some of your equity, but you also want to swap out early-stage investors for institutional investors.#This is a smart way to clean up your cap table and give early investors control over their time horizon (the length of time they wait to get a return on their investment).",
             "value":""
          },
          {
-            "label":"Both investors and employees",
-            "feedback":"",
+            "label":"Founders, investors and employee shareholders",
+            "feedback":"Naturally, you want to use this chance to cash in some of your equity and swap out early-stage investors for institutional investors. The exciting part of this choice, however, is inviting employees to take part.#Your decision helps them realise the true value of their equity and demonstrates your commitment to sharing success with your team. It makes equity a tangible, powerful tool for motivating employees.",
             "value":""
          }
       ]
-   },
-   {
-      "title":"Fixing a broken ESS",
-      "body":"You conduct an employee equity survey and find out no-one describes themselves as highly motivated by equity. What do you do?",
-      "choices":[
-         {
-            "label":"Stop issuing equity",
-            "feedback":"",
-            "value":""
-         },
-         {
-            "label":"Issue more equity",
-            "feedback":"",
-            "value":""
-         },
-         {
-            "label":"Make equity an active perk",
-            "feedback":"",
-            "value":""
-         }
-      ]
-   },
+   },   
    {
       "title":"Thanks for playing",
-      "body": "INSERT SCORING SCREEN TODO",
+      "body": "Your equity style is...(TODO: IMPLEMENT SCORING SCREEN)",
       "choices": [
          {
             "label":"Play again"
