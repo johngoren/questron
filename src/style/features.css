@@ -61,5 +61,17 @@
     display: none;
   }
   
+
+  /**
+  Welcome
+  */
+
+  .welcome logo {
+    height: 50vh;
+  }
+
+  .welcome play {
+    height: 33vh;
+  }
   
   

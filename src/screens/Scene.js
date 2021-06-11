@@ -43,7 +43,6 @@ export default function Scene(props) {
                     props.onChoose(choice);
                 }}
                 onClickFeedback={props.onClickFeedback} 
-                gameIsOver={gameIsOver}
             />
             </div>
         </>

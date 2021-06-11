@@ -3,7 +3,7 @@ import { prepareText } from '../helpers/textUtils';
 
 export const NO_ANSWER_YET = -1;
 export const PROGRESSIVE = 1;
-export const MODERATE = 2;
+export const TYPICAL = 2;
 export const CONSERVATIVE = 3;
 
 export function getSceneForIndex(index) {

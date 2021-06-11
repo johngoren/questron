@@ -13,8 +13,8 @@ export default function Journey(props) {
 }
 
 function getJourneyMarks(answers) {
-    return answers.map((answer) => {
-        const icon = getIconForAnswer(anwer, index);
+    return answers.map((answer, index) => {
+        const icon = getIconForAnswer(answer, index);
         return (
             <li key={index}>{icon}</li>
         )

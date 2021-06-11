@@ -15,7 +15,7 @@ function App() {
   const [choiceNum, setChoiceNum] = useState(null);
   const [isAnimatingExit, setIsAnimatingExit] = useState(false);
 
-  const initialAnswerState = game.getInitialAnswerState();
+  const initialAnswerState = getInitialAnswerState();
   const [answers, setAnswers] = useState(initialAnswerState);
 
   function setNewMode(mode) {
@@ -68,14 +68,11 @@ function App() {
   function clearForNextQuestion() {
       setNewMode(CHOICES_SCREEN);
   } 
-
-  const numQuestions = getNumberOfQuestions();
  
   return (
     <div className="App">
       <Journey
         answers={answers}            
-        numQuestions={numQuestions}
       />
       <header className="App-container">
         <Scene
