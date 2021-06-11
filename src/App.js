@@ -2,12 +2,11 @@ import './style/App.css';
 import React, { useState } from 'react';
 import Scene from './screens/Scene';
 import Journey from './ui/Journey';
-import { replay } from './story/game';
+import { getInitialAnswerState, replay } from './story/game';
 import { DELAY_MS_BEFORE_NEXT_QUESTION } from './constants/settings';
 import { WELCOME_SCREEN, CHOICES_SCREEN, FEEDBACK_SCREEN, SCORING_SCREEN } from './constants/modes';
 
 // TODO: "Learn more" feature
-// TODO: Should animating transitions be part of the mode?
 
 function App() {
 
@@ -15,7 +14,9 @@ function App() {
   const [index, setIndex] = useState(0);
   const [choiceNum, setChoiceNum] = useState(null);
   const [isAnimatingExit, setIsAnimatingExit] = useState(false);
-  const [answers, setAnswers] = useState([]);
+
+  const initialAnswerState = game.getInitialAnswerState();
+  const [answers, setAnswers] = useState(initialAnswerState);
 
   function setNewMode(mode) {
     console.log(mode);
@@ -56,7 +57,7 @@ function App() {
   
   function updateAnswerRecords(choiceIndex) {
     const newAnswers = answers;
-    newAnswers.push(choiceIndex);
+    newAnswers[index] = choiceIndex;
     setAnswers(newAnswers);
   }
 
@@ -67,11 +68,14 @@ function App() {
   function clearForNextQuestion() {
       setNewMode(CHOICES_SCREEN);
   } 
+
+  const numQuestions = getNumberOfQuestions();
  
   return (
     <div className="App">
       <Journey
         answers={answers}            
+        numQuestions={numQuestions}
       />
       <header className="App-container">
         <Scene

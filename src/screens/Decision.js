@@ -5,11 +5,12 @@ import { getDecisionText, getDecisionTitle } from '../story/game';
 export default function Decision(props) {
     const choiceNum = props.choiceNum;
     const index = props.index;
+    const isAnimatingExit = props.isAnimatingExit;
 
     if (choiceNum != null) {
         const title = getDecisionTitle(choiceNum, index);
         const body = getDecisionText(choiceNum, index);
-        const questionClassName = getQuestionClassName(props.isAnimatingExit);
+        const questionClassName = getQuestionClassName(isAnimatingExit);
     
         useEffect(fadeInLetters);
     

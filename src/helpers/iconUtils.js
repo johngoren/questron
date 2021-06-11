@@ -5,5 +5,10 @@ export function getIconForChapter(chapterNum) {
 }
 
 export function getIconForAnswer(answer, index) {
-    return <img class="answer" src="/images/ceo.png" alt="your progress"/>;
+    if (answer > 0) {
+        return <img class="answer" src="/images/ceo.png" alt="your progress"/>;
+    }
+    else {
+        return <span>No answer yet</span>
+    }
 }

@@ -1,12 +1,29 @@
 import gameScript from './game.json';
 import { prepareText } from '../helpers/textUtils';
 
+export const NO_ANSWER_YET = -1;
+export const PROGRESSIVE = 1;
+export const MODERATE = 2;
+export const CONSERVATIVE = 3;
+
 export function getSceneForIndex(index) {
   return gameScript.scenes[index];
 }  
 
 export function getMaxIndex() {
   return gameScript.scenes.length;
+}
+
+function getNumQuestions() {
+  return gameScript.scenes.length -1;
+}
+
+export function getInitialAnswerState() {
+  const answers = [];
+  for (let i=0; i<getNumQuestions; i++) {
+    answers.push(NO_ANSWER_YET);
+  }
+  return answers;
 }
 
 export function getDecisionTitle(choice, index) {
