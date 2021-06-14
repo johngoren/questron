@@ -12,9 +12,9 @@ export default function Next(props) {
 
 function getAnimationClass(isAnimatingExit) {
     if (isAnimatingExit) {
-        return "menuOption fadeOut";
+        return "next fadeOut";
     }
     else {
-        return "menuOption";
+        return "next Option";
     }
 }

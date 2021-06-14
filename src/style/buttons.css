@@ -1,5 +1,5 @@
 
-.menuOption button {
+.menuOption button, .next button {
     width: 100%;
     background: #566e82;
     color: white;
