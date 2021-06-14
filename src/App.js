@@ -14,8 +14,10 @@ function App() {
   const [index, setIndex] = useState(0);
   const [choiceNum, setChoiceNum] = useState(null);
   const [isAnimatingExit, setIsAnimatingExit] = useState(false);
+  const [isOnLearnMoreScreen, setIsOnLearnMoreScreen] = useState(false);
 
   const initialAnswerState = getInitialAnswerState();
+  console.log(initialAnswerState);
   const [answers, setAnswers] = useState(initialAnswerState);
 
   function setNewMode(mode) {
@@ -80,6 +82,7 @@ function App() {
           index={index}
           choiceNum={choiceNum}
           isAnimatingExit={isAnimatingExit}
+          isOnLearnMoreScreen={isOnLearnMoreScreen}
           answers={answers}
           onChoose={(choiceNum) => onUserMakesChoice(choiceNum)}
           onClickFeedback={() => onClickFeedback(clearForNextQuestion)}

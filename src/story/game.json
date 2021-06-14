@@ -3,11 +3,13 @@
     {
        "title":"Welcome to the Capdesk startup simulator",
        "body":"You've got a billion dollar idea and a plan for turning it into a reality, so you're starting your own business. What role will you take?",
+       "more_info": "TEST",
        "choices":[
           {
              "label":"I'm the CEO",
              "feedback":"Fantastic! The role of chief executive officer is a natural choice, putting you squarely at the helm of the business. CEOs tend to be open and trustworthy by nature, and able to inspire confidence in others.",
-             "value":""
+             "value":"",
+             "more_info": "TEST"
           },
           {
              "label": "I'm the CFO",
@@ -269,7 +271,18 @@
       "scoring": true
    }
  ],
- "about": [
-    
+ "categories": [
+    {
+      "name": "progressive",
+      "body": "TODO DESCRIPTION"
+    },
+    {
+      "name": "typical",
+      "body": "TODO DESCRIPTION"
+    },
+    {
+      "name": "conservative",
+      "body": "TODO DESCRIPTION"
+    }
  ]
 }

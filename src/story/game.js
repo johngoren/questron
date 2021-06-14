@@ -1,11 +1,14 @@
 import gameScript from './game.json';
-import { NO_ANSWER_YET } from './scoring';
+import { calculateScore, NO_ANSWER_YET } from './scoring';
 import { prepareText } from '../helpers/textUtils';
 
+export function calculatePlayerScore(answers) {
+  return calculateScore(answers);
+}
 
 export function getSceneForIndex(index) {
   return gameScript.scenes[index];
-}  
+}
 
 export function getMaxIndex() {
   return gameScript.scenes.length;
@@ -17,7 +20,7 @@ function getNumQuestions() {
 
 export function getInitialAnswerState() {
   const answers = [];
-  for (let i=0; i<getNumQuestions; i++) {
+  for (let i=0; i<getNumQuestions(); i++) {
     answers.push(NO_ANSWER_YET);
   }
   return answers;
@@ -54,6 +57,15 @@ export function getChoicesForIndex(index) {
   return scene.choices;
 }
 
+export function getMoreInfoTextForIndex(index) {
+  const scene = getSceneForIndex(index);
+  return scene.more_info;
+}
+
+export function getMoreInfoTextForChoice(choiceNum, index) {
+  return getChoice(index, choiceNum).more_info;
+}
+
 export function isGameOver(index) {
   const maxIndex = getMaxIndex();
   const gameIsOver = (index +1 === maxIndex);
@@ -63,6 +75,17 @@ export function isGameOver(index) {
 export function isGameOnLastQuestion(index) {
   return (getMaxIndex() === index);
 }
+
+export function getDescriptionForCategoryEnum(categoryEnum) {
+  const categories = getPlayerCategories();
+  const category = categories[categoryEnum - 1];
+  return category.description;
+}
+
+function getPlayerCategories() {
+  return gameScript.categories;
+}
+
 
 export function replay() {
   window.location.reload();
