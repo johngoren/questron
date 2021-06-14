@@ -20,6 +20,7 @@ Structure
   text-align: center;
   background-color: var(--navy);
   display: flex;
+  cursor: pointer;
 }
 
 .App-logo {

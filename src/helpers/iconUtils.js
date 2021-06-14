@@ -9,6 +9,6 @@ export function getIconForAnswer(answer, index) {
         return <img class="answer" src="/images/ceo.png" alt="your progress"/>;
     }
     else {
-        return <span>No answer yet</span>
+        return <img class="answer" src="/images/empty.png" alt="No answer yet"/>;
     }
 }
