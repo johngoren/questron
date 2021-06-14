@@ -17,7 +17,6 @@ function App() {
   const [isOnLearnMoreScreen, setIsOnLearnMoreScreen] = useState(false);
 
   const initialAnswerState = getInitialAnswerState();
-  console.log(initialAnswerState);
   const [answers, setAnswers] = useState(initialAnswerState);
 
   function setNewMode(mode) {

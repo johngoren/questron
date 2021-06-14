@@ -4,6 +4,8 @@ import ScoreScreen from './Score';
 import Situation from './Situation';
 import Decision from './Decision';
 import Menu from '../ui/Menu';
+import Next from '../ui/Next';
+
 import { WELCOME_SCREEN, SCORE_SCREEN, CHOICES_SCREEN, FEEDBACK_SCREEN } from '../constants/modes';
 import { getSceneForIndex } from '../story/game';
 
@@ -14,14 +16,18 @@ export default function Scene(props) {
 
     const scene = getSceneForIndex(props.index);
     const isAnimatingExit = props.isAnimatingExit;
+
     let Content;
+    let UIContent;
 
     switch(mode) {
         case CHOICES_SCREEN:
             Content = getQuestionContent(props);
+            UIContent = getMenuContent(props);
             break;
         case FEEDBACK_SCREEN:
-            Content = getDecisionContent(props);
+            Content = getDecisionMadeContent(props);
+            UIContent = getNextContent(props);
             break;
         default:
             throw new Error("Invalid mode");
@@ -35,16 +41,8 @@ export default function Scene(props) {
             </div>
         </div>
         <div className="footer">
-            <Menu
-                mode={mode}
-                isAnimatingExit={isAnimatingExit}
-                choices={scene.choices}
-                onChoose={(choice) => {
-                    props.onChoose(choice);
-                }}
-                onClickFeedback={props.onClickFeedback} 
-            />
-            </div>
+            {UIContent}
+        </div>
         </>
     )   
 
@@ -68,7 +66,7 @@ function getQuestionContent(props) {
     )
 }
 
-function getDecisionContent(props) {
+function getDecisionMadeContent(props) {
     const feedback = props.feedback;
     const index = props.index;
     const choiceNum = props.choiceNum;
@@ -88,6 +86,33 @@ function getDecisionContent(props) {
             index={index} 
             choiceNum={choiceNum}
             isAnimatingExit={isAnimatingExit}
+        />
+    )
+}
+
+function getNextContent(props) {
+    return (
+        <Next
+            isAnimatingExit={props.isAnimatingExit}
+            onClickFeedback={props.onClickFeedback}
+        />
+    )
+}
+
+function getMenuContent(props) {
+    const index = props.index;
+    const mode = props.mode;
+    const isAnimatingExit = props.isAnimatingExit;
+    const scene = getSceneForIndex(props.index);
+
+    return (
+        <Menu
+            mode={mode}
+            isAnimatingExit={isAnimatingExit}
+            choices={scene.choices}
+            onChoose={(choice) => {
+                props.onChoose(choice);
+            }}
         />
     )
 }
