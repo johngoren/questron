@@ -17,7 +17,13 @@
     padding-top: 40px;
     padding-right: 60px;
     width: 200px;
+    display: flex;  
+    flex-direction: column;
   }
+
+  /* .journey span {
+    height: 65px;
+  } */
   
   .journeyIsLeaving {
     position: relative;
