@@ -11,8 +11,7 @@ export function prepareText(text) {
     return parsed;
 }
 
-
-function spannifyForFading(text) {
+export function spannifyForFading(text) {
     if (!text) { return null; }
     let newText = "";
     const chars = text.split("");
