@@ -11,12 +11,12 @@ test('Gets choices for index number', () => {
 });
 
 test('Gets decision text for choice and index', () => {
-    const text = game.getDecisionText(0, 0);
+    const text = game.getDecisionText(2, 0);
     expect(text).toBeTruthy();
 });
 
 test('Gets More Info text for a scene', () => {
-    const text = game.getMoreInfoTextForIndex(0);
+    const text = game.getMoreInfoTextForIndex(1);
     expect(text).toBeTruthy();
 });
 

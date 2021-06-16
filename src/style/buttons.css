@@ -1,5 +1,5 @@
 
-.menuOption button, .next button {
+.menuOption button, .next button, .score button {
     width: 100%;
     background: #566e82;
     color: white;
@@ -11,11 +11,7 @@
     margin-bottom: 8px;
 }
 
-.menuOption button {
-    font-size: 36px;
-}
-
-.next button {
+.menuOption button, .next button, .score button {
     font-size: 36px;
 }
 
@@ -25,7 +21,7 @@
     animation-fill-mode: forwards;
 }
 
-.menuOption button:hover, .next button:hover {
+.menuOption button:hover, .next button:hover, .score button:hover {
   background: var(--highlight);
 }
 

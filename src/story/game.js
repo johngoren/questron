@@ -59,11 +59,11 @@ export function getChoicesForIndex(index) {
 
 export function getMoreInfoTextForIndex(index) {
   const scene = getSceneForIndex(index);
-  return scene.more_info;
+  return scene.more;
 }
 
 export function getMoreInfoTextForChoice(choiceNum, index) {
-  return getChoice(index, choiceNum).more_info;
+  return getChoice(index, choiceNum).more;
 }
 
 export function isGameOver(index) {

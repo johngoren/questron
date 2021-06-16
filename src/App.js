@@ -55,6 +55,10 @@ function App() {
         }
       }, DELAY_MS_BEFORE_NEXT_QUESTION) 
   }
+
+  function onClickReplay() {
+    window.location.reload();
+  }
   
   function updateAnswerRecords(choiceIndex) {
     const newAnswers = answers;
@@ -82,6 +86,7 @@ function App() {
           answers={answers}
           onChoose={(choiceNum) => onUserMakesChoice(choiceNum)}
           onClickNext={() => onClickNext(clearForNextQuestion)}
+          onClickReplay={() => onClickReplay()}
           onClickWelcomeButton={() => onClickWelcome() }
       />
       </header>

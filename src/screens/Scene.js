@@ -12,7 +12,7 @@ import { getSceneForIndex } from '../story/game';
 export default function Scene(props) {
     const mode = props.mode;
     if (mode === WELCOME_SCREEN) { return <WelcomeScreen onClickWelcomeButton={props.onClickWelcomeButton}/> }
-    if (mode === SCORE_SCREEN) { return <ScoreScreen/> }
+    if (mode === SCORE_SCREEN) { return <ScoreScreen onClickReplay={props.onClickReplay}/> }
 
     let Content;
     let UIContent;
