@@ -3,7 +3,7 @@
     width: 100%;
     background: #566e82;
     color: white;
-    font-family: "Trim";
+    font-family: "Trim Medium";
     font-weight: bold;
     text-align: left;
     border: none;
@@ -26,7 +26,7 @@
 }
 
 .menuOption button:hover, .next button:hover {
-  background: #A99;
+  background: var(--highlight);
 }
 
 .fadeOut {

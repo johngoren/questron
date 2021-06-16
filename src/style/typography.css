@@ -17,7 +17,7 @@ h1 {
 
 
 h2 {
-  font-family: "Trim";
+  font-family: "Trim Medium";
   text-align: left;
 }
 
@@ -40,7 +40,7 @@ h2 {
 
 .headline {
   position: relative;
-  animation: slideIn 6s;
+  animation: fadeIn 6s;
   text-align: left;
   animation-fill-mode: forwards;
   animation-timing-function: ease-in-out;

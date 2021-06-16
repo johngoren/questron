@@ -4,7 +4,16 @@ Fonts
 */
 
 @font-face {
-    font-family: 'Trim';
+    font-family: 'Trim Medium';
+    src: url('Trim-Medium.woff2') format('woff2'),
+        url('Trim-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Trim Bold';
     src: url('Trim-Bold.woff2') format('woff2'),
         url('Trim-Bold.woff') format('woff');
     font-weight: bold;
