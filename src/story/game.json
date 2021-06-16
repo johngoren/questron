@@ -8,7 +8,7 @@
           {
              "label":"I'm the CEO",
              "feedback":"Fantastic! The role of chief executive officer is a natural choice, putting you squarely at the helm of the business. CEOs tend to be open and trustworthy by nature, and able to inspire confidence in others.",
-             "value":"",
+             "value":""
           },
           {
              "label": "I'm the CFO",
@@ -25,8 +25,11 @@
     {
       "id": 1,
       "title":"Time to pick co-founders (or not)",
-       "body":"Now that you know what you what role you'll play, you've got another key decision to make: do you want to run the business singlehandedly, or bring on people to found the business alongside you?",
-       "more": "Having co-founders eases the burden of founding a business on many levels, but means you share the success with others – including financial success.#Founding a company alone lets you pursue your vision without interruption, but may leave you feeling lonely or unsupported – especially in tougher times.",
+       "body":"Now that you know what you what role you'll play, you've got another key decision to make: do you want to run the business singlehandedly, or bring on people to found the business alongside you?@",
+       "more": {
+          "title": null,
+          "body": "Having co-founders eases the burden of founding a business on many levels, but means you share the success with others – including financial success.#Founding a company alone lets you pursue your vision without interruption, but may leave you feeling lonely or unsupported – especially in tougher times."
+       },
        "choices":[
           {
              "label":"I'm a solo founder",
@@ -48,8 +51,12 @@
     {
       "id": 2,
       "title":"Making your first hires",
-       "body":"It's time to hire your core team: two developers, one salesperson and one account manager.#Once recruitment begins you run into a dilemma: your hiring budget only covers 80% of each role's market rate.",
-       "choices":[
+      "body":"It's time to hire your core team: two developers, one salesperson and one account manager.#Once recruitment begins you run into a dilemma: your hiring budget only covers 80% of each role's market rate.@",
+      "more": {
+         "title": "What's market rate?",
+         "body": "Market rate is the average value of an employee in the wider job market – it takes into account varying salaries at different companies and dictates what people expect to be paid for their skills and experience."
+      },
+      "choices":[
           {
              "label":"Give share options to all four hires",
              "feedback":"Your generous approach to share options wins you favours among your employees so you continue it as you grow your team to 15. Be careful though, you might hit the bottom of your option pool pretty quickly.",
@@ -95,8 +102,8 @@
     {
       "id": 4,
       "title":"Dealing with performance issues",
-       "body":"One year on from assembling your core team, you run into some performance issues.#Half of your employees perform on target, while the other half excel and out-perform their counterparts – they want to be recognised for this. How do you manage the situation?",
-       "choices":[
+      "body":"One year on from assembling your core team, you run into some performance issues.#Half of your employees perform on target, while the other half excel and out-perform their counterparts – they want to be recognised for this. How do you manage the situation?",
+      "choices":[
           {
              "label":"By allocating them additional share options",
              "feedback":"Great! Just make sure you communicate them effectively to give them appropriate meaning.",  
@@ -164,7 +171,11 @@
     {
        "id": 7,
        "title":"Setting up your employee share scheme",
-       "body":"You notice that long-term talent retention is a problem for your company. By now you are able to pay relatively competitive salaries, but you find the average employee tenure is 20 months, so you decide to launch an employee share scheme.#Who qualifies?",
+       "body":"You notice that long-term talent retention is a problem for your company. By now you are able to pay relatively competitive salaries, but you find the average employee tenure is 20 months, so you decide to launch an employee share scheme.@#Who qualifies?",
+       "more": {
+          "title": "What's an employee share scheme?",
+          "body": "A employee share scheme is a process that gives people the chance to buy shares at a set price, at some point in the future. It gives employees a stake in the business and long-term incentive to help grow the company – as the value of the company increases, so does the value of their shares."
+       },
        "choices":[
           {
              "label":"All employees",
@@ -186,8 +197,10 @@
     {
        "id": 8,
        "title":"Communicating your share scheme to employees",
-       "body":"After many hours of planning and design, the employee share scheme is ready to be rolled out. When announcing it, how much detail do you include?",
-       "more": "Why does it matter? Most people aren't familiar with terminology or concept/details of a share scheme, so you can't simply issue equity and be done with it. You need to ensure your employees understand the terms and meaning of being granted shares.#Liquidation preferences, debt obligations, tax breaks: there’s a lot you could include, but that’s not to say you ought to. If you overload employees, you risk losing their attention completely.",
+       "body":"After many hours of planning and design, the employee share scheme is ready to be rolled out. When announcing it, how much detail do you include?@",
+       "more": {
+          "body": "Why does it matter? Most people aren't familiar with terminology or concept/details of a share scheme, so you can't simply issue equity and be done with it. You need to ensure your employees understand the terms and meaning of being granted shares.#Liquidation preferences, debt obligations, tax breaks: there’s a lot you could include, but that’s not to say you ought to. If you overload employees, you risk losing their attention completely."
+       },
        "choices":[
           {
              "label":"Just the essentials",
@@ -212,8 +225,11 @@
     {
       "id": 9,
       "title":"Negotiating option pools and equity",
-      "body":"You’re deep in the fundraising process, and discussing terms with prospective investors. They’re offering investment based on a pre-money valuation, which will significantly dilute the value of your equity, but includes a sizeable increase to your employee option pool.#What do you do?",
-      "more": "TODO (explainer copy needed)",
+      "body":"You’re deep in the fundraising process, and discussing terms with prospective investors. They’re offering investment based on a pre-money valuation, which will significantly dilute the value of your equity, but includes a sizeable increase to your employee option pool.@#What do you do?",
+      "more": {
+         "title": "Valuations, dilution and option pools",
+         "body": "Explainer copy needed"
+      },
       "choices":[
          {
             "label":"Push back and protect your equity",
@@ -257,8 +273,11 @@
    {
       "id": 11,
       "title":"Running your first secondary",
-      "body":"You are four years into building your company and things are going well. You've just secured terms for another big round, and one of the investors is happy for some of their equity to come in the form of a secondary sale.",
-      "more": "What's a secondary sale?#In a secondary sale, existing shareholders sell some or all of their equity to a third-party buyer. The impact a secondary sale has on company ownership depends on who you invite to take part and how many shares they sell in that transaction.",
+      "body":"You are four years into building your company and things are going well. You've just secured terms for another big round, and one of the investors is happy for some of their equity to come in the form of a secondary sale.@",
+      "more": {
+         "title": "What's a secondary sale?",
+         "body": "In a secondary sale, existing shareholders sell some or all of their equity to a third-party buyer. The impact a secondary sale has on company ownership depends on who you invite to take part and how many shares they sell in that transaction."
+      },
       "choices":[
          {
             "label":"You and any other Founders",
