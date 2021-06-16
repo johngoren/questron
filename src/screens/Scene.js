@@ -14,9 +14,6 @@ export default function Scene(props) {
     if (mode === WELCOME_SCREEN) { return <WelcomeScreen onClickWelcomeButton={props.onClickWelcomeButton}/> }
     if (mode === SCORE_SCREEN) { return <ScoreScreen/> }
 
-    const scene = getSceneForIndex(props.index);
-    const isAnimatingExit = props.isAnimatingExit;
-
     let Content;
     let UIContent;
 
@@ -94,13 +91,12 @@ function getNextContent(props) {
     return (
         <Next
             isAnimatingExit={props.isAnimatingExit}
-            onClickFeedback={props.onClickFeedback}
+            onClickNext={props.onClickNext}
         />
     )
 }
 
 function getMenuContent(props) {
-    const index = props.index;
     const mode = props.mode;
     const isAnimatingExit = props.isAnimatingExit;
     const scene = getSceneForIndex(props.index);

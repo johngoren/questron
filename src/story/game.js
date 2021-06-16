@@ -15,7 +15,7 @@ export function getMaxIndex() {
 }
 
 function getNumQuestions() {
-  return gameScript.scenes.length -1;
+  return gameScript.scenes.length;
 }
 
 export function getInitialAnswerState() {
@@ -68,7 +68,7 @@ export function getMoreInfoTextForChoice(choiceNum, index) {
 
 export function isGameOver(index) {
   const maxIndex = getMaxIndex();
-  const gameIsOver = (index +1 === maxIndex);
+  const gameIsOver = (index === maxIndex);
   return gameIsOver;
 }
 
@@ -90,4 +90,3 @@ function getPlayerCategories() {
 export function replay() {
   window.location.reload();
 }
-

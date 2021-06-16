@@ -1,10 +1,10 @@
 import './style/App.css';
 import React, { useState } from 'react';
 import Scene from './screens/Scene';
-import Journey from './ui/Journey';
-import { getInitialAnswerState, replay } from './story/game';
+import ProgressBlocks from './ui/ProgressBlocks';
+import { getInitialAnswerState, isGameOver, replay } from './story/game';
 import { DELAY_MS_BEFORE_NEXT_QUESTION } from './constants/settings';
-import { WELCOME_SCREEN, CHOICES_SCREEN, FEEDBACK_SCREEN, SCORING_SCREEN } from './constants/modes';
+import { WELCOME_SCREEN, CHOICES_SCREEN, FEEDBACK_SCREEN, SCORE_SCREEN } from './constants/modes';
 
 // TODO: "Learn more" feature
 
@@ -31,10 +31,6 @@ function App() {
 
   function onUserMakesChoice(choiceNum) {
     if (choiceNum != null) {
-      if (gameIsOnLastQuestion()) {
-        replay();
-        return;
-      }
       setIsAnimatingExit(false);  
       setChoiceNum(choiceNum);
       updateAnswerRecords(choiceNum);
@@ -45,14 +41,18 @@ function App() {
     }
   }
 
-  // User continues to the next screen after reading decision text
-
-  function onClickFeedback(completion) {
+  function onClickNext(completion) {
     setIsAnimatingExit(true);
 
     setTimeout(() => {
         completion();
-        setIndex(index + 1);
+        const newIndex = index +1;
+        if (isGameOver(newIndex)) {
+          setNewMode(SCORE_SCREEN);
+        }
+        else {
+          setIndex(newIndex);
+        }
       }, DELAY_MS_BEFORE_NEXT_QUESTION) 
   }
   
@@ -62,17 +62,14 @@ function App() {
     setAnswers(newAnswers);
   }
 
-  function gameIsOnLastQuestion(index) {
-    return false; // TODO: Implement
-  }
-
   function clearForNextQuestion() {
       setNewMode(CHOICES_SCREEN);
   } 
  
   return (
     <div className="App">
-      <Journey
+      <ProgressBlocks
+        mode={mode}
         answers={answers}            
       />
       <header className="App-container">
@@ -84,7 +81,7 @@ function App() {
           isOnLearnMoreScreen={isOnLearnMoreScreen}
           answers={answers}
           onChoose={(choiceNum) => onUserMakesChoice(choiceNum)}
-          onClickFeedback={() => onClickFeedback(clearForNextQuestion)}
+          onClickNext={() => onClickNext(clearForNextQuestion)}
           onClickWelcomeButton={() => onClickWelcome() }
       />
       </header>

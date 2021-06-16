@@ -4,7 +4,7 @@ export default function Next(props) {
 
     return (
         <div className={animationClass}>
-            <button onClick={props.onClickFeedback}>Next</button>
+            <button onClick={props.onClickNext}>Next</button>
         </div>  
     )
 }

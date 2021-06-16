@@ -8,7 +8,7 @@ export default function Decision(props) {
     const isAnimatingExit = props.isAnimatingExit;
 
     if (choiceNum != null) {
-        const title = getDecisionTitle(choiceNum, index);
+        const title = getDecisionTitle(choiceNum, index); // TODO: Get decision icon instead
         const body = getDecisionText(choiceNum, index);
         const questionClassName = getQuestionClassName(isAnimatingExit);
     
@@ -16,7 +16,7 @@ export default function Decision(props) {
     
         return (
             <div className={questionClassName}>
-                <h1>{title}</h1>
+                <img src="/images/ceo.png" alt="CEO decision" className="graphicBlock" /><br/>
                 <div className="teletype">{body}</div>
             </div>
         )   
