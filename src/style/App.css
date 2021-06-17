@@ -31,6 +31,7 @@ Structure
 
 .App-container {
   min-height: 100vh;
+  max-width: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -67,13 +68,17 @@ Structure
   display: inline;
 }
 
+.situationText {
+  text-align: left;
+}
+
 .findOutMore {
   padding-left: 0.5em;
 }
 
 .findOutMore a {
   text-decoration: none;
-  color: white;
+  color: var(--highlight);
   font-style: italic;
 }
 

@@ -56,6 +56,7 @@ function getQuestionContent(props) {
     return (
         <Situation 
             index={props.index} 
+            mode={props.mode}
             title={title} 
             body={body} 
             onChoose={props.onChoose} 

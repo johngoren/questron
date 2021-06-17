@@ -6,6 +6,14 @@
     opacity: 0;
     animation-fill-mode: forwards;
   }
+
+  /**
+  Modes 
+  */
+
+  .situation {
+    text-align: left;
+  }
     
 
   /**
@@ -35,6 +43,7 @@
   .question .graphicBlock {
     height: 250px;
   }
+
   
   /**
   Lists
@@ -80,18 +89,6 @@
   }
   
 
-  /**
-  Welcome
-  */
-
-  .welcome logo {
-    height: 50vh;
-  }
-
-  .welcome play {
-    height: 33vh;
-  }
-  
   
   /**
   Learn More

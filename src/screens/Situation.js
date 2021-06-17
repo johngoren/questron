@@ -3,6 +3,7 @@ import { More } from '../ui/More';
 import { fadeInLetters } from '../effects/effects';
 import { prepareText, getLearnMorePositionFromText } from '../helpers/textUtils';
 import { getIconForChapter } from '../helpers/iconUtils';
+import { CHOICES_SCREEN } from '../constants/modes';
 
 export default function Situation(props) {
     const title = props.title ?? "NO_TITLE";
@@ -16,9 +17,11 @@ export default function Situation(props) {
             // TODO: Scoot into correct paragraph if it belongs higher up.
         }
     });
+ 
+    const situationClassName = (props.mode === CHOICES_SCREEN) ? "situation" : "feedback";
 
     return (
-        <div className="question">
+        <div className={situationClassName}>
             <div className="banner">
                 {Icon}
                 <div className="text">
@@ -48,7 +51,7 @@ function FindOutMore(props) {
 
     return (
         <span className={learnMoreClass}>
-            <a href="#" onClick={props.onClickMore}>Find Out More</a>
+            <a href="#" onClick={props.onClickMore}>Find out more</a>
         </span>
     )
 }
@@ -65,5 +68,5 @@ function getContentForState(props) {
 }
 
 function SituationText(props) {
-    return <div className="teletype">{props.text}</div>
+    return <div className="teletype situationText">{props.text}</div>
 }
