@@ -21,7 +21,7 @@ function getNumQuestions() {
 export function getInitialAnswerState() {
   const answers = [];
   for (let i=0; i<getNumQuestions(); i++) {
-    answers.push(NO_ANSWER_YET);
+    answers.push(null);
   }
   return answers;
 }
@@ -84,6 +84,10 @@ export function getDescriptionForCategoryEnum(categoryEnum) {
 
 function getPlayerCategories() {
   return gameScript.categories;
+}
+
+export function getValueForAnswer(choiceNum, index) {
+
 }
 
 

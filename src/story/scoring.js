@@ -1,30 +1,47 @@
-export const NO_ANSWER_YET = -1;
-export const PROGRESSIVE = 1;
-export const TYPICAL = 2;
-export const CONSERVATIVE = 3;
+import { getValueForAnswer } from "./game";
 
 export function calculateScore(answers) {
-    const tally = [null, 0, 0, 0];
+    const tally = {
+        "progressive": 0,
+        "typical": 0,
+        "conservative": 0
+    }
 
     for (let i=0; i<answers.length; i++) {
         const answer = answers[i];
-        if (answer < 1) {
-            throw new Error("Invalid answers found during scoring.");
+        const value = getScoreValueForAnswer(answer);
+
+        switch(value) {
+            case "progressive":
+                tally["progressive"]++;
+                break;
+            case "typical":
+                tally["typical"]++;
+                break;
+            case "conservative":
+                tally["conservative"]++;
+                break;
+            case null:
+                break;
+            default:
+                throw new Error("Invalid answer");
         }
-        const category = answer + 1;
-        tally[category]++;
     }
 
-    let highestScoreFound = 0;
-    let categoryWithHighestScore = 0;
+    let highestTally = 0;
+    let winningCategory = null;
 
-    for (let j=1; j<tally.length; j++) {
-        const scoreForThisCategory = tally[j];
-        if (scoreForThisCategory > highestScoreFound) {
-            highestScoreFound = scoreForThisCategory;
-            categoryWithHighestScore = j;
+    for (let scoreKey of Object.keys(tally)) {
+        let total = tally[scoreKey];
+        if (total > highestTally) { 
+            highestTally = total 
+            winningCategory = scoreKey;
         }
     }
 
-    return categoryWithHighestScore;
+    return winningCategory;
+}
+
+function getScoreValueForAnswer(answerNum) {
+    return getValueForAnswer(answerNum);
 }
