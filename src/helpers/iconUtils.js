@@ -5,7 +5,7 @@ export function getIconForChapter(chapterNum) {
 }
 
 export function getIconForAnswer(answer, index) {
-    if (answer > -1) {
+    if (answer != null) {
         return <img className="answer" src="/images/1.png" alt="your progress"/>;
     }
     else {

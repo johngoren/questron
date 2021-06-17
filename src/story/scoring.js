@@ -24,7 +24,7 @@ export function calculateScore(answers) {
             case null:
                 break;
             default:
-                throw new Error("Invalid answer");
+                throw new Error("Invalid answer:" + value);
         }
     }
 
