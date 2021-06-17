@@ -59,6 +59,12 @@ function App() {
   function onClickReplay() {
     window.location.reload();
   }
+
+  function onClickMore() {
+    alert("MORE");
+    console.log("find out more");
+    setIsOnLearnMoreScreen(true);
+  }
   
   function updateAnswerRecords(choiceIndex) {
     const newAnswers = answers;
@@ -88,6 +94,7 @@ function App() {
           onClickNext={() => onClickNext(clearForNextQuestion)}
           onClickReplay={() => onClickReplay()}
           onClickWelcomeButton={() => onClickWelcome() }
+          onClickMore={() => onClickMore()}
       />
       </header>
     </div>

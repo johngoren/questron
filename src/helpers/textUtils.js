@@ -3,7 +3,7 @@ import parse from 'html-react-parser';
 const PLACEHOLDER = "TEXT TK";
 const LINEBREAK = "<br/><br/>";
 
-export function prepareText(text) {
+export function prepareText(text, onClick) {
     if (text === null) { return PLACEHOLDER; }
 
     const spans = spannifyForFading(text);
@@ -11,7 +11,7 @@ export function prepareText(text) {
     return parsed;
 }
 
-export function spannifyForFading(text) {
+export function spannifyForFading(text, onClick) {
     if (!text) { return null; }
     let newText = "";
     const chars = text.split("");
@@ -20,10 +20,21 @@ export function spannifyForFading(text) {
         if (char === "#") {
             newText += LINEBREAK;
         }
+        else if (char === "@") {
+            // Do nothing
+        }
         else {
             newText += `<span class="fadeIn">${char}</span>`
         }
     }
 
     return newText;
+}
+
+export function getLearnMorePositionFromText(text) {
+    const hasAnchor = text.includes("@");
+    if (!hasAnchor) {
+        return null;
+    }
+    return 0; // TODO: Granular identification of which paragraph
 }

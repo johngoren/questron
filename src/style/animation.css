@@ -3,9 +3,15 @@
 Teletype effect
 */
 
+.feedback .teletype {
+  text-align: center;
+}
+
 .teletype {
   text-align: left;
   opacity: 1.0;
+  max-width: 1200px;
+  display: inline;
 }
 
 .fadeIn {

@@ -1,5 +1,6 @@
 
 .menuOption button, .next button, .score button {
+    padding-left: 0.5em;
     width: 100%;
     background: #566e82;
     color: white;

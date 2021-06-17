@@ -21,7 +21,6 @@ Structure
   padding-left: 90px;
   text-align: center;
   background-color: var(--navy);
-  display: flex;
   cursor: pointer;
 }
 
@@ -35,8 +34,7 @@ Structure
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(8px + 2vmin);
   color: white;
   padding-left: 60px;
   padding-right: 60px;
@@ -54,11 +52,33 @@ Structure
 }
 
 .main {
-  width: 75vw;
+  width: 100%;
   display: flex;
 }
 
+.feedback .teletype {
+  text-align: center;
+}
+
+.teletype {
+  text-align: left;
+  opacity: 1.0;
+  max-width: 1200px;
+  display: inline;
+}
+
+.findOutMore {
+  padding-left: 0.5em;
+}
+
+.findOutMore a {
+  text-decoration: none;
+  color: white;
+  font-style: italic;
+}
+
 .footer {
+  width: 100%;
   margin-top: 30px;
   margin-bottom: 100px;
 }
