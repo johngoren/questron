@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { More } from '../ui/More';
 import { fadeInLetters } from '../effects/effects';
 import { prepareText, getLearnMorePositionFromText } from '../helpers/textUtils';
 import { getIconForChapter } from '../helpers/iconUtils';
@@ -6,12 +7,13 @@ import { getIconForChapter } from '../helpers/iconUtils';
 export default function Situation(props) {
     const title = props.title ?? "NO_TITLE";
     const learnMorePosition = getLearnMorePositionFromText(props.body);
-    const text = prepareText(props.body);
-    const Icon = getIconForChapter(props.chapterNum);
+    const Icon = getIconForChapter(props.index + 1);
+    const Content = getContentForState(props);
+
     useEffect(fadeInLetters);
     useEffect(() => {
         if (learnMorePosition != null) {
-            // TODO: Scoot into correct place if it belongs higher up.
+            // TODO: Scoot into correct paragraph if it belongs higher up.
         }
     });
 
@@ -24,9 +26,9 @@ export default function Situation(props) {
                     <h1 className="headline">{title}</h1>
                 </div>
             </div>
-          
-            <div className="teletype">{text}</div>
+            {Content}
             <FindOutMore
+                isMore={props.isMore}
                 learnMorePosition={learnMorePosition}
                 onClickMore={props.onClickMore}
             />
@@ -37,7 +39,7 @@ export default function Situation(props) {
 function FindOutMore(props) {
     let learnMoreClass = "findOutMore";
 
-    if (props.learnMorePosition === null) {
+    if (props.learnMorePosition === null || props.isMore) {
         learnMoreClass+= " hidden";
     }
     else {
@@ -51,3 +53,17 @@ function FindOutMore(props) {
     )
 }
 
+function getContentForState(props) {
+    const text = prepareText(props.body);
+
+    if (props.isMore) {
+        return <More index={props.index} />
+    }
+    else {
+        return <SituationText text={text} />
+    }
+}
+
+function SituationText(props) {
+    return <div className="teletype">{props.text}</div>
+}

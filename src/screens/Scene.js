@@ -5,6 +5,7 @@ import Situation from './Situation';
 import Decision from './Decision';
 import Menu from '../ui/Menu';
 import Next from '../ui/Next';
+import Back from '../ui/Back';
 
 import { WELCOME_SCREEN, SCORE_SCREEN, CHOICES_SCREEN, FEEDBACK_SCREEN } from '../constants/modes';
 import { getSceneForIndex } from '../story/game';
@@ -48,21 +49,18 @@ export default function Scene(props) {
 }
 
 function getQuestionContent(props) {
-    const index = props.index;
     const scene = getSceneForIndex(props.index);
     const title = scene.title;
     const body = scene.body;
-    const chapterNum = index + 1;
-    const onClickMore = props.onClickMore;
 
     return (
         <Situation 
-            chapterNum={chapterNum} 
+            index={props.index} 
             title={title} 
             body={body} 
             onChoose={props.onChoose} 
-            index={index} 
             onClickMore={props.onClickMore}
+            isMore={props.isMore}
         />
     )
 }
@@ -101,20 +99,29 @@ function getNextContent(props) {
 }
 
 function getMenuContent(props) {
-    const mode = props.mode;
-    const isAnimatingExit = props.isAnimatingExit;
-    const scene = getSceneForIndex(props.index);
+    if (props.isMore) {
+        return (
+            <Back
+                onClickBack={props.onClickBack}
+            />
+        )
+    }
+    else {
+        const scene = getSceneForIndex(props.index);
 
-    return (
-        <Menu
-            mode={mode}
-            isAnimatingExit={isAnimatingExit}
-            choices={scene.choices}
-            onChoose={(choice) => {
-                props.onChoose(choice);
-            }}
-        />
-    )
+        return (
+            <Menu
+                mode={props.mode}
+                isMore={props.isMore}
+                isAnimatingExit={props.isAnimatingExit}
+                choices={scene.choices}
+                onChoose={(choice) => {
+                    props.onChoose(choice);
+                }}
+            />
+        )
+   
+    }
 }
 
  // eslint-disable-next-line

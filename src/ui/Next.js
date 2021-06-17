@@ -18,3 +18,4 @@ function getAnimationClass(isAnimatingExit) {
         return "next Option";
     }
 }
+

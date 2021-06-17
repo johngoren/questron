@@ -1,7 +1,7 @@
 import parse from 'html-react-parser';
 
 const PLACEHOLDER = "TEXT TK";
-const LINEBREAK = "<br/><br/>";
+const NEW_PARAGRAPH = "<br/><br/>";
 
 export function prepareText(text, onClick) {
     if (text === null) { return PLACEHOLDER; }
@@ -18,7 +18,7 @@ export function spannifyForFading(text, onClick) {
     for (var i=0; i<chars.length; i++) {
         const char = chars[i];
         if (char === "#") {
-            newText += LINEBREAK;
+            newText += NEW_PARAGRAPH;
         }
         else if (char === "@") {
             // Do nothing
@@ -29,6 +29,11 @@ export function spannifyForFading(text, onClick) {
     }
 
     return newText;
+}
+
+export function addLinebreaksToText(text) {
+    const withLineBreaks = text.replace("#", NEW_PARAGRAPH);
+    return parse(withLineBreaks);
 }
 
 export function getLearnMorePositionFromText(text) {

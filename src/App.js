@@ -6,21 +6,17 @@ import { getInitialAnswerState, isGameOver, replay } from './story/game';
 import { DELAY_MS_BEFORE_NEXT_QUESTION } from './constants/settings';
 import { WELCOME_SCREEN, CHOICES_SCREEN, FEEDBACK_SCREEN, SCORE_SCREEN } from './constants/modes';
 
-// TODO: "Learn more" feature
-
 function App() {
 
   const [mode, setMode] = useState(WELCOME_SCREEN);
   const [index, setIndex] = useState(0);
   const [choiceNum, setChoiceNum] = useState(null);
   const [isAnimatingExit, setIsAnimatingExit] = useState(false);
-  const [isOnLearnMoreScreen, setIsOnLearnMoreScreen] = useState(false);
-
+  const [isMore, setIsMore] = useState(false);
   const initialAnswerState = getInitialAnswerState();
   const [answers, setAnswers] = useState(initialAnswerState);
 
   function setNewMode(mode) {
-    console.log(mode);
     setMode(mode);
   }
 
@@ -61,9 +57,13 @@ function App() {
   }
 
   function onClickMore() {
-    alert("MORE");
-    console.log("find out more");
-    setIsOnLearnMoreScreen(true);
+    console.log("onClickMore");
+    console.log(isMore);
+    setIsMore(true);
+  }
+
+  function onClickBack() {
+    setIsMore(false);
   }
   
   function updateAnswerRecords(choiceIndex) {
@@ -88,9 +88,10 @@ function App() {
           index={index}
           choiceNum={choiceNum}
           isAnimatingExit={isAnimatingExit}
-          isOnLearnMoreScreen={isOnLearnMoreScreen}
+          isMore={isMore}
           answers={answers}
           onChoose={(choiceNum) => onUserMakesChoice(choiceNum)}
+          onClickBack={() => onClickBack()}
           onClickNext={() => onClickNext(clearForNextQuestion)}
           onClickReplay={() => onClickReplay()}
           onClickWelcomeButton={() => onClickWelcome() }
