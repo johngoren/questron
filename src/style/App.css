@@ -31,7 +31,6 @@ Structure
 
 .App-container {
   min-height: 100vh;
-  max-width: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -54,6 +53,7 @@ Structure
 
 .main {
   width: 100%;
+  max-width: 1000px;
   display: flex;
 }
 
@@ -86,6 +86,7 @@ Structure
   width: 100%;
   margin-top: 30px;
   margin-bottom: 100px;
+  max-width: 1000px;
 }
 
 
