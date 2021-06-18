@@ -43,6 +43,7 @@
   .question .graphicBlock {
     height: 250px;
     transition: 1s;
+    z-index: 9999;
   }
 
   

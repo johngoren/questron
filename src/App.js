@@ -13,7 +13,7 @@ function App() {
   const [activeChoice, setActiveChoice] = useState(null);
   const [isAnimatingExit, setIsAnimatingExit] = useState(false);
   const [isMore, setIsMore] = useState(false);
-  const [isLearningMoreAboutDecision, setIsLearningMoreAboutDecision] = useState(null);
+  const [isMoreAboutDecision, setIsMoreAboutDecision] = useState(null);
   const initialAnswerState = getInitialAnswerState();
   const [answers, setAnswers] = useState(initialAnswerState);
 
@@ -61,8 +61,9 @@ function App() {
     setIsMore(true);
   }
 
-  function onClickMoreAboutDecision() {
-    console.log("onClickMoreAboutDecision");
+  function onClickMoreAboutDecision(choiceNum) {
+    setIsMore(true);
+    setIsMoreAboutDecision(choiceNum);
   }
 
   function onClickBack() {
@@ -92,10 +93,11 @@ function App() {
           choiceNum={activeChoice}
           isAnimatingExit={isAnimatingExit}
           isMore={isMore}
+          isMoreAboutDecision={isMoreAboutDecision}
           answers={answers}
           onChoose={(choiceNum) => onUserMakesChoice(choiceNum)}
           onClickBack={() => onClickBack()}
-          onClickMoreAboutDecision={() => onClickMoreAboutDecision() }
+          onClickMoreAboutDecision={(choiceNum) => onClickMoreAboutDecision(choiceNum) }
           onClickNext={() => onClickNext(clearForNextQuestion)}
           onClickReplay={() => onClickReplay()}
           onClickWelcomeButton={() => onClickWelcome() }

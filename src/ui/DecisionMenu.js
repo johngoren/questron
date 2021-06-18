@@ -22,9 +22,14 @@ function DecisionLabel(props) {
 }
 
 function LearnMoreButton(props) {
+    const handleClick = e => {
+        e.stopPropagation();
+        props.onClickMoreAboutDecision(props.choiceNum);
+    }
+
     return (
         <>
-            <span className="learnMore" onClick={props.onClickMoreAboutDecision}>Learn More</span>
+            <span className="learnMore" onClick={handleClick}>Learn More</span>
         </>
     )
 }

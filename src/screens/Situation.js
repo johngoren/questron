@@ -60,8 +60,9 @@ function getContentForState(props) {
     const text = prepareText(props.body);
 
     if (props.isMore) {
-        return <More index={props.index} />
+        return <More index={props.index} isMoreAboutDecision={props.isMoreAboutDecision}/>
     }
+
     else {
         return <SituationText text={text} />
     }

@@ -1,9 +1,17 @@
-import { getMoreInfoTextForIndex } from "../story/game";
+import { getMoreInfoTextForChoice, getMoreInfoTextForIndex } from "../story/game";
 import { addLinebreaksToText } from "../helpers/textUtils";
 
 export function More(props) {
-    const moreText = getMoreInfoTextForIndex(props.index).body;
-    const prepared = prepareBodyText(moreText);
+    let moreText;
+
+    if (props.isMoreAboutDecision != null) {
+        moreText = getMoreInfoTextForChoice(props.isMoreAboutDecision, props.index);
+    }
+    else {
+        moreText = getMoreInfoTextForIndex(props.index).body;
+    }
+
+    const prepared = prepareBodyText(moreText);  
 
     return (
         <>

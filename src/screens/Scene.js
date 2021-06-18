@@ -13,6 +13,7 @@ import { getSceneForIndex } from '../story/game';
 // TODO: UseEffect to 1) move Learn More into proper position, 2) hide if there was none found.
 
 export default function Scene(props) {
+    console.log(props);
     const mode = props.mode;
     if (mode === WELCOME_SCREEN) { return <WelcomeScreen onClickWelcomeButton={props.onClickWelcomeButton}/> }
     if (mode === SCORE_SCREEN) { return <ScoreScreen onClickReplay={props.onClickReplay}/> }
@@ -62,6 +63,7 @@ function getQuestionContent(props) {
             onChoose={props.onChoose} 
             onClickMore={props.onClickMore}
             isMore={props.isMore}
+            isMoreAboutDecision={props.isMoreAboutDecision}
         />
     )
 }
