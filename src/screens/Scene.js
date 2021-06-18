@@ -3,11 +3,11 @@ import WelcomeScreen from './Welcome';
 import ScoreScreen from './Score';
 import Situation from './Situation';
 import Decision from './Decision';
-import Menu from '../ui/Menu';
+import DecisionMenu from '../ui/DecisionMenu';
 import Next from '../ui/Next';
 import Back from '../ui/Back';
 
-import { WELCOME_SCREEN, SCORE_SCREEN, CHOICES_SCREEN, FEEDBACK_SCREEN } from '../constants/modes';
+import { WELCOME_SCREEN, SCORE_SCREEN, SITUATION_SCREEN, DECISION_SCREEN } from '../constants/modes';
 import { getSceneForIndex } from '../story/game';
 
 // TODO: UseEffect to 1) move Learn More into proper position, 2) hide if there was none found.
@@ -21,11 +21,11 @@ export default function Scene(props) {
     let UIContent;
 
     switch(mode) {
-        case CHOICES_SCREEN:
+        case SITUATION_SCREEN:
             Content = getQuestionContent(props);
             UIContent = getMenuContent(props);
             break;
-        case FEEDBACK_SCREEN:
+        case DECISION_SCREEN:
             Content = getDecisionMadeContent(props);
             UIContent = getNextContent(props);
             break;
@@ -111,7 +111,7 @@ function getMenuContent(props) {
         const scene = getSceneForIndex(props.index);
 
         return (
-            <Menu
+            <DecisionMenu
                 mode={props.mode}
                 isMore={props.isMore}
                 isAnimatingExit={props.isAnimatingExit}
@@ -119,6 +119,7 @@ function getMenuContent(props) {
                 onChoose={(choice) => {
                     props.onChoose(choice);
                 }}
+                onClickMoreAboutDecision={props.onClickMoreAboutDecision}
             />
         )
    

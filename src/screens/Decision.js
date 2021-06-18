@@ -8,26 +8,31 @@ export default function Decision(props) {
     const isAnimatingExit = props.isAnimatingExit;
 
     if (choiceNum != null) {
-        const title = getDecisionTitle(choiceNum, index); // TODO: Get decision icon instead
+        // const title = getDecisionTitle(choiceNum, index); // TODO: Get title where there is no decision icon.
         const body = getDecisionText(choiceNum, index);
-        const questionClassName = getQuestionClassName(isAnimatingExit);
-    
+        const fadingAnimationClassName = getFadingAnimationClass(isAnimatingExit);
+        const blockAnimationClass = getBlockAnimationClass(isAnimatingExit);
+
         useEffect(fadeInLetters);
     
         return (
-            <div className={questionClassName}>
-                <img src="/images/ceo.png" alt="CEO decision" className="graphicBlock" /><br/>
-                <div className="teletype">{body}</div>
+            <div className="question feedback">
+                <img src="/images/ceo.png" alt="CEO decision" className={blockAnimationClass} /><br/>
+                <div className={fadingAnimationClassName}>{body}</div>
             </div>
         )   
     }
     else {
         throw new Error("Tried to render a decision screen but was lacking needed information.");
     }
-
 }
 
-function getQuestionClassName(isAnimatingExit) {
-    const baseClassName = "question feedback";
+function getFadingAnimationClass(isAnimatingExit) {
+    const baseClassName = "teletype";
     return isAnimatingExit ? baseClassName + " fadeOut" : baseClassName;
+}
+
+function getBlockAnimationClass(isAnimatingExit) {
+    const baseClassName = "graphicBlock";
+    return isAnimatingExit ? baseClassName + " flying" : baseClassName;
 }

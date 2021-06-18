@@ -3,7 +3,7 @@ import { More } from '../ui/More';
 import { fadeInLetters } from '../effects/effects';
 import { prepareText, getLearnMorePositionFromText } from '../helpers/textUtils';
 import { getIconForChapter } from '../helpers/iconUtils';
-import { CHOICES_SCREEN } from '../constants/modes';
+import { SITUATION_SCREEN } from '../constants/modes';
 
 export default function Situation(props) {
     const title = props.title ?? "NO_TITLE";
@@ -18,7 +18,7 @@ export default function Situation(props) {
         }
     });
  
-    const situationClassName = (props.mode === CHOICES_SCREEN) ? "situation" : "feedback";
+    const situationClassName = (props.mode === SITUATION_SCREEN) ? "situation" : "feedback";
 
     return (
         <div className={situationClassName}>

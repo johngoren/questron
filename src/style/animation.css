@@ -1,18 +1,16 @@
+/**
+Blocks flying into place
+*/
+
+.flying {
+  transform: translate(-1500px, 200px) rotate(360deg);
+}
+
 
 /**
 Teletype effect
 */
 
-.feedback .teletype {
-  text-align: center;
-}
-
-.teletype {
-  text-align: left;
-  opacity: 1.0;
-  max-width: 1200px;
-  display: inline;
-}
 
 .fadeIn {
   opacity: 0;

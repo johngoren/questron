@@ -4,15 +4,16 @@ import Scene from './screens/Scene';
 import ProgressBlocks from './ui/ProgressBlocks';
 import { getInitialAnswerState, isGameOver, replay } from './story/game';
 import { DELAY_MS_BEFORE_NEXT_QUESTION } from './constants/settings';
-import { WELCOME_SCREEN, CHOICES_SCREEN, FEEDBACK_SCREEN, SCORE_SCREEN } from './constants/modes';
+import { WELCOME_SCREEN, SITUATION_SCREEN, DECISION_SCREEN, SCORE_SCREEN } from './constants/modes';
 
 function App() {
 
   const [mode, setMode] = useState(WELCOME_SCREEN);
   const [index, setIndex] = useState(0);
-  const [choiceNum, setChoiceNum] = useState(null);
+  const [activeChoice, setActiveChoice] = useState(null);
   const [isAnimatingExit, setIsAnimatingExit] = useState(false);
   const [isMore, setIsMore] = useState(false);
+  const [isLearningMoreAboutDecision, setIsLearningMoreAboutDecision] = useState(null);
   const initialAnswerState = getInitialAnswerState();
   const [answers, setAnswers] = useState(initialAnswerState);
 
@@ -22,15 +23,14 @@ function App() {
 
   function onClickWelcome() {
     document.getElementById('audio').play();
-    setNewMode(CHOICES_SCREEN);
+    setNewMode(SITUATION_SCREEN);
   }
 
   function onUserMakesChoice(choiceNum) {
     if (choiceNum != null) {
       setIsAnimatingExit(false);  
-      setChoiceNum(choiceNum);
-      updateAnswerRecords(choiceNum);
-      setNewMode(FEEDBACK_SCREEN);  
+      setActiveChoice(choiceNum);
+      setNewMode(DECISION_SCREEN);  
     }
     else {
       throw new Error("User's choice was null.");
@@ -38,10 +38,11 @@ function App() {
   }
 
   function onClickNext(completion) {
-    setIsAnimatingExit(true);
+    setIsAnimatingExit(true); // TODO: This state will also animate the block flying into place.
 
     setTimeout(() => {
         completion();
+        updateAnswerRecords(activeChoice);
         const newIndex = index +1;
         if (isGameOver(newIndex)) {
           setNewMode(SCORE_SCREEN);
@@ -57,9 +58,11 @@ function App() {
   }
 
   function onClickMore() {
-    console.log("onClickMore");
-    console.log(isMore);
     setIsMore(true);
+  }
+
+  function onClickMoreAboutDecision() {
+    console.log("onClickMoreAboutDecision");
   }
 
   function onClickBack() {
@@ -73,7 +76,7 @@ function App() {
   }
 
   function clearForNextQuestion() {
-      setNewMode(CHOICES_SCREEN);
+      setNewMode(SITUATION_SCREEN);
   } 
  
   return (
@@ -86,7 +89,7 @@ function App() {
         <Scene
           mode={mode}
           index={index}
-          choiceNum={choiceNum}
+          choiceNum={activeChoice}
           isAnimatingExit={isAnimatingExit}
           isMore={isMore}
           answers={answers}
