@@ -95,6 +95,7 @@ function App() {
           answers={answers}
           onChoose={(choiceNum) => onUserMakesChoice(choiceNum)}
           onClickBack={() => onClickBack()}
+          onClickMoreAboutDecision={() => onClickMoreAboutDecision() }
           onClickNext={() => onClickNext(clearForNextQuestion)}
           onClickReplay={() => onClickReplay()}
           onClickWelcomeButton={() => onClickWelcome() }
