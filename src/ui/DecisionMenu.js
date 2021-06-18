@@ -17,7 +17,7 @@ function DecisionMenuOption(props) {
 
 function DecisionLabel(props) {
     return (
-        <span key={props.index}>{props.choice.label}</span>
+        <span key={props.index} className="label">{props.choice.label}</span>
     )
 }
 

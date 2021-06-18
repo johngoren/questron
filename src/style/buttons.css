@@ -22,6 +22,10 @@
   font-size: 16px;
 }
 
+.menuOption .label {
+  padding-left: 0.5em;
+}
+
 .menuOption {
     opacity: 0;
     transition: opacity;
@@ -39,6 +43,7 @@
 }
 
 .menuOption {
+    padding: 1px 6px;
     appearance: auto;
     text-rendering: auto;
     padding-left: 0.5em;
@@ -58,9 +63,8 @@
     text-shadow: none;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     cursor: default;
     box-sizing: border-box;
-    margin: 0em;
     padding: 1px 6px;
 }
