@@ -134,3 +134,33 @@ function getPlayerCategories() {
 export function replay() {
   window.location.reload();
 }
+
+export function getValueForAnswer(choiceNum, index) {
+  const decision = getChoice(index, choiceNum);
+  const value = decision.value;
+  return value;
+}
+
+// "scenes": [
+//   {
+//      "id": 0,
+//      "title":"Welcome to the Capdesk startup simulator",
+//      "body":"You've got a billion dollar idea and a plan for turning it into a reality, so you're starting your own business. What role will you take?",
+//      "choices":[
+//         {
+//            "label":"I'm the CEO",
+//            "feedback":"Fantastic! The role of chief executive officer is a natural choice, putting you squarely at the helm of the business. CEOs tend to be open and trustworthy by nature, and able to inspire confidence in others.",
+//            "value":null
+//         },
+//         {
+//            "label": "I'm the CFO",
+//            "feedback":"Great! The CFO has the highest financial oversight and responsibility for the whole organisation. Chief financial officers are typically practical, resourceful leaders with a detail-oriented working style.",
+//            "value":null
+//         },
+//         {
+//            "label": "I'm the CTO",
+//            "feedback":"Strong choice – if you're building a tech-powered business, chief technology officer is arguably the most important position. CTOs tend to be good at making decisions and highly driven to innovate.",
+//            "value":null
+//         }
+//      ]
+//   },

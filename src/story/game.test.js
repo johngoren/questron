@@ -56,6 +56,9 @@ test('Checks whether decisions have learn more', () => {
 })
 
 test('Calculates score', () => {
+    const ideology = game.getValueForAnswer(0, 2);
+    expect(ideology).toBe("progressive");
+
     let initialTally = scoring.getInitialTally();
     expect(initialTally["progressive"]).toBe(0);
 

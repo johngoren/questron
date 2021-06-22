@@ -1,7 +1,16 @@
-export function calculateScore(answers) {
-    const tally = calculateTally(answers);
+import { getValueForAnswer } from "./game";
+
+export function calculateScore(numericalAnswers) {
+    const ideological = getIdeologiesForNumbers(numericalAnswers);
+    const tally = calculateTally(ideological);
     const winningTally = getWinningTally(tally);
     return winningTally;
+}
+
+export function getIdeologiesForNumbers(numericalAnswers) {
+    return numericalAnswers.map(function(choiceNum, index) {
+        return getValueForNumericalAnswer(choiceNum, index);
+    });
 }
 
 export function getInitialTally() {
@@ -13,27 +22,33 @@ export function getInitialTally() {
 }
 
 export function calculateTally(answers) {
-    let tally = getInitialTally();
+    if (answers != null) {
+        let tally = getInitialTally();
 
-     answers.forEach(function(answer) {
-        switch(answer) {
-            case "progressive":
-                tally["progressive"]++;
-                break;
-            case "typical":
-                tally["typical"]++;
-                break;
-            case "conservative":
-                tally["conservative"]++;
-                break;
-            case null:
-                break;
-            default:
-                throw new Error("Invalid answer:" + answer);
-        }
-    });
+        answers.forEach(function(answer) {
+           switch(answer) {
+               case "progressive":
+                   tally["progressive"]++;
+                   break;
+               case "typical":
+                   tally["typical"]++;
+                   break;
+               case "conservative":
+                   tally["conservative"]++;
+                   break;
+               case null:
+                   break;
+               default:
+                   throw new Error("Invalid answer:" + answer);
+           }
+       });
+   
+       return tally;  
+    }
+    else {
+        throw new Error("Did not receive a valid set of answers to work with.");
+    }
 
-    return tally;
 }
 
 export function getWinningTally(tally) {
@@ -74,4 +89,8 @@ function getScoreDescription(score) {
         default:
             throw new Error("Invalid score: " + score);
     }
+}
+
+function getValueForNumericalAnswer(answer, index) {
+    return 
 }
