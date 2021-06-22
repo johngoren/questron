@@ -1,51 +1,27 @@
 import { getValueForAnswer } from "./game";
 
 export function calculateScore(numericalAnswers) {
-    const ideological = getIdeologiesForNumbers(numericalAnswers);
-    const tally = calculateTally(ideological);
+    const keywords = getKeywordsForNumbers(numericalAnswers);
+    const tally = calculateTally(keywords);
     const winningTally = getWinningTally(tally);
     return winningTally;
 }
 
-export function getIdeologiesForNumbers(numericalAnswers) {
+export function getKeywordsForNumbers(numericalAnswers) {
     return numericalAnswers.map(function(choiceNum, index) {
         return getValueForNumericalAnswer(choiceNum, index);
     })
 }
 
-export function getInitialTally() {
-    return {
-        "progressive": 0,
-        "typical": 0,
-        "conservative": 0
-    }
-}
 
-export function calculateTally(ideologicalAnswers) {
-    if (ideologicalAnswers != null) {
-        let tally = getInitialTally();
-
-        ideologicalAnswers.forEach(function(answer) {
-           switch(answer) {
-               case "progressive":
-                   tally["progressive"]++;
-                   break;
-               case "typical":
-                   tally["typical"]++;
-                   break;
-               case "conservative":
-                   tally["conservative"]++;
-                   break;
-               case null:
-                   break;
-               case undefined:
-                   break;
-               default:
-                   throw new Error("Invalid answer:" + answer);
-           }
-       });
-   
-       return tally;  
+export function calculateTally(keywordAnswers) {
+    if (keywordAnswers != null) {
+        return keywordAnswers.reduce((tally, keyword) => {
+            if (keyword != null) {
+                tally[keyword] = (tally[keyword] || 0) + 1;
+            }
+            return tally;
+        }, {})
     }
     else {
         throw new Error("Did not receive a valid set of answers to work with.");
@@ -68,11 +44,16 @@ export function getWinningTally(tally) {
 }
 
 export function getScoreInfo(score) {
-    const title = getScoreTitle(score);
-    const body = getScoreDescription(score);
-    return {
-        title: title,
-        body: body
+    if (score != null) {
+        const title = getScoreTitle(score);
+        const body = getScoreDescription(score);
+        return {
+            title: title,
+            body: body
+        }   
+    }
+    else {
+        throw new Error("Sco")
     }
 }
 

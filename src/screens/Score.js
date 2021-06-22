@@ -12,7 +12,7 @@ export default function ScoreScreen(props) {
 }
 
 function ScoreResult(props) {
-    const info = getPlayerScoreInfo(props);
+    const info = getPlayerScoreInfo(props.score);
     const title = info.title;
     const body = info.body;
 

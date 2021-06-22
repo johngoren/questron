@@ -59,11 +59,8 @@ test('Calculates score', () => {
     const ideology = game.getValueForAnswer(0, 2);
     expect(ideology).toBe("progressive");
 
-    let initialTally = scoring.getInitialTally();
-    expect(initialTally["progressive"]).toBe(0);
-
     const numericalAnswers = [0, 0, 2, 1, 2, 0, 2];
-    const asWordValues = scoring.getIdeologiesForNumbers(numericalAnswers);
+    const asWordValues = scoring.getKeywordsForNumbers(numericalAnswers);
     console.log(asWordValues);
     expect(asWordValues).toBeTruthy();
 
@@ -81,10 +78,7 @@ test('Calculates score', () => {
     expect(info).toBeTruthy();
 
     const info1 = game.getPlayerScoreInfo("typical");
-    console.log(info1);
-
     const info2 = game.getPlayerScoreInfo("progressive");
-    console.log(info2);
 
     expect(info1).toBeTruthy();
     expect(info2).toBeTruthy();
