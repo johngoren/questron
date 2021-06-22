@@ -11,6 +11,10 @@ export function More(props) {
         moreText = getMoreInfoTextForIndex(props.index).body;
     }
 
+    if (!moreText) {
+        throw new Error("Tried to show More screen but there was no text to work with.");
+    }
+
     const prepared = prepareBodyText(moreText);  
 
     return (
@@ -21,6 +25,5 @@ export function More(props) {
 }
 
 function prepareBodyText(text) {
-    console.log(text);
     return addLinebreaksToText(text);
 }

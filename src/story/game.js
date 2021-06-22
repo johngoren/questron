@@ -7,7 +7,12 @@ export function calculatePlayerScore(answers) {
 }
 
 export function getSceneForIndex(index) {
-  return gameScript.scenes[index];
+  try {
+    return gameScript.scenes[index];
+  }
+  catch(e) {
+    throw e;
+  }
 }
 
 export function getMaxIndex() {
@@ -53,17 +58,64 @@ function getChoice(index, choiceNum) {
 }
 
 export function getChoicesForIndex(index) {
-  const scene = getSceneForIndex(index);
-  return scene.choices;
+  try {
+    if (index != null) {
+      const scene = getSceneForIndex(index);
+      const choices = scene.choices;
+      return choices; 
+    }
+    else {
+      throw new Error("Invalid index:" + index);
+    }
+  }
+  catch(e) {
+    throw e;
+  }
 }
 
 export function getMoreInfoTextForIndex(index) {
-  const scene = getSceneForIndex(index);
-  return scene.more;
+  try {
+    const scene = getSceneForIndex(index);
+    const more = scene.more;
+    if (more) {
+      return more;
+    }
+    else {
+      return null;
+    }
+  }
+  catch(e) {
+    throw e;
+  }
+
 }
 
 export function getMoreInfoTextForChoice(choiceNum, index) {
-  return getChoice(index, choiceNum).more;
+  const choices = getChoicesForIndex(index);
+  const choice = choices[choiceNum];
+  return choice.more ? choice.more : null;
+}
+
+export function hasLearnMore(choiceNum, index) {
+  try {
+    if (index != null && choiceNum != null) {
+      const choices = getChoicesForIndex(index);
+      const choice = choices[choiceNum];
+      if (choice.more) {
+        return true
+      }
+      else {
+        return false;
+      }  
+    }
+    if (index === null) {
+      throw new Error("Null index.");
+    }
+
+  }
+  catch(e) {
+    throw e;
+  }
 }
 
 export function isGameOver(index) {

@@ -1,7 +1,8 @@
+import { hasLearnMore } from '../story/game';
+
 export default function DecisionMenu(props) {
-    const choices = props.choices;
-    const ChoicesAsMenu = choices.map(function(choice, index) {
-        return <DecisionMenuOption key={index} choiceNum={index} choice={choice} onChoose={props.onChoose} onClickMoreAboutDecision={props.onClickMoreAboutDecision} />
+    const ChoicesAsMenu = props.choices.map(function(choice, index) {
+        return <DecisionMenuOption index={props.index} key={index} choiceNum={index} choice={choice} onChoose={props.onChoose} onClickMoreAboutDecision={props.onClickMoreAboutDecision} />
     });
     return ChoicesAsMenu;  
 }
@@ -27,9 +28,17 @@ function LearnMoreButton(props) {
         props.onClickMoreAboutDecision(props.choiceNum);
     }
 
+    const visibilityClass = getVisibilityClassForLearnMoreButton(props);
+
     return (
         <>
-            <span className="learnMore" onClick={handleClick}>Learn More</span>
+            <span className={visibilityClass}  onClick={handleClick}>Learn More</span>
         </>
     )
 }
+
+function getVisibilityClassForLearnMoreButton(props) {
+    const hasMore = hasLearnMore(props.choiceNum, props.index);
+    return hasMore ? "learnMore" : "hidden";
+}
+
