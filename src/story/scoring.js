@@ -10,7 +10,7 @@ export function calculateScore(numericalAnswers) {
 export function getIdeologiesForNumbers(numericalAnswers) {
     return numericalAnswers.map(function(choiceNum, index) {
         return getValueForNumericalAnswer(choiceNum, index);
-    });
+    })
 }
 
 export function getInitialTally() {
@@ -21,11 +21,11 @@ export function getInitialTally() {
     }
 }
 
-export function calculateTally(answers) {
-    if (answers != null) {
+export function calculateTally(ideologicalAnswers) {
+    if (ideologicalAnswers != null) {
         let tally = getInitialTally();
 
-        answers.forEach(function(answer) {
+        ideologicalAnswers.forEach(function(answer) {
            switch(answer) {
                case "progressive":
                    tally["progressive"]++;
@@ -37,6 +37,8 @@ export function calculateTally(answers) {
                    tally["conservative"]++;
                    break;
                case null:
+                   break;
+               case undefined:
                    break;
                default:
                    throw new Error("Invalid answer:" + answer);
@@ -75,7 +77,9 @@ export function getScoreInfo(score) {
 }
 
 function getScoreTitle(score) {
-    return score.toUpperCase();
+    if (score != null) {
+        return score.toUpperCase();
+    }
 }
 
 function getScoreDescription(score) {
@@ -92,5 +96,5 @@ function getScoreDescription(score) {
 }
 
 function getValueForNumericalAnswer(answer, index) {
-    return 
+    return getValueForAnswer(answer, index);
 }

@@ -138,7 +138,12 @@ export function replay() {
 export function getValueForAnswer(choiceNum, index) {
   const decision = getChoice(index, choiceNum);
   const value = decision.value;
-  return value;
+  if (value != null) {
+    return value;
+  }
+  else {
+    return null;
+  }
 }
 
 // "scenes": [

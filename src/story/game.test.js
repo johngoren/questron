@@ -62,12 +62,30 @@ test('Calculates score', () => {
     let initialTally = scoring.getInitialTally();
     expect(initialTally["progressive"]).toBe(0);
 
-    const answers = ["progressive", "typical", null, "conservative", "conservative"];
-    let tally = scoring.calculateTally(answers);
+    const numericalAnswers = [0, 0, 2, 1, 2, 0, 2];
+    const asWordValues = scoring.getIdeologiesForNumbers(numericalAnswers);
+    console.log(asWordValues);
+    expect(asWordValues).toBeTruthy();
+
+    const ideologicalAnswers = ["progressive", "typical", null, "conservative", "conservative"];
+    let tally = scoring.calculateTally(ideologicalAnswers);
 
     expect(tally["conservative"]).toBe(2);
     expect(tally["progressive"]).toBe(1);
 
     const winner = scoring.getWinningTally(tally);
     expect(winner).toBe("conservative");
+
+    const info = game.getPlayerScoreInfo(winner);
+    console.log(info);
+    expect(info).toBeTruthy();
+
+    const info1 = game.getPlayerScoreInfo("typical");
+    console.log(info1);
+
+    const info2 = game.getPlayerScoreInfo("progressive");
+    console.log(info2);
+
+    expect(info1).toBeTruthy();
+    expect(info2).toBeTruthy();
 })

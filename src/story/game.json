@@ -180,7 +180,7 @@
           {
              "label":"All employees",
              "feedback":"It might be uncommon, but giving equity to every employee makes a lot of sense – after all, everyone has a part to play in the company's success. However, it carries a risk that you spend time and effort giving equity to people who don't fully appreciate its value.#Nonetheless, your employees are pleased to learn of your democratic, progressive approach.",
-             "value":"progessive"
+             "value":"progressive"
           },
           {
              "label":"Early and senior hires",
@@ -261,7 +261,7 @@
          {
             "label":"Issue more equity",
             "feedback":"You've deduced the reason people aren't motivated by equity is because they haven't been given enough. If that's true, awarding more equity is a progressive way to address the problem, and shows your commitment to sharing success with your employees.",
-            "value":"progessive"
+            "value":"progressive"
          },
          {
             "label":"Run an employee equity seminar",
@@ -292,23 +292,9 @@
          {
             "label":"Founders, investors and employee shareholders",
             "feedback":"Naturally, you want to use this chance to cash in some of your equity and swap out early-stage investors for institutional investors. The exciting part of this choice, however, is inviting employees to take part.#Your decision helps them realise the true value of their equity and demonstrates your commitment to sharing success with your team. It makes equity a tangible, powerful tool for motivating employees.",
-            "value":"progessive"
+            "value":"progressive"
          }
       ]
    }
- ],
- "categories": [
-    {
-      "name": "progressive",
-      "body": "TODO DESCRIPTION"
-    },
-    {
-      "name": "typical",
-      "body": "TODO DESCRIPTION"
-    },
-    {
-      "name": "conservative",
-      "body": "TODO DESCRIPTION"
-    }
  ]
 }
