@@ -1,4 +1,5 @@
 const game = require('./game');
+const scoring = require('./scoring');
 
 test('Gets scene for index number', () => {
     const scene = game.getSceneForIndex(0);
@@ -23,21 +24,9 @@ test('Gets More Info text for a scene', () => {
     expect(text).toBeTruthy();
 });
 
-test('Checks whether a particular choice has More Info', () => {
-    const first = game.hasLearnMore(0, 0);
-    const second = game.hasLearnMore(2, 0);
-
-    const firstCheck = game.hasLearnMore(first);
-    const secondCheck = game.hasLearnMore(second);
-
-    expect(firstCheck).toBeFalse();
-    expect(secondCheck).toBeTrue();
-});
-
 test('Gets More Info text for a choice', () => {
     const text = game.getMoreInfoTextForChoice(0, 2);
     expect(text).toBeTruthy();
-    console.log(text);
 })
 
 test('Identifies correct index for displaying the score screen', () => {
@@ -64,4 +53,18 @@ test('Checks whether decisions have learn more', () => {
 
     expect(noOption).toBeFalsy();
     expect(hasOption).toBeTruthy();
+})
+
+test('Calculates score', () => {
+    let initialTally = scoring.getInitialTally();
+    expect(initialTally["progressive"]).toBe(0);
+
+    const answers = ["progressive", "typical", null, "conservative", "conservative"];
+    let tally = scoring.calculateTally(answers);
+
+    expect(tally["conservative"]).toBe(2);
+    expect(tally["progressive"]).toBe(1);
+
+    const winner = scoring.getWinningTally(tally);
+    expect(winner).toBe("conservative");
 })

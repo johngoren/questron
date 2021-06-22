@@ -1,9 +1,13 @@
 import gameScript from './game.json';
-import { calculateScore, NO_ANSWER_YET } from './scoring';
+import { calculateScore, getScoreInfo, NO_ANSWER_YET } from './scoring';
 import { prepareText } from '../helpers/textUtils';
 
 export function calculatePlayerScore(answers) {
   return calculateScore(answers);
+}
+
+export function getPlayerScoreInfo(score) {
+  return getScoreInfo(score);
 }
 
 export function getSceneForIndex(index) {
@@ -97,25 +101,14 @@ export function getMoreInfoTextForChoice(choiceNum, index) {
 }
 
 export function hasLearnMore(choiceNum, index) {
-  try {
-    if (index != null && choiceNum != null) {
-      const choices = getChoicesForIndex(index);
-      const choice = choices[choiceNum];
-      if (choice.more) {
-        return true
-      }
-      else {
-        return false;
-      }  
+    const choices = getChoicesForIndex(index);
+    const choice = choices[choiceNum];
+    if (choice.more) {
+      return true
     }
-    if (index === null) {
-      throw new Error("Null index.");
-    }
-
-  }
-  catch(e) {
-    throw e;
-  }
+    else {
+      return false;
+    }  
 }
 
 export function isGameOver(index) {
@@ -137,11 +130,6 @@ export function getDescriptionForCategoryEnum(categoryEnum) {
 function getPlayerCategories() {
   return gameScript.categories;
 }
-
-export function getValueForAnswer(choiceNum, index) {
-
-}
-
 
 export function replay() {
   window.location.reload();

@@ -1,8 +1,23 @@
+import { calculatePlayerScore, getPlayerScoreInfo } from "../story/game"
+
 export default function ScoreScreen(props) {
+    const score = calculatePlayerScore(props.answers);
+
     return (
         <div class="score">
-        <p>Your score! TODO</p>
-        <button onClick={props.onClickReplay}>Replay</button>
-    </div>
+            <ScoreResult score={score} />
+            <button onClick={props.onClickReplay}>Replay</button>
+        </div>
     )
+}
+
+function ScoreResult(props) {
+    const info = getPlayerScoreInfo(props);
+    const title = info.title;
+    const body = info.body;
+
+    return <div>
+        <h2>{title}</h2>
+        <p>{body}</p>
+    </div>
 }

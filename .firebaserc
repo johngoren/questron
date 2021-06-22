@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "capquest-bf50f"
+    "default": "capquest-bf50f",
+    "capquest": "capdesk-quest"
   }
 }

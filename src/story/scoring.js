@@ -1,17 +1,22 @@
-import { getValueForAnswer } from "./game";
-
 export function calculateScore(answers) {
-    const tally = {
+    const tally = calculateTally(answers);
+    const winningTally = getWinningTally(tally);
+    return winningTally;
+}
+
+export function getInitialTally() {
+    return {
         "progressive": 0,
         "typical": 0,
         "conservative": 0
     }
+}
 
-    for (let i=0; i<answers.length; i++) {
-        const answer = answers[i];
-        const value = getScoreValueForAnswer(answer);
+export function calculateTally(answers) {
+    let tally = getInitialTally();
 
-        switch(value) {
+     answers.forEach(function(answer) {
+        switch(answer) {
             case "progressive":
                 tally["progressive"]++;
                 break;
@@ -24,10 +29,14 @@ export function calculateScore(answers) {
             case null:
                 break;
             default:
-                throw new Error("Invalid answer:" + value);
+                throw new Error("Invalid answer:" + answer);
         }
-    }
+    });
 
+    return tally;
+}
+
+export function getWinningTally(tally) {
     let highestTally = 0;
     let winningCategory = null;
 
@@ -38,10 +47,31 @@ export function calculateScore(answers) {
             winningCategory = scoreKey;
         }
     }
-
     return winningCategory;
 }
 
-function getScoreValueForAnswer(answerNum) {
-    return getValueForAnswer(answerNum);
+export function getScoreInfo(score) {
+    const title = getScoreTitle(score);
+    const body = getScoreDescription(score);
+    return {
+        title: title,
+        body: body
+    }
+}
+
+function getScoreTitle(score) {
+    return score.toUpperCase();
+}
+
+function getScoreDescription(score) {
+    switch(score) {
+        case "progressive":
+            return "Text about why you are progressive.";
+        case "typical":
+            return "Text about why you are typical.";
+        case "conservative":
+            return "Text about why you are conservative.";
+        default:
+            throw new Error("Invalid score: " + score);
+    }
 }
