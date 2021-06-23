@@ -7,7 +7,6 @@ import { DELAY_MS_BEFORE_NEXT_QUESTION } from './constants/settings';
 import { WELCOME_SCREEN, SITUATION_SCREEN, DECISION_SCREEN, SCORE_SCREEN } from './constants/modes';
 
 function App() {
-
   const [mode, setMode] = useState(WELCOME_SCREEN);
   const [index, setIndex] = useState(0);
   const [activeChoice, setActiveChoice] = useState(null);
@@ -16,6 +15,7 @@ function App() {
   const [isMoreAboutDecision, setIsMoreAboutDecision] = useState(null);
   const initialAnswerState = getInitialAnswerState();
   const [answers, setAnswers] = useState(initialAnswerState);
+  const [hasTeletyped, setHasTeletyped] = useState(false);
 
   function setNewMode(mode) {
     setMode(mode);
@@ -68,6 +68,7 @@ function App() {
 
   function onClickBack() {
     setIsMore(false);
+    setHasTeletyped(true);
   }
   
   function updateAnswerRecords(choiceIndex) {
@@ -79,7 +80,8 @@ function App() {
   function clearForNextQuestion() {
       setNewMode(SITUATION_SCREEN);
   } 
- 
+
+  
   return (
     <div className="App">
       <ProgressBlocks
@@ -95,6 +97,7 @@ function App() {
           isMore={isMore}
           isMoreAboutDecision={isMoreAboutDecision}
           answers={answers}
+          hasTeletyped={hasTeletyped}
           onChoose={(choiceNum) => onUserMakesChoice(choiceNum)}
           onClickBack={() => onClickBack()}
           onClickMoreAboutDecision={(choiceNum) => onClickMoreAboutDecision(choiceNum) }

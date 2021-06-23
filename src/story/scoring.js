@@ -3,7 +3,7 @@ import { getValueForAnswer } from "./game";
 export function calculateScore(numericalAnswers) {
     const keywords = getKeywordsForNumbers(numericalAnswers);
     const tally = calculateTally(keywords);
-    const winningTally = getWinningTally(tally);
+    const winningTally = getWinningKeyword(tally);
     return winningTally;
 }
 
@@ -29,7 +29,7 @@ export function calculateTally(keywordAnswers) {
 
 }
 
-export function getWinningTally(tally) {
+export function getWinningKeyword(tally) {
     let highestTally = 0;
     let winningCategory = null;
 
@@ -53,7 +53,7 @@ export function getScoreInfo(score) {
         }   
     }
     else {
-        throw new Error("Sco")
+        throw new Error("Needed score but it was null");
     }
 }
 

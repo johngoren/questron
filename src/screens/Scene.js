@@ -59,6 +59,7 @@ function getQuestionContent(props) {
             mode={props.mode}
             title={title} 
             body={body} 
+            hasTeletyped={props.hasTeletyped}
             onChoose={props.onChoose} 
             onClickMore={props.onClickMore}
             isMore={props.isMore}
@@ -68,25 +69,21 @@ function getQuestionContent(props) {
 }
 
 function getDecisionMadeContent(props) {
-    const feedback = props.feedback;
-    const index = props.index;
-    const choiceNum = props.choiceNum;
-    const isAnimatingExit = props.isAnimatingExit;
-
-    if (index === null) {
+    if (props.index === null) {
         throw new Error("No index number available while serving decision.");
     }
 
-    if (choiceNum === null) {
+    if (props.choiceNum === null) {
         throw new Error("No choice number available while serving decision");
     }
 
     return (
         <Decision 
-            body={feedback} 
-            index={index} 
-            choiceNum={choiceNum}
-            isAnimatingExit={isAnimatingExit}
+            body={props.feedback} 
+            index={props.index} 
+            choiceNum={props.choiceNum}
+            isAnimatingExit={props.isAnimatingExit}
+            hasTeletyped={props.hasTeletyped}
         />
     )
 }

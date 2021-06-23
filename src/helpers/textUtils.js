@@ -24,7 +24,7 @@ export function spannifyForFading(text, onClick) {
             // Do nothing
         }
         else {
-            newText += `<span class="fadeIn">${char}</span>`
+            newText += `<span class="teletypeFade">${char}</span>`
         }
     }
 

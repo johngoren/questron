@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
-import { fadeInLetters } from '../effects/effects';
+import { fadeInLetters, displayAllLettersImmediately } from '../effects/effects';
 import { getDecisionText, getDecisionTitle } from '../story/game';
 
 export default function Decision(props) {
     const choiceNum = props.choiceNum;
     const index = props.index;
     const isAnimatingExit = props.isAnimatingExit;
+    const hasTeletyped = props.hasTeletyped;
 
     if (choiceNum != null) {
         // const title = getDecisionTitle(choiceNum, index); // TODO: Get title where there is no decision icon.
@@ -13,7 +14,17 @@ export default function Decision(props) {
         const fadingAnimationClassName = getFadingAnimationClass(isAnimatingExit);
         const blockAnimationClass = getBlockAnimationClass(isAnimatingExit);
 
-        useEffect(fadeInLetters);
+        useEffect(            
+            function performTeletypeEffect() {
+                fadeInLetters();
+
+                // if (!hasTeletyped) {
+                // }
+                // else {
+                //     displayAllLettersImmediately();
+                // }
+            }
+        );
     
         return (
             <div className="question feedback">

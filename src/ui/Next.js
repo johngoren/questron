@@ -1,4 +1,3 @@
-
 export default function Next(props) {
     const animationClass = getAnimationClass(props.isAnimatingExit);
 
@@ -8,7 +7,6 @@ export default function Next(props) {
         </div>  
     )
 }
-
 
 function getAnimationClass(isAnimatingExit) {
     if (isAnimatingExit) {

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { More } from '../ui/More';
-import { fadeInLetters } from '../effects/effects';
+import { fadeInLetters, displayAllLettersImmediately } from '../effects/effects';
 import { prepareText, getLearnMorePositionFromText } from '../helpers/textUtils';
 import { getIconForChapter } from '../helpers/iconUtils';
 import { SITUATION_SCREEN } from '../constants/modes';
@@ -10,11 +10,23 @@ export default function Situation(props) {
     const learnMorePosition = getLearnMorePositionFromText(props.body);
     const Icon = getIconForChapter(props.index + 1);
     const Content = getContentForState(props);
+    const hasTeletyped = props.hasTeletyped;
+
+    console.log("Situation: Has teletyped:");
+    console.log(hasTeletyped);
 
     useEffect(fadeInLetters);
     useEffect(() => {
-        if (learnMorePosition != null) {
-            // TODO: Scoot into correct paragraph if it belongs higher up.
+        function performTeletypeEffect() {
+
+            // TODO: Scoot Learn More into place if needed based on position
+
+            if (!hasTeletyped) {
+                fadeInLetters();
+            }
+            else {
+                displayAllLettersImmediately();
+            }
         }
     });
  
@@ -46,7 +58,7 @@ function FindOutMore(props) {
         learnMoreClass+= " hidden";
     }
     else {
-        learnMoreClass+= " fadeIn";
+        learnMoreClass+= " teletypeFade";
     }
 
     return (

@@ -11,8 +11,7 @@ Blocks flying into place
 Teletype effect
 */
 
-
-.fadeIn {
+.teletypeFade {
   opacity: 0;
   animation-name: teletypeFade;
   animation-duration: 400ms;
