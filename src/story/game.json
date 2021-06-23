@@ -1,4 +1,20 @@
 {
+   "scores": [
+      {
+         "id": "progressive",
+         "title": "You are an equity pioneer",
+         "description": "<p>Congratulations, you played today’s game as an equity pioneer. You took a progressive stance on equity, favouring the distribution of wealth in private companies over amassing a large personal fortune.</p><p>By giving employees equity, explaining its value in real terms and giving employees the chance to turn their shares into cash, you motivated and rewarded the people who built your business.</p><p>Eager to reap these rewards in real life? <a href='https://info.capdesk.com/employee-equity-workshop'>Sign up to our employee equity workshop</a> and learn how to roll out a world-class share scheme.</p><p>Want to get started today? Read <a href='https://info.capdesk.com/intro-to-employee-equity-0'>our employee equity guide</a>, a thorough introduction to the topic.</p>"
+      },
+      {
+         "id": "typical",
+         "title": "You are an equity preserver",
+         "description": "<p>Congratulations, you played today’s game as an equity preserver, making decisions that reflect how things are done in the majority of today’s startups. You took a balanced approach, rewarding some employees with a stake in the business but nonetheless favouring the status quo and preserving your own equity.</p><p>A more progressive approach to employee equity could generate stronger results for your business. By motivating and rewarding those who are growing your company, you’ll attract and retain talented people.</p><p>Curious to learn how it works in real life? <a href='https://info.capdesk.com/employee-equity-workshop '>Sign up to our employee equity workshop</a> and learn how to roll out a world-class share scheme.</p><p>Want to get started today? Read our <a href='https://info.capdesk.com/intro-to-employee-equity-0'>employee equity guide</a>, a thorough introduction to the topic."
+      },
+      {
+         "id": "conservative",
+         "description": "<p>Congratulations, you played today’s game as an equity conservative. You took a traditional approach that favoured rewarding employees with salary and viewed equity as the remit of founders, investors and your finance team.</p><p>A progressive approach to employee equity could generate stronger results for your business. By motivating and rewarding those who are growing your company, you’ll attract and retain talented people.</p><p>Curious to learn how it works in real life? Sign up to our employee equity workshop and learn how to roll out a world-class share scheme -> https://info.capdesk.com/employee-equity-workshop.</p><p>Want to get started today? Read our <a href='https://info.capdesk.com/intro-to-employee-equity-0'>employee equity guide</a>, a thorough introduction to the topic.</p>"
+      }
+   ],
    "scenes": [
     {
        "id": 0,

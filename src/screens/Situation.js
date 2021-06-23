@@ -12,19 +12,14 @@ export default function Situation(props) {
     const Content = getContentForState(props);
     const hasTeletyped = props.hasTeletyped;
 
-    console.log("Situation: Has teletyped:");
-    console.log(hasTeletyped);
-
     useEffect(function performTeletypeEffect() {
 
             // TODO: Scoot Learn More into place if needed based on position
 
             if (!hasTeletyped) {
-                console.log("Perform teletype!");
                 fadeInLettersAndButtons();
             }
             else {
-                console.log("So display all letters immediately.");
                 displaySceneContentRightAway();
             }
     });

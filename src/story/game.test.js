@@ -70,11 +70,10 @@ test('Calculates score', () => {
     expect(tally["conservative"]).toBe(2);
     expect(tally["progressive"]).toBe(1);
 
-    const winner = scoring.getWinningTally(tally);
+    const winner = scoring.getWinningKeyword(tally);
     expect(winner).toBe("conservative");
 
     const info = game.getPlayerScoreInfo(winner);
-    console.log(info);
     expect(info).toBeTruthy();
 
     const info1 = game.getPlayerScoreInfo("typical");

@@ -1,8 +1,38 @@
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-    /* Styles */
-    }
+
+  .welcome img {
+    height: 100px;
+  }
+
+  .journey {
+    display: none;
+  }
+
+  .App-container {
+    padding-left: 0 !important;
+  }
+
+  h1 {
+    font-size: 52px !important;
+    line-height: 1em;
+  }
+
+  h2 {
+    font-size: 18px !important;
+  }
+
+  .menuOption, .button, .next, button, span.label {
+    font-size: 24px !important;
+  }
+
+  span.learnMore {
+    font-size: 14px !important;
+  }
+
+  /* Styles */
+  }
     
   /* Smartphones (landscape) ----------- */
   @media only screen and (min-width : 321px) {
