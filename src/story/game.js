@@ -1,13 +1,13 @@
 import gameScript from './game.json';
-import { calculateScore, getScoreInfo, NO_ANSWER_YET } from './scoring';
+import { calculateScore, getScoreMeta, NO_ANSWER_YET } from './scoring';
 import { prepareText } from '../helpers/textUtils';
 
 export function calculatePlayerScore(answers) {
   return calculateScore(answers);
 }
 
-export function getPlayerScoreInfo(score) {
-  return getScoreInfo(score);
+export function getPlayerScoreMeta(score) {
+  return getScoreMeta(score);
 }
 
 export function getSceneForIndex(index) {
@@ -140,6 +140,26 @@ export function getValueForAnswer(choiceNum, index) {
   const value = decision.value;
   if (value != null) {
     return value;
+  }
+  else {
+    return null;
+  }
+}
+
+export function getRankTitle(keyword) {
+  const entry = getRankEntry(keyword);
+  console.log(entry);
+  return entry.title;
+}
+
+export function getRankDescription(keyword) {
+  return getRankEntry(keyword).description;
+}
+
+export function getRankEntry(keyword) {
+  const filtered = gameScript.scores.filter(item => item.id === keyword);
+  if (filtered != null) {
+    return filtered[0];
   }
   else {
     return null;

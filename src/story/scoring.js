@@ -1,4 +1,4 @@
-import { getValueForAnswer } from "./game";
+import { getValueForAnswer, getRankTitle, getRankDescription } from "./game";
 
 export function calculateScore(numericalAnswers) {
     const keywords = getKeywordsForNumbers(numericalAnswers);
@@ -43,36 +43,15 @@ export function getWinningKeyword(tally) {
     return winningCategory;
 }
 
-export function getScoreInfo(score) {
-    if (score != null) {
-        const title = getScoreTitle(score);
-        const body = getScoreDescription(score);
-        return {
-            title: title,
-            body: body
-        }   
-    }
-    else {
-        throw new Error("Needed score but it was null");
-    }
-}
-
 function getScoreTitle(score) {
     if (score != null) {
-        return score.toUpperCase();
+        return getRankTitle(score);
     }
 }
 
 function getScoreDescription(score) {
-    switch(score) {
-        case "progressive":
-            return "Text about why you are progressive.";
-        case "typical":
-            return "Text about why you are typical.";
-        case "conservative":
-            return "Text about why you are conservative.";
-        default:
-            throw new Error("Invalid score: " + score);
+    if (score != null) {
+        return getRankDescription(score);
     }
 }
 
