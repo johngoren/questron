@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { More } from '../ui/More';
-import { fadeInLetters, displayAllLettersImmediately } from '../effects/effects';
+import { fadeInLettersAndButtons, displayAllLettersImmediately as displaySceneContentRightAway } from '../effects/effects';
 import { prepareText, getLearnMorePositionFromText } from '../helpers/textUtils';
 import { getIconForChapter } from '../helpers/iconUtils';
 import { SITUATION_SCREEN } from '../constants/modes';
@@ -15,19 +15,18 @@ export default function Situation(props) {
     console.log("Situation: Has teletyped:");
     console.log(hasTeletyped);
 
-    useEffect(fadeInLetters);
-    useEffect(() => {
-        function performTeletypeEffect() {
+    useEffect(function performTeletypeEffect() {
 
             // TODO: Scoot Learn More into place if needed based on position
 
             if (!hasTeletyped) {
-                fadeInLetters();
+                console.log("Perform teletype!");
+                fadeInLettersAndButtons();
             }
             else {
-                displayAllLettersImmediately();
+                console.log("So display all letters immediately.");
+                displaySceneContentRightAway();
             }
-        }
     });
  
     const situationClassName = (props.mode === SITUATION_SCREEN) ? "situation" : "feedback";

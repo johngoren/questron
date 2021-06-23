@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { fadeInLetters, displayAllLettersImmediately } from '../effects/effects';
+import { fadeInLettersAndButtons, displayAllLettersImmediately } from '../effects/effects';
 import { getDecisionText, getDecisionTitle } from '../story/game';
 
 export default function Decision(props) {
@@ -16,7 +16,7 @@ export default function Decision(props) {
 
         useEffect(            
             function performTeletypeEffect() {
-                fadeInLetters();
+                fadeInLettersAndButtons();
 
                 // if (!hasTeletyped) {
                 // }

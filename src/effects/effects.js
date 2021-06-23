@@ -2,7 +2,7 @@
 
 const DURATION_TELETYPE = 15;
 
-export function fadeInLetters() {
+export function fadeInLettersAndButtons() {
     const fadeSpans = document.getElementsByClassName("teletypeFade");
 
     for (let i=0; i<fadeSpans.length; i++) {       
@@ -33,6 +33,9 @@ function fadeInButtons(initialDelay) {
 export function displayAllLettersImmediately() {
     const spans = document.getElementsByClassName("teletypeFade");
     for (const span of spans) {
+        span.style.animation = "none";
+        span.style.transition = "none";
         span.style.opacity = 1.0;
     }
+    fadeInButtons(0);
 }
