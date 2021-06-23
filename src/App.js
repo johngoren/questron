@@ -78,6 +78,7 @@ function App() {
   }
 
   function clearForNextQuestion() {
+      setHasTeletyped(false);
       setNewMode(SITUATION_SCREEN);
   } 
 
