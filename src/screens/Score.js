@@ -1,4 +1,4 @@
-import { calculatePlayerScore, getPlayerScoreInfo } from "../story/game"
+import { calculatePlayerScore, getPlayerScoreTitle, getPlayerScoreDescription } from "../story/game"
 
 export default function ScoreScreen(props) {
     const score = calculatePlayerScore(props.answers);
@@ -12,7 +12,7 @@ export default function ScoreScreen(props) {
 }
 
 function ScoreResult(props) {
-    const info = getPlayerScoreInfo(props.score);
+    const info = getPlayerScoreMeta(props.score);
     const title = info.title;
     const body = info.body;
 

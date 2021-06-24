@@ -43,13 +43,13 @@ export function getWinningKeyword(tally) {
     return winningCategory;
 }
 
-function getScoreTitle(score) {
+export function getScoreTitle(score) {
     if (score != null) {
         return getRankTitle(score);
     }
 }
 
-function getScoreDescription(score) {
+export function getScoreDescription(score) {
     if (score != null) {
         return getRankDescription(score);
     }

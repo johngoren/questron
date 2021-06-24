@@ -1,13 +1,17 @@
 import gameScript from './game.json';
-import { calculateScore, getScoreMeta, NO_ANSWER_YET } from './scoring';
+import { calculateScore, getScoreTitle, getScoreDescription } from './scoring';
 import { prepareText } from '../helpers/textUtils';
 
 export function calculatePlayerScore(answers) {
   return calculateScore(answers);
 }
 
-export function getPlayerScoreMeta(score) {
-  return getScoreMeta(score);
+export function getPlayerScoreTitle(score) {
+  return getScoreTitle(score);
+}
+
+export function getPlayerScoreDescription(score) {
+  return getScoreDescription(score);
 }
 
 export function getSceneForIndex(index) {
