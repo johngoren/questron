@@ -1,7 +1,7 @@
 import parse from 'html-react-parser';
 
 const PLACEHOLDER = "TEXT TK";
-const NEW_PARAGRAPH = "</p><p>";
+const NEW_PARAGRAPH = "<br/><br/>";
 
 export function prepareText(text) {
     if (text === null) { return PLACEHOLDER; }
@@ -13,7 +13,7 @@ export function prepareText(text) {
 
 export function spannifyForFading(text) {
     if (!text) { return null; }
-    let newText = `<p class="bodyText">`;
+    let newText = "";
     const chars = text.split("");
     for (var i=0; i<chars.length; i++) {
         const char = chars[i];
@@ -28,7 +28,7 @@ export function spannifyForFading(text) {
         }
     }
 
-    return `${newText}</p>`
+    return `${newText}`
 }
 
 export function addLinebreaksToText(text) {

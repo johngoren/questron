@@ -71,14 +71,14 @@ function getContentForState(props) {
             const hasLearnMore = paragraph.includes("@");
             const prepared = prepareText(paragraph, props.onClickMore);
             if (!hasLearnMore) {
-               return <SituationText key={index} text={prepared} />
+               return <p><SituationText key={index} text={prepared} /></p>
             }
             else {
                 return (
-                    <>
+                    <p>
                         <SituationText key={index} text={prepared} />
                         <FindOutMore onClickMore={props.onClickMore}/>
-                    </>
+                    </p>
                 )
             }
         });
@@ -87,6 +87,6 @@ function getContentForState(props) {
 }
 
 function SituationText(props) {
-    return <div key={props.index} className="teletype situationText">{props.text}</div>
+    return <span key={props.index} className="teletype situationText">{props.text}</span>
 }
 
