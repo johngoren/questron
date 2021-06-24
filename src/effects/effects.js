@@ -1,6 +1,6 @@
 // Teletype effect
 
-const DURATION_TELETYPE = 11;
+const DURATION_TELETYPE = 10;
 
 export function fadeInLettersAndButtons() {
     const fadeSpans = document.getElementsByClassName("teletypeFade");
@@ -30,7 +30,7 @@ function fadeInButtons(initialDelay) {
     }
 }
 
-export function displayAllLettersImmediately() {
+export function displaySceneContentRightAway() {
     const spans = document.getElementsByClassName("teletypeFade");
     for (const span of spans) {
         span.style.animation = "none";
@@ -38,4 +38,15 @@ export function displayAllLettersImmediately() {
         span.style.opacity = 1.0;
     }
     fadeInButtons(0);
+}
+
+export function scootLearnMoreIntoPlace(position) {
+    const learnMoreClass = "findOutMore";
+    const learnMore = document.getElementsByClassName(learnMoreClass);
+    if (learnMore.length > 0) {
+        const graphs = document.getElementsByClassName("bodyText");
+        if (graphs.length > 0) {
+            graphs[position].append(learnMore);
+        }
+    }
 }

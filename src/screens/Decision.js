@@ -2,12 +2,13 @@ import React, { useEffect } from 'react';
 import { fadeInLettersAndButtons, displayAllLettersImmediately } from '../effects/effects';
 import { getDecisionText, getDecisionTitle } from '../story/game';
 
+// TODO: Dynamic icons
+
 export default function Decision(props) {
     const choiceNum = props.choiceNum;
     const index = props.index;
     const isAnimatingExit = props.isAnimatingExit;
-    const hasTeletyped = props.hasTeletyped;
-
+ 
     if (choiceNum != null) {
         // const title = getDecisionTitle(choiceNum, index); // TODO: Get title where there is no decision icon.
         const body = getDecisionText(choiceNum, index);
@@ -17,12 +18,6 @@ export default function Decision(props) {
         useEffect(            
             function performTeletypeEffect() {
                 fadeInLettersAndButtons();
-
-                // if (!hasTeletyped) {
-                // }
-                // else {
-                //     displayAllLettersImmediately();
-                // }
             }
         );
     

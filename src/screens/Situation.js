@@ -1,21 +1,18 @@
 import React, { useEffect } from 'react';
 import { More } from '../ui/More';
-import { fadeInLettersAndButtons, displayAllLettersImmediately as displaySceneContentRightAway } from '../effects/effects';
-import { prepareText, getLearnMorePositionFromText } from '../helpers/textUtils';
+import { fadeInLettersAndButtons, displaySceneContentRightAway } from '../effects/effects';
+import { prepareText } from '../helpers/textUtils';
 import { getIconForChapter } from '../helpers/iconUtils';
 import { SITUATION_SCREEN } from '../constants/modes';
+import { hasLearnMore } from '../story/game';
 
 export default function Situation(props) {
     const title = props.title ?? "NO_TITLE";
-    const learnMorePosition = getLearnMorePositionFromText(props.body);
     const Icon = getIconForChapter(props.index + 1);
     const Content = getContentForState(props);
     const hasTeletyped = props.hasTeletyped;
 
     useEffect(function performTeletypeEffect() {
-
-            // TODO: Scoot Learn More into place if needed based on position
-
             if (!hasTeletyped) {
                 fadeInLettersAndButtons();
             }
@@ -30,17 +27,18 @@ export default function Situation(props) {
         <div className={situationClassName}>
             <div className="banner">
                 {Icon}
-                <div className="text">
-                    <h2 className="company">Capdes<span className="garnish">k</span></h2>
-                    <h1 className="headline">{title}</h1>
-                </div>
+                <Banner title={title}/>
             </div>
             {Content}
-            <FindOutMore
-                isMore={props.isMore}
-                learnMorePosition={learnMorePosition}
-                onClickMore={props.onClickMore}
-            />
+        </div>
+    )
+}
+
+function Banner(props) {
+    return (
+        <div className="text">
+            <h2 className="company">Capdes<span className="garnish">k</span></h2>
+            <h1 className="headline">{props.title}</h1>
         </div>
     )
 }
@@ -63,17 +61,32 @@ function FindOutMore(props) {
 }
 
 function getContentForState(props) {
-    const text = prepareText(props.body);
-
     if (props.isMore) {
         return <More index={props.index} isMoreAboutDecision={props.isMoreAboutDecision}/>
     }
 
     else {
-        return <SituationText text={text} />
+        const split = props.body.split("#");
+        const content = split.map((paragraph, index) => {
+            const hasLearnMore = paragraph.includes("@");
+            const prepared = prepareText(paragraph, props.onClickMore);
+            if (!hasLearnMore) {
+               return <SituationText key={index} text={prepared} />
+            }
+            else {
+                return (
+                    <>
+                        <SituationText key={index} text={prepared} />
+                        <FindOutMore onClickMore={props.onClickMore}/>
+                    </>
+                )
+            }
+        });
+        return content;
     }
 }
 
 function SituationText(props) {
-    return <div className="teletype situationText">{props.text}</div>
+    return <div key={props.index} className="teletype situationText">{props.text}</div>
 }
+

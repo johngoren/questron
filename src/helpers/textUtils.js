@@ -1,9 +1,9 @@
 import parse from 'html-react-parser';
 
 const PLACEHOLDER = "TEXT TK";
-const NEW_PARAGRAPH = "<br/><br/>";
+const NEW_PARAGRAPH = "</p><p>";
 
-export function prepareText(text, onClick) {
+export function prepareText(text) {
     if (text === null) { return PLACEHOLDER; }
 
     const spans = spannifyForFading(text);
@@ -11,9 +11,9 @@ export function prepareText(text, onClick) {
     return parsed;
 }
 
-export function spannifyForFading(text, onClick) {
+export function spannifyForFading(text) {
     if (!text) { return null; }
-    let newText = "";
+    let newText = `<p class="bodyText">`;
     const chars = text.split("");
     for (var i=0; i<chars.length; i++) {
         const char = chars[i];
@@ -28,32 +28,10 @@ export function spannifyForFading(text, onClick) {
         }
     }
 
-    return newText;
+    return `${newText}</p>`
 }
 
 export function addLinebreaksToText(text) {
     const withLineBreaks = text.replace("#", NEW_PARAGRAPH);
     return parse(withLineBreaks);
-}
-
-export function getLearnMorePositionFromText(text) {
-
-    if (text != null) {
-        const hasAnchor = text.includes("@");
-        if (!hasAnchor) {
-            return null;
-        }
-        const split = text.split("#");
-        let position = null;
-        for (let i=0; i<split.length; i++) {
-            if (split[i].includes("@")) {
-                console.log(`Found it at ${i}`);
-                position = i;
-            }
-        }
-        return position;
-    }
-    else {
-        throw new Error("Tried to learn position from null text");
-    }
 }
