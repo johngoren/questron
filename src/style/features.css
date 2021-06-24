@@ -103,3 +103,11 @@
     font-style: italic;
   }
 
+
+  /**
+  Score
+  */
+
+  .score {
+    text-align: left;
+  }

@@ -152,7 +152,6 @@ export function getValueForAnswer(choiceNum, index) {
 
 export function getRankTitle(keyword) {
   const entry = getRankEntry(keyword);
-  console.log(entry);
   return entry.title;
 }
 

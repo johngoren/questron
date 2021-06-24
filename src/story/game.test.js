@@ -1,5 +1,6 @@
 const game = require('./game');
 const scoring = require('./scoring');
+const textUtils = require('../helpers/textUtils');
 
 test('Gets scene for index number', () => {
     const scene = game.getSceneForIndex(0);
@@ -24,10 +25,23 @@ test('Gets More Info text for a scene', () => {
     expect(text).toBeTruthy();
 });
 
+
+test('Finds correct Learn More paragraph', () => {
+    let text = game.getSceneForIndex(0).body;
+    let position = textUtils.getLearnMorePositionFromText(text);
+    expect(position).toBe(null);
+
+    text = game.getSceneForIndex(2).body;
+    position = textUtils.getLearnMorePositionFromText(text);
+    expect(position).toBe(1);
+
+});
+
 test('Gets More Info text for a choice', () => {
     const text = game.getMoreInfoTextForChoice(0, 2);
     expect(text).toBeTruthy();
-})
+});
+
 
 test('Identifies correct index for displaying the score screen', () => {
     let gameIsOver = game.isGameOver(0);
@@ -61,7 +75,6 @@ test('Calculates score', () => {
 
     const numericalAnswers = [0, 0, 2, 1, 2, 0, 2];
     const asWordValues = scoring.getKeywordsForNumbers(numericalAnswers);
-    console.log(asWordValues);
     expect(asWordValues).toBeTruthy();
 
     const ideologicalAnswers = ["progressive", "typical", null, "conservative", "conservative"];

@@ -37,9 +37,23 @@ export function addLinebreaksToText(text) {
 }
 
 export function getLearnMorePositionFromText(text) {
-    const hasAnchor = text.includes("@");
-    if (!hasAnchor) {
-        return null;
+
+    if (text != null) {
+        const hasAnchor = text.includes("@");
+        if (!hasAnchor) {
+            return null;
+        }
+        const split = text.split("#");
+        let position = null;
+        for (let i=0; i<split.length; i++) {
+            if (split[i].includes("@")) {
+                console.log(`Found it at ${i}`);
+                position = i;
+            }
+        }
+        return position;
     }
-    return 0; // TODO: Granular identification of which paragraph
+    else {
+        throw new Error("Tried to learn position from null text");
+    }
 }
