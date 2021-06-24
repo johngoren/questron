@@ -12,9 +12,8 @@ export default function ScoreScreen(props) {
 }
 
 function ScoreResult(props) {
-    const info = getPlayerScoreMeta(props.score);
-    const title = info.title;
-    const body = info.body;
+    const title = getPlayerScoreTitle(props.score);
+    const body = getPlayerScoreDescription(props.score);
 
     return <div>
         <h2>{title}</h2>

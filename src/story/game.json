@@ -3,17 +3,17 @@
       {
          "id": "progressive",
          "title": "You are an equity pioneer",
-         "description": "<p>Congratulations, you played today’s game as an equity pioneer. You took a progressive stance on equity, favouring the distribution of wealth in private companies over amassing a large personal fortune.</p><p>By giving employees equity, explaining its value in real terms and giving employees the chance to turn their shares into cash, you motivated and rewarded the people who built your business.</p><p>Eager to reap these rewards in real life? <a href='https://info.capdesk.com/employee-equity-workshop'>Sign up to our employee equity workshop</a> and learn how to roll out a world-class share scheme.</p><p>Want to get started today? Read <a href='https://info.capdesk.com/intro-to-employee-equity-0'>our employee equity guide</a>, a thorough introduction to the topic.</p>"
+         "description": "<p>Congratulations, you played today’s game as an equity pioneer. You took a progressive stance on equity, favouring the distribution of wealth in private companies over amassing a large personal fortune.</p><p>By giving employees equity, explaining its value in real terms and giving employees the chance to turn their shares into cash, you motivated and rewarded the people who built your business.</p><p>Eager to reap these rewards in real life? Sign up to our <a href='https://info.capdesk.com/employee-equity-workshop '>employee equity workshop</a> and learn how to roll out a world-class share scheme.</p><p>Want to get started today? Read <a href='https://info.capdesk.com/intro-to-employee-equity-0'>our employee equity guide</a>, a thorough introduction to the topic.</p>"
       },
       {
          "id": "typical",
          "title": "You are an equity preserver",
-         "description": "<p>Congratulations, you played today’s game as an equity preserver, making decisions that reflect how things are done in the majority of today’s startups. You took a balanced approach, rewarding some employees with a stake in the business but nonetheless favouring the status quo and preserving your own equity.</p><p>A more progressive approach to employee equity could generate stronger results for your business. By motivating and rewarding those who are growing your company, you’ll attract and retain talented people.</p><p>Curious to learn how it works in real life? <a href='https://info.capdesk.com/employee-equity-workshop '>Sign up to our employee equity workshop</a> and learn how to roll out a world-class share scheme.</p><p>Want to get started today? Read our <a href='https://info.capdesk.com/intro-to-employee-equity-0'>employee equity guide</a>, a thorough introduction to the topic."
+         "description": "<p>Congratulations, you played today’s game as an equity preserver, making decisions that reflect how things are done in the majority of today’s startups. You took a balanced approach, rewarding some employees with a stake in the business but nonetheless favouring the status quo and preserving your own equity.</p><p>A more progressive approach to employee equity could generate stronger results for your business. By motivating and rewarding those who are growing your company, you’ll attract and retain talented people.</p><p>Curious to learn how it works in real life? Sign up to our <a href='https://info.capdesk.com/employee-equity-workshop '>employee equity workshop</a> and learn how to roll out a world-class share scheme.</p><p>Want to get started today? Read our <a href='https://info.capdesk.com/intro-to-employee-equity-0'>employee equity guide</a>, a thorough introduction to the topic."
       },
       {
          "id": "conservative",
          "title": "You are an equity conservative",
-         "description": "<p>Congratulations, you played today’s game as an equity conservative. You took a traditional approach that favoured rewarding employees with salary and viewed equity as the remit of founders, investors and your finance team.</p><p>A progressive approach to employee equity could generate stronger results for your business. By motivating and rewarding those who are growing your company, you’ll attract and retain talented people.</p><p>Curious to learn how it works in real life? Sign up to our employee equity workshop and learn how to roll out a world-class share scheme -> https://info.capdesk.com/employee-equity-workshop.</p><p>Want to get started today? Read our <a href='https://info.capdesk.com/intro-to-employee-equity-0'>employee equity guide</a>, a thorough introduction to the topic.</p>"
+         "description": "<p>Congratulations, you played today’s game as an equity conservative. You took a traditional approach that favoured rewarding employees with salary and viewed equity as the remit of founders, investors and your finance team.</p><p>A progressive approach to employee equity could generate stronger results for your business. By motivating and rewarding those who are growing your company, you’ll attract and retain talented people.</p><p>Curious to learn how it works in real life? Sign up to our <a href='https://info.capdesk.com/employee-equity-workshop '>employee equity workshop</a> and learn how to roll out a world-class share scheme.</p><p>Want to get started today? Read our <a href='https://info.capdesk.com/intro-to-employee-equity-0'>employee equity guide</a>, a thorough introduction to the topic.</p>"
       }
    ],
    "scenes": [
@@ -50,7 +50,7 @@
        "choices":[
           {
              "label":"I'm a solo founder",
-             "feedback":"You're striking out solo! Well, fortune favours the brave.#It's time to bring some people onboard.",
+             "feedback":"You're striking out solo! Well, fortune favours the brave.#If you haven't taken the role of CEO, your first job is to find someone phenomenal to fill that position.#Then it's time to bring some other people onboard.",
              "value":null
           },
           {
@@ -68,7 +68,7 @@
     {
       "id": 2,
       "title":"Making your first hires",
-      "body":"It's time to hire your core team: two developers, one salesperson and one account manager.#Once recruitment begins you run into a dilemma: your hiring budget only covers 80% of each role's market rate.@",
+      "body":"It's time to hire your core team: two developers, one salesperson and one client services manager.#Once recruitment begins you run into a dilemma: your hiring budget only covers 80% of each role's market rate.@#What do you do?",
       "more": {
          "title": "What's market rate?",
          "body": "Market rate is the average value of an employee in the wider job market – it takes into account varying salaries at different companies and dictates what people expect to be paid for their skills and experience."
@@ -123,7 +123,7 @@
       "choices":[
           {
              "label":"By allocating them additional share options",
-             "feedback":"Great! Just make sure you communicate them effectively to give them appropriate meaning.",  
+             "feedback":"Great! Just make sure you communicate the rationale behind your decision and the significance of receiving more equity to the recipients.",  
              "more": "Granting high-performers shares instead of giving them a cash reward gives them a chance to participate further in the long-term success of the business.",
              "value":"progressive"
           },
@@ -166,7 +166,7 @@
    {
       "id": 6,
       "title":"Money talks",
-      "body":"There's talk among the team about salary disclosure, and a few of your more radical-minded employees start asking for full transparency over staff pay.#You discuss with your options with relevant senior stakeholders and make a decision. Which is it?",
+      "body":"There's talk among the team about salary disclosure, and a few of your more radical-minded employees start asking for full transparency over staff pay.#You discuss your options with relevant senior stakeholders and make a decision. Which is it?",
       "choices":[
          {
             "label":"Full salary transparency",
@@ -233,7 +233,7 @@
           },
           {
              "label":"Unpack and explain the terms of the entire scheme",
-             "feedback":"This is no mean feat, but the payoff could be huge. In giving your employees the full story, you equip them with a greater understanding of their relationship to company equity. On the other hand, you risk overloading some employees that have only a passing interest in the scheme.",
+             "feedback":"This is no mean feat, but the payoff could be huge. In giving your employees the full story, you equip them with a greater understanding of their relationship to company equity. However, you also risk overloading some employees that have only a passing interest in the scheme.",
              "value":"progressive",
             "more": "This is full transparency. On top of the essentials and the details, you explain how dilution and liquidation preferences will have an impact on potential outcomes."
          }
@@ -245,7 +245,7 @@
       "body":"You’re deep in the fundraising process, and discussing terms with prospective investors. They’re offering investment based on a pre-money valuation, which will significantly dilute the value of your equity, but includes a sizeable increase to your employee option pool.@#What do you do?",
       "more": {
          "title": "Valuations, dilution and option pools",
-         "body": "Explainer copy needed"
+         "body": "You’ve been offered investment based on a pre-money valuation. This is favourable for the incoming investors but dilutes the equity of existing shareholders: you, your investors, any co-founders as well as any employees with equity.#However, the offer also increases the size of your option pool, which makes it possible to give more equity to future employees. In the long run, this will allow you to distribute the company’s financial success more widely."
       },
       "choices":[
          {
@@ -268,7 +268,7 @@
    {
       "id": 11,
       "title":"Equity and employee motivation",
-      "body":"Two years after launching your employee share scheme, you conduct a staff survey and learn that nobody describes themselves as highly motivated by equity – a disappointing discovery.",
+      "body":"Two years after launching your employee share scheme, you conduct a staff survey and learn that nobody describes themselves as highly motivated by equity – a disappointing discovery.#How do you respond?",
       "choices":[
          {
             "label":"Stop issuing equity",
@@ -290,7 +290,7 @@
    {
       "id": 12,
       "title":"Running your first secondary",
-      "body":"You are four years into building your company and things are going well. You've just secured terms for another big round, and one of the investors is happy for some of their equity to come in the form of a secondary sale.@",
+      "body":"You are four years into building your company and things are going well. You've just secured terms for another big round, and one of the investors is happy for some of their equity to come in the form of a secondary sale.@#Who's invited to take part?",
       "more": {
          "title": "What's a secondary sale?",
          "body": "In a secondary sale, existing shareholders sell some or all of their equity to a third-party buyer. The impact a secondary sale has on company ownership depends on who you invite to take part and how many shares they sell in that transaction."

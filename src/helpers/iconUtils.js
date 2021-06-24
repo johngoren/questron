@@ -1,5 +1,3 @@
-// TODO: Lots of magic
-
 export function getIconForChapter(chapterNum) {
     return <img className="chapter" src="/images/ceo.png" alt="chapter icon"/>;
 }

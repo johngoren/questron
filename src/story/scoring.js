@@ -1,4 +1,5 @@
 import { getValueForAnswer, getRankTitle, getRankDescription } from "./game";
+import parse from 'html-react-parser';
 
 export function calculateScore(numericalAnswers) {
     const keywords = getKeywordsForNumbers(numericalAnswers);
@@ -51,7 +52,7 @@ export function getScoreTitle(score) {
 
 export function getScoreDescription(score) {
     if (score != null) {
-        return getRankDescription(score);
+        return parse(getRankDescription(score));
     }
 }
 
