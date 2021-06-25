@@ -3,12 +3,12 @@ import FindOutMore from '../ui/FindOutMore';
 import More from '../ui/More';
 import { fadeInLettersAndButtons, displaySceneContentRightAway } from '../effects/effects';
 import { prepareText, prepareHeadline } from '../helpers/textUtils';
-import { getIconForChapter } from '../helpers/iconUtils';
+import { getNumberIcon } from '../helpers/iconUtils';
 import { SITUATION_SCREEN } from '../constants/modes';
 
 export default function Situation(props) {
     const title = props.title ?? "NO_TITLE";
-    const Icon = getIconForChapter(props.index + 1);
+    const Icon = getNumberIcon(props.index, true);
     const Content = getContentForState(props);
     const hasTeletyped = props.hasTeletyped;
 
@@ -55,11 +55,11 @@ function getContentForState(props) {
             const hasLearnMore = paragraph.includes("@");
             const prepared = prepareText(paragraph, props.onClickMore);
             if (!hasLearnMore) {
-               return <p><SituationText key={index} text={prepared} /></p>
+               return <p key={index}><SituationText key={index} text={prepared} /></p>
             }
             else {
                 return (
-                    <p>
+                    <p key={index}>
                         <SituationText key={index} text={prepared} />
                         <FindOutMore onClickMore={props.onClickMore}/>
                     </p>

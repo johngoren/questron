@@ -23,7 +23,7 @@ export default function Decision(props) {
     
         return (
             <div className="question feedback">
-                <img src="/images/ceo.png" className={blockAnimationClass} /><br/>
+                {icon}
                 <div className={fadingAnimationClassName}>{body}</div>
             </div>
         )   

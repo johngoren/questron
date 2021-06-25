@@ -1,7 +1,3 @@
-export function getIconForChapter(chapterNum) {
-    return <img className="chapter" src="/images/ceo.png" alt="chapter icon"/>;
-}
-
 export function getIconForAnswer(answer, index) {
     if (answer != null) {
         return getNumberIcon(index, true);
@@ -11,14 +7,14 @@ export function getIconForAnswer(answer, index) {
     }
 }
 
-function getNumberIcon(index, isOn) {
+export function getNumberIcon(index, isOn) {
     const isOnSlug = getStateSlug(isOn);
     const path = `/images/numbers/${index}-${isOnSlug}.png`;
     return getImageElementForPath(path, index);
 }
 
 export function getDecisionIcon(choiceNum, index, title) {
-    const path = `/images/decisions/${index}.${choiceNum}.png`;
+    const path = `/images/decisions/${index + 1}.${choiceNum + 1}.png`;
     return getImageElementForPath(path, title);
 }
 
