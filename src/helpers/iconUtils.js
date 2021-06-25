@@ -8,13 +8,26 @@ export function getIconForAnswer(answer, index) {
 }
 
 export function getNumberIcon(index, isOn) {
+    const chapterNum = index + 1
     const isOnSlug = getStateSlug(isOn);
-    const path = `/images/numbers/${index}-${isOnSlug}.png`;
+    const path = `/images/numbers/${chapterNum}-${isOnSlug}.png`;
     return getImageElementForPath(path, index);
 }
 
 export function getDecisionIcon(choiceNum, index, title) {
-    const path = `/images/decisions/${index + 1}.${choiceNum + 1}.png`;
+    const chapterNum = index + 1;
+    const choiceIndex = choiceNum + 1;
+    let path = `/images/decisions/${chapterNum}.${choiceIndex}.png`;
+
+    switch(chapterNum) {
+        case 3:
+        case 5:
+        case 6:
+            path = `/images/decisions/${chapterNum.png}`;
+            break;
+        default:
+            break;
+    }
     return getImageElementForPath(path, title);
 }
 

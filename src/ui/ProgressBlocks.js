@@ -21,7 +21,7 @@ export default function ProgressBlocks(props) {
 function getProgressBlocks(answers) {
     console.log(answers);
     return answers.map((answer, index) => {
-        const icon = getIconForAnswer(answer, index + 1);
+        const icon = getIconForAnswer(answer, index);
         const zIndex = 100 - index;
         return (
             <span key={index} style={{zIndex: zIndex, height: "65px"}}>{icon}</span>
