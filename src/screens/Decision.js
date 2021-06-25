@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import { fadeInLettersAndButtons, displayAllLettersImmediately } from '../effects/effects';
+import { getDecisionIcon } from '../helpers/iconUtils';
 import { getDecisionText, getDecisionTitle } from '../story/game';
-
-// TODO: Dynamic icons
 
 export default function Decision(props) {
     const choiceNum = props.choiceNum;
@@ -10,7 +9,8 @@ export default function Decision(props) {
     const isAnimatingExit = props.isAnimatingExit;
  
     if (choiceNum != null) {
-        // const title = getDecisionTitle(choiceNum, index); // TODO: Get title where there is no decision icon.
+        const title = getDecisionTitle(choiceNum, index);
+        const icon = getDecisionIcon(choiceNum, index, title);
         const body = getDecisionText(choiceNum, index);
         const fadingAnimationClassName = getFadingAnimationClass(isAnimatingExit);
         const blockAnimationClass = getBlockAnimationClass(isAnimatingExit);
@@ -23,7 +23,7 @@ export default function Decision(props) {
     
         return (
             <div className="question feedback">
-                <img src="/images/ceo.png" alt="CEO decision" className={blockAnimationClass} /><br/>
+                <img src="/images/ceo.png" className={blockAnimationClass} /><br/>
                 <div className={fadingAnimationClassName}>{body}</div>
             </div>
         )   

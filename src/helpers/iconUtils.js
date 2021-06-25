@@ -4,27 +4,27 @@ export function getIconForChapter(chapterNum) {
 
 export function getIconForAnswer(answer, index) {
     if (answer != null) {
-        return getNumberIconForQuestion(index, true);
+        return getNumberIcon(index, true);
     }
     else {
-        return getNumberIconForQuestion(index, false);
+        return getNumberIcon(index, false);
     }
 }
 
-function getNumberIconForQuestion(index, isOn) {
+function getNumberIcon(index, isOn) {
     const isOnSlug = getStateSlug(isOn);
     const path = `/images/numbers/${index}-${isOnSlug}.png`;
-    return getImageElementForPath(path);
+    return getImageElementForPath(path, index);
 }
 
-function getQuestionIcon(answer, index) {
-
+export function getDecisionIcon(choiceNum, index, title) {
+    const path = `/images/decisions/${index}.${choiceNum}.png`;
+    return getImageElementForPath(path, title);
 }
 
-function getImageElementForPath(path) {
-    return <img className="answer" src={path} alt="startup icon"/>
+function getImageElementForPath(path, title) {
+    return <img className="answer" src={path} alt={title} />
 }
-
 
 function getStateSlug(isOn) {
     return isOn ? "on" : "off"
