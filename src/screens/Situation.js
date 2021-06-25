@@ -71,6 +71,6 @@ function getContentForState(props) {
 }
 
 function SituationText(props) {
-    return <span key={props.index} className="teletype situationText">{props.text}</span>
+    return <span key={props.index} className="teletype">{props.text}</span>
 }
 

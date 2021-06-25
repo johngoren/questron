@@ -1,4 +1,5 @@
 import { calculatePlayerScore, getPlayerScoreTitle, getPlayerScoreDescription } from "../story/game"
+import { getRankIcon } from "../helpers/iconUtils";
 
 export default function ScoreScreen(props) {
     const score = calculatePlayerScore(props.answers);
@@ -13,10 +14,11 @@ export default function ScoreScreen(props) {
 
 function ScoreResult(props) {
     const title = getPlayerScoreTitle(props.score);
+    const bannerGraphic = getRankIcon(props.score);
     const body = getPlayerScoreDescription(props.score);
 
     return <div>
-        <h2>{title}</h2>
+        {bannerGraphic}
         <p>{body}</p>
     </div>
 }

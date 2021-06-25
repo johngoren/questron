@@ -38,3 +38,8 @@ function getImageElementForPath(path, title) {
 function getStateSlug(isOn) {
     return isOn ? "on" : "off"
 }
+
+export function getRankIcon(keyword) {
+    const path = `/images/result-${keyword}.png`;
+    return getImageElementForPath(path, keyword);
+}

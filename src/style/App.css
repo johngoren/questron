@@ -67,6 +67,7 @@ Structure
 }
 
 .feedback .teletype {
+  display: block;
   text-align: center;
 }
 
@@ -85,10 +86,6 @@ Structure
   padding-left: 0.5em;
 }
 
-.findOutMore a {
-  color: var(--link);
-  font-size: 2vmin;
-}
 
 .score a {
   color: var(--aqua);
