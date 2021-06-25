@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
 import { More } from '../ui/More';
 import { fadeInLettersAndButtons, displaySceneContentRightAway } from '../effects/effects';
-import { prepareText } from '../helpers/textUtils';
+import { prepareText, prepareHeadline } from '../helpers/textUtils';
 import { getIconForChapter } from '../helpers/iconUtils';
 import { SITUATION_SCREEN } from '../constants/modes';
-import { hasLearnMore } from '../story/game';
 
 export default function Situation(props) {
     const title = props.title ?? "NO_TITLE";
@@ -35,10 +34,11 @@ export default function Situation(props) {
 }
 
 function Banner(props) {
+    const noWidows = prepareHeadline(props.title);
+
     return (
         <div className="text">
-            <h2 className="company">Capdes<span className="garnish">k</span></h2>
-            <h1 className="headline">{props.title}</h1>
+            <h1 className="headline">{noWidows}</h1>
         </div>
     )
 }

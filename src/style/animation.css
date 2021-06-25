@@ -3,7 +3,7 @@ Blocks flying into place
 */
 
 .flying {
-  transform: translate(-1500px, 200px) rotate(360deg);
+  transform: translate(-1500px, 200px);
 }
 
 

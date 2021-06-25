@@ -26,17 +26,6 @@ test('Gets More Info text for a scene', () => {
 });
 
 
-test('Finds correct Learn More paragraph', () => {
-    let text = game.getSceneForIndex(0).body;
-    let position = textUtils.getLearnMorePositionFromText(text);
-    expect(position).toBe(null);
-
-    text = game.getSceneForIndex(2).body;
-    position = textUtils.getLearnMorePositionFromText(text);
-    expect(position).toBe(1);
-
-});
-
 test('Gets More Info text for a choice', () => {
     const text = game.getMoreInfoTextForChoice(0, 2);
     expect(text).toBeTruthy();
@@ -92,5 +81,12 @@ test('Calculates score', () => {
     expect(title1).toBeTruthy();
     expect(title2).toBeTruthy();
 
+})
+
+test('Removes widows', () => {
+    const headline = "Hello there Clara!";
+    const noWidows = textUtils.prepareHeadline(headline);
+    expect(noWidows).toContain("Clara");
+    expect(noWidows).toContain('\xa0');
 })
 

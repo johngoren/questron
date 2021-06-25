@@ -11,6 +11,23 @@ export function prepareText(text) {
     return parsed;
 }
 
+export function prepareHeadline(text) {
+    if (text === null) { return PLACEHOLDER; }
+
+    const split = text.split(" ");
+    const noWidows = split.map((word, index) => {
+        switch(index) {
+            case 0:
+                return word;
+            case split.length - 1:
+                return `\xa0${word}`;
+            default:
+                return ` ${word}`;
+        }
+    }).join('');
+    return noWidows;
+}
+
 export function spannifyForFading(text) {
     if (!text) { return null; }
     let newText = "";
