@@ -40,7 +40,7 @@
     animation-timing-function: ease-in-out;
   }
 
-  .question .graphicBlock {
+  .question img {
     height: 250px;
     transition: 1s;
     z-index: 9999;

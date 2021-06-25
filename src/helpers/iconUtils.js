@@ -23,7 +23,7 @@ export function getDecisionIcon(choiceNum, index, title) {
         case 3:
         case 5:
         case 6:
-            path = `/images/decisions/${chapterNum.png}`;
+            path = `/images/decisions/${chapterNum}.png`;
             break;
         default:
             break;
