@@ -1,6 +1,6 @@
 // Teletype effect
 
-const DURATION_TELETYPE = 10;
+const DURATION_TELETYPE = 3;
 
 export function fadeInLettersAndButtons() {
     const fadeSpans = document.getElementsByClassName("teletypeFade");

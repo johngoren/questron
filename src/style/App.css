@@ -11,6 +11,7 @@
   --green: #00f5a9;
   --aqua: #00bdb4;  
   --highlight: #0fe0d2;
+  --link: #1cffc0;
 }
 
 .html {
@@ -49,6 +50,10 @@ Structure
   color: #61dafb;
 }
 
+.banner {
+  align-items: center;
+}
+
 .menu {
   width: 75vw;
   padding-top: 60px;
@@ -81,9 +86,8 @@ Structure
 }
 
 .findOutMore a {
-  text-decoration: none;
-  color: var(--aqua);
-  font-style: italic;
+  color: var(--link);
+  font-size: 2vmin;
 }
 
 .score a {

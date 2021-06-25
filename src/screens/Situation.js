@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { More } from '../ui/More';
+import FindOutMore from '../ui/FindOutMore';
+import More from '../ui/More';
 import { fadeInLettersAndButtons, displaySceneContentRightAway } from '../effects/effects';
 import { prepareText, prepareHeadline } from '../helpers/textUtils';
 import { getIconForChapter } from '../helpers/iconUtils';
@@ -40,23 +41,6 @@ function Banner(props) {
         <div className="text">
             <h1 className="headline">{noWidows}</h1>
         </div>
-    )
-}
-
-function FindOutMore(props) {
-    let learnMoreClass = "findOutMore";
-
-    if (props.learnMorePosition === null || props.isMore) {
-        learnMoreClass+= " hidden";
-    }
-    else {
-        learnMoreClass+= " teletypeFade";
-    }
-
-    return (
-        <span className={learnMoreClass}>
-            <a href="#" onClick={props.onClickMore}>Find out more</a>
-        </span>
     )
 }
 

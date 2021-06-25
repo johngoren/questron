@@ -1,9 +1,11 @@
 /**
 Blocks flying into place
+
+// TODO: Toaster effect
 */
 
 .flying {
-  transform: translate(-1500px, 200px);
+
 }
 
 

@@ -48,3 +48,12 @@ Fonts
     font-display: block;
 }
   
+@font-face {
+    font-family: 'Trim Regular';
+    src: url('Trim-Regular.woff2') format('woff2'),
+        url('Trim-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

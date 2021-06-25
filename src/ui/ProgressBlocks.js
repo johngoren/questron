@@ -3,7 +3,7 @@ import { WELCOME_SCREEN } from "../constants/modes";
 
 export default function ProgressBlocks(props) {
     const answers = props.answers;
-    const JourneyMarks = getProgressBlocks(answers);
+    const ProgressBlocksContent = getProgressBlocks(answers);
     let journeyClassName = "journey icons";
 
     if (props.mode === WELCOME_SCREEN) {
@@ -12,13 +12,16 @@ export default function ProgressBlocks(props) {
 
     return (
         <div className={journeyClassName}>
-           {JourneyMarks}
+           {ProgressBlocksContent}
        </div>
     )
 }
 
 function getProgressBlocks(answers) {
     return answers.map((answer, index) => {
+        if (index === 0) {
+            return;
+        }
         const icon = getIconForAnswer(answer, index);
         const zIndex = 100 - index;
         return (

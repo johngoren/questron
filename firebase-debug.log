@@ -1,0 +1,27 @@
+[debug] [2021-06-25T12:45:12.648Z] ----------------------------------------------------------------------
+[debug] [2021-06-25T12:45:12.650Z] Command:       /usr/local/bin/firebase /home/johng/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
+[debug] [2021-06-25T12:45:12.650Z] CLI Version:   9.13.0
+[debug] [2021-06-25T12:45:12.650Z] Platform:      linux
+[debug] [2021-06-25T12:45:12.650Z] Node Version:  v12.18.1
+[debug] [2021-06-25T12:45:12.650Z] Time:          Fri Jun 25 2021 13:45:12 GMT+0100 (British Summer Time)
+[debug] [2021-06-25T12:45:12.651Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-06-25T12:45:12.658Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2021-06-25T12:45:12.677Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-06-25T12:45:12.677Z] > authorizing via signed-in user (john.gorenfeld@gmail.com)
+[debug] [2021-06-25T12:45:12.677Z] [iam] checking project capdesk-quest for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-06-25T12:45:12.678Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-06-25T12:45:12.678Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-06-25T12:45:12.783Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Fri, 25 Jun 2021 12:45:11 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-06-25T12:45:12.810Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/capdesk-quest:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-06-25T12:45:13.034Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2021-06-25T12:45:13.034Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2021-06-25T12:45:13.418Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 25 Jun 2021 12:45:11 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=546","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-06-25T12:45:13.421Z] > refreshing access token with scopes: []
+[debug] [2021-06-25T12:45:13.421Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-06-25T12:45:13.499Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","date":"Fri, 25 Jun 2021 12:45:12 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-06-25T12:45:13.567Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/capdesk-quest [none]
+[debug] [2021-06-25T12:45:13.743Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/capdesk-quest 200

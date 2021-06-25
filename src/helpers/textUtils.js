@@ -20,7 +20,7 @@ export function prepareHeadline(text) {
             case 0:
                 return word;
             case split.length - 1:
-                return `\xa0${word}`;
+                return `\xa0${word}`;   // nbsp
             default:
                 return ` ${word}`;
         }

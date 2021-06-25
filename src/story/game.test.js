@@ -83,7 +83,7 @@ test('Calculates score', () => {
 
 })
 
-test('Removes widows', () => {
+test('Removes widowed text from headlines', () => {
     const headline = "Hello there Clara!";
     const noWidows = textUtils.prepareHeadline(headline);
     expect(noWidows).toContain("Clara");
