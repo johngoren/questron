@@ -29,13 +29,12 @@ function MoreInfoButton(props) {
     const visibilityClass = getVisibilityClassForLearnMoreButton(props);
 
     return (
-        <button onClick={handleClick} className="moreInfoButton"><img className="info" src="/images/info-on.png"/></button>
+        <button onClick={handleClick} className={visibilityClass}/>
     )
 }
 
 function getVisibilityClassForLearnMoreButton(props) {
-    // const hasMore = hasLearnMore(props.choiceNum, props.index);
-    const hasMore = true;
-    return hasMore ? "learnMore" : "hidden";
+    const hasMore = hasLearnMore(props.choiceNum, props.index);
+    return hasMore ? "moreInfoButton" : "hidden";
 }
 

@@ -14,6 +14,7 @@
     border: none;
     border-radius: 6px;
     margin-bottom: 8px;
+    transition: color 1s;
 }
 
 .decisionOption {
@@ -21,9 +22,19 @@
 }
 
 .moreInfoButton {
-  background: none;
+  background: url("info-on.png");
+  background-repeat: no-repeat;
+  background-size: contain;
   border: none;
-  flex: 0;
+  width: 75px;
+  height: 75px;
+
+}
+
+.moreInfoButton:hover {
+  background: url("info-off.png");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .decisionButton {
