@@ -12,6 +12,7 @@
   --aqua: #00bdb4;  
   --highlight: #0fe0d2;
   --link: #1cffc0;
+  --highlightDark: #002545;
 }
 
 .html {
@@ -54,6 +55,10 @@ Structure
   align-items: center;
 }
 
+.body {
+  max-width: 900px;
+  min-height: 250px;
+}
 .menu {
   width: 75vw;
   padding-top: 60px;

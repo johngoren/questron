@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
+import Banner from '../ui/Banner';
 import FindOutMore from '../ui/FindOutMore';
 import More from '../ui/More';
 import { fadeInLettersAndButtons, displaySceneContentRightAway } from '../effects/effects';
-import { prepareText, prepareHeadline } from '../helpers/textUtils';
+import { prepareText } from '../helpers/textUtils';
 import { getNumberIcon } from '../helpers/iconUtils';
 import { SITUATION_SCREEN } from '../constants/modes';
 
@@ -34,15 +35,6 @@ export default function Situation(props) {
     )
 }
 
-function Banner(props) {
-    const noWidows = prepareHeadline(props.title);
-
-    return (
-        <div className="text">
-            <h1 className="headline">{noWidows}</h1>
-        </div>
-    )
-}
 
 function getContentForState(props) {
     if (props.isMore) {
@@ -51,7 +43,7 @@ function getContentForState(props) {
 
     else {
         const split = props.body.split("#");
-        const content = split.map((paragraph, index) => {
+        const Content = split.map((paragraph, index) => {
             const hasLearnMore = paragraph.includes("@");
             const prepared = prepareText(paragraph, props.onClickMore);
             if (!hasLearnMore) {
@@ -66,7 +58,11 @@ function getContentForState(props) {
                 )
             }
         });
-        return content;
+        return (
+            <div className="body">
+                {Content}
+            </div>
+        );
     }
 }
 

@@ -32,6 +32,7 @@
 
 .menuOption:hover, .next button:hover, .score button:hover {
   background: var(--highlight);
+  color: var(--highlightDark);
 }
 
 .fadeOut {
