@@ -7,7 +7,7 @@ export default function ScoreScreen(props) {
     return (
         <div class="score">
             <ScoreResult score={score} />
-            <button onClick={props.onClickReplay}>Replay</button>
+            <button className="replay" onClick={props.onClickReplay}>Replay</button>
         </div>
     )
 }
@@ -18,7 +18,12 @@ function ScoreResult(props) {
     const body = getPlayerScoreDescription(props.score);
 
     return <div>
-        {bannerGraphic}
+        <div className="flexHorizontal">
+            <div>Your result:</div>
+            <div className="scoreGraphic">
+                {bannerGraphic}
+            </div>
+        </div>
         <p>{body}</p>
     </div>
 }

@@ -1,5 +1,6 @@
 // Teletype effect
 
+const BASE_DELAY = 0;
 const DURATION_TELETYPE = 5;
 
 export function fadeInLettersAndButtons() {
@@ -15,7 +16,7 @@ export function fadeInLettersAndButtons() {
  
 
 function getAnimationDelayForIndex(i) {
-    const ms = DURATION_TELETYPE * i;
+    const ms = (DURATION_TELETYPE * i) + BASE_DELAY;
     return `${ms}ms`;
 }
 

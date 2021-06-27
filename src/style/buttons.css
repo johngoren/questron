@@ -5,7 +5,7 @@
 .menuOption button, .next button, .score button {
     display: flex;
     justify-content: space-between;
-    padding-left: 0.5em;
+    padding-left: 0.5rem;
     width: 100%;
     background: #566e82;
     color: white;
@@ -19,6 +19,12 @@
 
 .decisionOption {
   display: flex;
+}
+
+.replay  {
+  width: auto !important;
+  padding-left: 4rem !important;
+  padding-right: 4rem !important;
 }
 
 .moreInfoButton {

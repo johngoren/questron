@@ -89,6 +89,11 @@
   .hidden {
     display: none;
   }
+
+  .flexHorizontal {
+    display: flex;
+    flex-direction: row;
+  }
   
 
   
@@ -111,4 +116,8 @@
   .score {
     text-align: left;
     padding-left: 75px;
+  }
+
+  .scoreGraphic {
+    flex: 5;
   }
