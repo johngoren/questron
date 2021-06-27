@@ -1,3 +1,7 @@
+.info {
+  width: 75px;
+}
+
 .menuOption button, .next button, .score button {
     display: flex;
     justify-content: space-between;
@@ -12,8 +16,30 @@
     margin-bottom: 8px;
 }
 
+.decisionOption {
+  display: flex;
+}
+
+.moreInfoButton {
+  background: none;
+  border: none;
+  flex: 0;
+}
+
+.decisionButton {
+  flex: 10;
+  padding-left: 0.5em;
+  background: #566e82;
+  color: white;
+  font-family: "Trim Regular";
+  text-align: left;
+  border: none;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+
 .menuOption .learnMore {
-  font-size: 16px;
   display: block;
   padding: 20px;
   margin: -20px;
@@ -30,7 +56,7 @@
     display: flex;
 }
 
-.menuOption:hover, .next button:hover, .score button:hover {
+.menuOption:hover, .next button:hover, .score button:hover, .decisionButton:hover {
   background: var(--highlight);
   color: var(--highlightDark);
 }

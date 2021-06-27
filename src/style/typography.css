@@ -52,6 +52,6 @@ h2 {
   font-size: calc(2vmin);
 }
 
-.menuOption, .next button, .score button {
-  font-size: calc(2vmin + 4px);
+.menuOption, .next button, .score button, .decisionButton {
+  font-size: calc(2vmin + 8px);
 }
