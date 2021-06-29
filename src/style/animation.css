@@ -1,11 +1,25 @@
 /**
 Blocks flying into place
 
-// TODO: Toaster effect
+/**
+Toaster effect
 */
 
-.flying {
 
+.pop {
+  animation: popUp 1s ease-in-out;
+}
+
+@keyframes popUp {
+  0% {
+    clip-path: inset(0px 0px 232px 0px);
+    transform: translate(0, 232px);
+  }
+
+  100% {
+    clip-path: inset(0px 0px 0px 0px);
+    transform: translate(0, 0px);
+  }
 }
 
 

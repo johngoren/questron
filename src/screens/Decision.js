@@ -10,10 +10,9 @@ export default function Decision(props) {
  
     if (choiceNum != null) {
         const title = getDecisionTitle(choiceNum, index);
-        const icon = getDecisionIcon(choiceNum, index, title);
+        const icon = getDecisionIcon(choiceNum, index, title, isAnimatingExit);
         const body = getDecisionText(choiceNum, index);
         const fadingAnimationClassName = getFadingAnimationClass(isAnimatingExit);
-        const blockAnimationClass = getBlockAnimationClass(isAnimatingExit);
 
         useEffect(            
             function performTeletypeEffect() {
@@ -36,9 +35,4 @@ export default function Decision(props) {
 function getFadingAnimationClass(isAnimatingExit) {
     const baseClassName = "teletype";
     return isAnimatingExit ? baseClassName + " fadeOut" : baseClassName;
-}
-
-function getBlockAnimationClass(isAnimatingExit) {
-    const baseClassName = "graphicBlock";
-    return isAnimatingExit ? baseClassName + " flying" : baseClassName;
 }

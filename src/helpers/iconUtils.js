@@ -14,10 +14,11 @@ export function getNumberIcon(index, isOn) {
     return getImageElementForPath(path, index);
 }
 
-export function getDecisionIcon(choiceNum, index, title) {
+export function getDecisionIcon(choiceNum, index, title, isAnimatingExit) {
     const chapterNum = index + 1;
     const choiceIndex = choiceNum + 1;
     let path = `/images/decisions/${chapterNum}.${choiceIndex}.png`;
+    const animationClass = getAnimationClassForDecisionBlock(isAnimatingExit);
 
     switch(chapterNum) {
         case 3:
@@ -28,7 +29,8 @@ export function getDecisionIcon(choiceNum, index, title) {
         default:
             break;
     }
-    return getImageElementForPath(path, title);
+
+    return <img className={animationClass} src={path} alt={title} />
 }
 
 function getImageElementForPath(path, title) {
@@ -37,6 +39,17 @@ function getImageElementForPath(path, title) {
 
 function getStateSlug(isOn) {
     return isOn ? "on" : "off"
+}
+
+function getAnimationClassForDecisionBlock(isAnimatingExit) {
+    let classes = ["graphicBlock"];
+    if (isAnimatingExit) {
+        classes.push("fadeOut");
+    }
+    else {
+        classes.push("pop");
+    }
+    return classes.join(" ");
 }
 
 export function getRankIcon(keyword) {
