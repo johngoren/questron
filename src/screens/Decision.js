@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { fadeInLettersAndButtons, displayAllLettersImmediately } from '../effects/effects';
+import { fadeInLettersAndButtons, bouncyAnimation } from '../effects/effects';
 import { getDecisionIcon } from '../helpers/iconUtils';
 import { getDecisionText, getDecisionTitle } from '../story/game';
 
@@ -17,6 +17,7 @@ export default function Decision(props) {
         useEffect(            
             function performTeletypeEffect() {
                 fadeInLettersAndButtons();
+                bouncyAnimation();
             }
         );
     

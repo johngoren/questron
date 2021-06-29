@@ -14,6 +14,13 @@ export function fadeInLettersAndButtons() {
     fadeInButtons(fadeSpans.length * DURATION_TELETYPE);
 }
  
+export function bouncyAnimation() {
+    setTimeout(function() {
+        const block = document.getElementsByClassName("graphicBlock")[0];
+        block.classList.remove("pop");
+        block.classList.add("bouncy");
+    }, 1100);
+}
 
 function getAnimationDelayForIndex(i) {
     const ms = (DURATION_TELETYPE * i) + BASE_DELAY;
