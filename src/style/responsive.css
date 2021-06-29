@@ -2,17 +2,21 @@
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 
-  .welcome img {
-    height: 100px;
+  .App {
+    padding-left: 0 !important;
   }
+
+
+  .welcome .logo {
+    width: 75vw;
+    height: auto;
+  }
+
 
   .journey {
     display: none;
   }
 
-  .App-container {
-    padding-left: 0 !important;
-  }
 
   h1 {
     font-size: 52px !important;
@@ -23,16 +27,42 @@
     font-size: 18px !important;
   }
 
-  .menuOption, .button, .next, button, span.label {
-    font-size: 24px !important;
+  .menuOption, .button, .next, span.label {
+    font-size: 24px;
   }
 
   span.learnMore {
     font-size: 14px !important;
   }
 
+  .findOutMore a {
+    font-size: 16px;
+  }
+
+  .decisionButton {
+    font-size: 18px !important;
+  }
+
+  .moreInfoButton {
+    height: 25px;
+  }
+
+  .score {
+    padding-left: 0;
+  }
+
+  .answer {
+    width: 66vw;
+  }
+
+  .footer {
+    margin-top: 10px !important;
+  }
+
   /* Styles */
   }
+
+  
     
   /* Smartphones (landscape) ----------- */
   @media only screen and (min-width : 321px) {

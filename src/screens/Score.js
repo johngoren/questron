@@ -7,7 +7,7 @@ export default function ScoreScreen(props) {
     return (
         <div class="score">
             <ScoreResult score={score} />
-            <button className="replay" onClick={props.onClickReplay}>Replay</button>
+            <button className="shortButton" onClick={props.onClickReplay}>Replay</button>
         </div>
     )
 }
