@@ -31,20 +31,30 @@ export function prepareHeadline(text) {
 export function spannifyForFading(text) {
     if (!text) { return null; }
     let newText = "";
+    let italicsIsOn = false;
     const chars = text.split("");
     for (var i=0; i<chars.length; i++) {
         const char = chars[i];
-        if (char === "#") {
-            newText += NEW_PARAGRAPH;
-        }
-        else if (char === "@") {
-            // Do nothing
-        }
-        else {
-            newText += `<span class="teletypeFade">${char}</span>`
+        switch(char) {
+            case "#":
+                newText += NEW_PARAGRAPH;
+                break;
+            case "*":
+                if (!italicsIsOn) {
+                    newText += "<em>";
+                    italicsIsOn = true;
+                }
+                else {
+                    newText += "</em>";
+                    italicsIsOn = false;
+                }
+                break;
+            case "@":
+                break;
+            default:
+                newText += `<span class="teletypeFade">${char}</span>`
         }
     }
-
     return `${newText}`
 }
 

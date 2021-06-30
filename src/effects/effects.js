@@ -17,8 +17,10 @@ export function fadeInLettersAndButtons() {
 export function bouncyAnimation() {
     setTimeout(function() {
         const block = document.getElementsByClassName("graphicBlock")[0];
-        block.classList.remove("pop");
-        block.classList.add("bouncy");
+        if (block != null) {
+            block.classList.remove("pop");
+            block.classList.add("bouncy");    
+        }
     }, 1100);
 }
 
@@ -28,7 +30,7 @@ function getAnimationDelayForIndex(i) {
 }
 
 function fadeInButtons(initialDelay) {
-    const buttons = document.getElementsByClassName("menuOption");
+    const buttons = document.getElementsByClassName("decisionOption");
     for (let i=0; i<buttons.length; i++) {
         const button = buttons[i];
         const newDelayMs = initialDelay + (i * 1000);

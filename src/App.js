@@ -2,7 +2,7 @@ import './style/App.css';
 import React, { useState } from 'react';
 import Scene from './screens/Scene';
 import ProgressBlocks from './ui/ProgressBlocks';
-import { getInitialAnswerState, isGameOver, replay } from './story/game';
+import { getInitialAnswerState, isGameOver } from './story/game';
 import { DELAY_MS_BEFORE_NEXT_QUESTION } from './constants/settings';
 import { WELCOME_SCREEN, SITUATION_SCREEN, DECISION_SCREEN, SCORE_SCREEN } from './constants/modes';
 
