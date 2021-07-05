@@ -9,8 +9,9 @@ export function getIconForAnswer(answer, index) {
 
 export function getNumberIcon(index, isOn) {
     const chapterNum = index + 1
+    const filenameNum = getFilenameNumForChapter(chapterNum);
     const isOnSlug = getStateSlug(isOn);
-    const path = `/images/numbers/${chapterNum}-${isOnSlug}.png`;
+    const path = `/images/numbers/${filenameNum}-${isOnSlug}.png`;
     return getImageElementForPath(path, index);
 }
 
@@ -50,6 +51,18 @@ function getAnimationClassForDecisionBlock(isAnimatingExit) {
         classes.push("pop");
     }
     return classes.join(" ");
+}
+
+// Makes adjustment for certain late chapters whose images don't line up with the index because a question was snipped out.
+function getFilenameNumForChapter(rawNum) {
+    // return rawNum;
+
+    if (rawNum > 8) {
+        return rawNum + 1;
+    }
+    else {
+        return rawNum;
+    }
 }
 
 export function getRankIcon(keyword) {

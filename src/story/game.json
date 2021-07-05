@@ -85,12 +85,12 @@
          {
             "label":"Employees can work from wherever they like",
             "feedback":"Nice! A remote-first policy gives you access to a much wider talent pool, and it gives your employees the freedom to travel or relocate while working for you.",
-            "value":null,
+            "value":null
          },
          {
             "label":"Employees must work from the company office",
             "feedback":"The benefits of office work are well-known – collaboration comes naturally, socialising is straightforward and it's easy to maintain oversight of team challenges, successes and productvity levels.",
-            "value":null,
+            "value":null
          },
          {
             "label":"Employees must spend at least two days per week in the office",
@@ -194,6 +194,26 @@
              "label":"Those who negotiate for it",
              "feedback":"By giving equity out only to those who successfully negotiate for it, you advantage those who are experienced and confident in this area and risk shutting others out.#On the plus side, you ensure only those that *really* want it end up with a stake in the business. You can also use equity as a lever to compromise on salary and save some budget.",
              "value":"conservative"
+          }
+       ]
+    },
+    {
+       "title": "Designing your company's employee share scheme",
+       "body": "Now you've decided who qualifies, it's time to design the scheme in detail. This task could sit with a few different stakeholders, each of whom has their own priorities and objectives. Who do you make responsible for designing your employee share scheme?",
+       "choices": [
+          {
+            "label": "The People Ops team",
+            "feedback": "(benchmarking to market standard, feeding into feedback)",
+            "value": "progressive"
+          },
+          {
+            "label": "The Finance Team",
+            "value": "typical",
+            "feedback": ""
+         },
+         {
+            "label": "I'll do it myself as founder",
+            "value": "conservative"
           }
        ]
     },
