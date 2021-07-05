@@ -130,8 +130,15 @@
   .score {
     text-align: left;
     padding-left: 75px;
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
   }
 
   .scoreGraphic {
     flex: 5;
+  }
+  
+  .scoreGraphic img {
+    max-width: 60vmin;
   }

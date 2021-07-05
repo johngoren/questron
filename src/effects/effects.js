@@ -21,7 +21,7 @@ export function bouncyAnimation() {
             block.classList.remove("pop");
             block.classList.add("bouncy");    
         }
-    }, 1100);
+    }, 900);
 }
 
 function getAnimationDelayForIndex(i) {

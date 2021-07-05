@@ -10,7 +10,7 @@ export default function FindOutMore(props) {
 
     return (
         <span className={learnMoreClass}>
-            <a href="#" onClick={props.onClickMore}>Find&nbsp;out&nbsp;more</a>
+            <a href="#" onClick={props.onClickMore}>Find out&nbsp;more</a>
         </span>
     )
 }

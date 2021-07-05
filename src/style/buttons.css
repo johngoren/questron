@@ -26,6 +26,7 @@
   width: auto !important;
   padding-left: 4rem !important;
   padding-right: 4rem !important;
+  align-self: center !important;
 }
 
 .moreInfoButton {

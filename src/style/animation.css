@@ -15,8 +15,8 @@ Toaster effect
 }
 
 .bouncy {
-	-webkit-animation: bounce-bottom 0.5s both;
-	        animation: bounce-bottom 0.5s both;
+	-webkit-animation: bounce-bottom 1s both;
+	        animation: bounce-bottom 1s both;
 }
 
 
