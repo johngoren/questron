@@ -15,22 +15,9 @@ export function getNumberIcon(index, isOn) {
     return getImageElementForPath(path, index);
 }
 
-export function getDecisionIcon(choiceNum, index, title, isAnimatingExit) {
-    const chapterNum = index + 1;
-    const choiceIndex = choiceNum + 1;
-    let path = `/images/decisions/${chapterNum}.${choiceIndex}.png`;
+export function getDecisionIcon(iconFilename, title, isAnimatingExit) {
+    let path = `/images/decisions/${iconFilename}`;
     const animationClass = getAnimationClassForDecisionBlock(isAnimatingExit);
-
-    switch(chapterNum) {
-        case 3:
-        case 5:
-        case 6:
-            path = `/images/decisions/${chapterNum}.png`;
-            break;
-        default:
-            break;
-    }
-
     return <img className={animationClass} src={path} alt={title} />
 }
 
@@ -55,14 +42,14 @@ function getAnimationClassForDecisionBlock(isAnimatingExit) {
 
 // Makes adjustment for certain late chapters whose images don't line up with the index because a question was snipped out.
 function getFilenameNumForChapter(rawNum) {
-    // return rawNum;
+    return rawNum;
 
-    if (rawNum > 8) {
-        return rawNum + 1;
-    }
-    else {
-        return rawNum;
-    }
+    // if (rawNum > 9) {
+    //     return rawNum + 1;
+    // }
+    // else {
+    //     return rawNum;
+    // }
 }
 
 export function getRankIcon(keyword) {

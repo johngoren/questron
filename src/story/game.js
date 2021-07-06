@@ -57,6 +57,18 @@ export function getDecisionText(choice, index) {
   throw Error("Was asked for decision text, but was missing information.");
 }
 
+export function getDecisionIconFilename(choice, index) {
+  if (choice != null && index != null) {
+    const decision = getChoice(index, choice);
+    if (decision != null) {
+      const iconSlug = decision.image;
+      const iconFilename = `${iconSlug}.png`;
+      return iconFilename;
+    }
+  }
+  throw Error("Needed to look up icon number, but was missing information.");
+}
+
 function getChoice(index, choiceNum) {
   if (choiceNum != null && index != null) {
     const choices = getChoicesForIndex(index);

@@ -82,6 +82,7 @@ function getDecisionMadeContent(props) {
             body={props.feedback} 
             index={props.index} 
             choiceNum={props.choiceNum}
+            iconNum={props.iconNum}
             isAnimatingExit={props.isAnimatingExit}
             hasTeletyped={props.hasTeletyped}
         />

@@ -8,17 +8,20 @@
           {
              "label":"I'm the CEO",
              "feedback":"Fantastic! The role of chief executive officer is a natural choice, putting you squarely at the helm of the business. CEOs tend to be open and trustworthy by nature, and able to inspire confidence in others.",
-             "value":null
+             "value":null,
+             "image":"1.2"
           },
           {
              "label": "I'm the CFO",
              "feedback":"Great! The CFO has the highest financial oversight and responsibility for the whole organisation. Chief financial officers are typically practical, resourceful leaders with a detail-oriented working style.",
-             "value":null
+             "value":null,
+             "image":"1.3"
           },
           {
              "label": "I'm the CTO",
              "feedback":"Strong choice – if you're building a tech-powered business, chief technology officer is arguably the most important position. CTOs tend to be good at making decisions and highly driven to innovate.",
-             "value":null
+             "value":null,
+             "image":"1.1"
           }
        ]
     },
@@ -34,17 +37,20 @@
           {
              "label":"I'm a solo founder",
              "feedback":"You're striking out solo! Well, fortune favours the brave.#If you haven't taken the role of CEO, your first job is to find someone phenomenal to fill that position.#Then it's time to bring some other people onboard.",
-             "value":null
+             "value":null,
+             "image":"2.1"
           },
           {
              "label":"I have one co-founder",
              "feedback":"You've found someone who shares your vision and passion but brings new skills to the table – an ideal co-founder.#Time to start building your team.",
-             "value":null
+             "value":null,
+             "image":"2.2"
           },
           {
              "label":"I have two co-founders",
              "feedback":"Strength in numbers! Your three-person founding team spans a range of skills and experience but is perfectly aligned on vision.#Time to start hiring.",
-             "value":null
+             "value":null,
+             "image":"2.3"
           }
        ]
     },
@@ -61,21 +67,24 @@
              "label":"Give share options to all four hires",
              "feedback":"Your generous approach to share options wins you favours among your employees so you continue it as you grow your team to 15. Be careful though, you might hit the bottom of your option pool pretty quickly.",
              "value":"progressive",
-             "more": "By allocating share options to every hire that overcompensate for the below-market salary, you're giving new joiners a stake in the business which has the potential to be worth much more in future."
+             "more": "By allocating share options to every hire that overcompensate for the below-market salary, you're giving new joiners a stake in the business which has the potential to be worth much more in future.",
+             "image":"3"
           },
           {
              "label":"Change all hires from senior to junior",
              "feedback":"Your junior team are enthusiastic and hard-working, but don't have in-depth experience. Within a year, you'll probably accumulate management debt and have to make some hard decisions.",
              "value":"conservative",
-             "more": "By hiring less experienced people, you're able to make all four hires within budget but taking a risk on their ability to execute at the level you need."
+             "more": "By hiring less experienced people, you're able to make all four hires within budget but taking a risk on their ability to execute at the level you need.",
+             "image":"3"
           },
           {
              "label":"Change two hires to junior and give share options to the others",
              "feedback":"This is a smart compromise, but success of this plan hangs in the balance – there are no guarantees that both your junior hires will rise to the challenge, and may be demotivated by the lack of equity.",
              "value":"typical",
-             "more": "By issuing shares to the two most senior hires in line with the missing 20%, and hiring more junior people than planned to do the two other roles, you are hedging your bets without breaking your budget."
-          }
-       ]
+             "more": "By issuing shares to the two most senior hires in line with the missing 20%, and hiring more junior people than planned to do the two other roles, you are hedging your bets without breaking your budget.",
+             "image":"3"
+            }
+         ]
     },
     {
       "id": 4,
@@ -85,17 +94,20 @@
          {
             "label":"Employees can work from wherever they like",
             "feedback":"Nice! A remote-first policy gives you access to a much wider talent pool, and it gives your employees the freedom to travel or relocate while working for you.",
-            "value":null
+            "value":null,
+            "image":"4.1"
          },
          {
             "label":"Employees must work from the company office",
             "feedback":"The benefits of office work are well-known – collaboration comes naturally, socialising is straightforward and it's easy to maintain oversight of team challenges, successes and productvity levels.",
-            "value":null
+            "value":null,
+            "image":"4.2"
          },
          {
             "label":"Employees must spend at least two days per week in the office",
             "feedback":"Smart decision – combining remote and in-office work gives your team flexibility while also allowing for face-to-face meetings and collaboration.",
-            "value":null
+            "value":null,
+            "image":"4.3"
          }
       ]
    },
@@ -108,19 +120,22 @@
              "label":"By allocating them additional share options",
              "feedback":"Great! Just make sure you communicate the rationale behind your decision and the significance of receiving more equity to the recipients.",  
              "more": "Granting high-performers shares instead of giving them a cash reward gives them a chance to participate further in the long-term success of the business.",
-             "value":"progressive"
+             "value":"progressive",
+             "image":"5"
           },
           {
              "label":"By giving them a healthy end of year bonus",
              "feedback":"This works best as a short-term incentive and unless you address underlying issues your higher-performing employees wait for their bonus and then resign.",
              "more": "A cash bonus is a typical way of rewarding employees' hard work, but can shift the team's focus to short-term results.",
-             "value":"conservative"
+             "value":"conservative",
+             "image":"5"
           },
           {
              "label":"By giving them a raise",
              "feedback":"They gladly accept but start looking around. Within a year both high-performers them get a higher offer elsewhere and leave your business.",
              "more": "Payrises are often the path of least resistance – who doesn't want a salary increase?",
-             "value":"conservative"
+             "value":"conservative",
+             "image":"5"
           }
        ]
     },
@@ -132,17 +147,20 @@
          {
             "label":"Hire a People Operations Manager",
             "feedback":"Dedicated People Operations resource in a team of 25 is a bold move - it shows your dedication to improving staff happiness at work.",
-            "value":null
+            "value":null,
+            "image":"6"
          },
          {
             "label":"Send team leads on a management course",
             "feedback":"Culture is set from the top, so arranging training for all team leaders is a smart first step towards increasing staff satisfaction.",
-            "value":null
+            "value":null,
+            "image":"6"
          },
          {
             "label":"Make a company-wide speech about company culture",
             "feedback":"You give an inspiring speech about the reasons your team and company culture are so special. It gives everyone a short-term morale boost but the long-term impact is questionable.",
-            "value":null
+            "value":null,
+            "image":"6"
          }
       ]
    },
@@ -183,42 +201,49 @@
           {
              "label":"All employees",
              "feedback":"It might be uncommon, but giving equity to every employee makes a lot of sense – after all, everyone has a part to play in the company's success. However, it carries a risk that you spend time and effort giving equity to people who don't fully appreciate its value.#Nonetheless, your employees are pleased to learn of your democratic, progressive approach.",
-             "value":"progressive"
+             "value":"progressive",
+             "image":"8.1"
           },
           {
              "label":"Early and senior hires",
              "feedback":"This is a tried-and-tested strategy, which aligns with the thinking that these employees will contribute the most overall to business growth and should therefore receive equity.#It also accommodates for the likelihood that senior hires are paid below market rate.",
-             "value":"typical"
+             "value":"typical",
+             "image":"8.2"
           },
           {
              "label":"Those who negotiate for it",
              "feedback":"By giving equity out only to those who successfully negotiate for it, you advantage those who are experienced and confident in this area and risk shutting others out.#On the plus side, you ensure only those that *really* want it end up with a stake in the business. You can also use equity as a lever to compromise on salary and save some budget.",
-             "value":"conservative"
+             "value":"conservative",
+             "image":"8.3"
           }
        ]
     },
     {
+       "id":9,
        "title": "Designing your company's employee share scheme",
        "body": "Now you've decided who qualifies, it's time to design the scheme in detail. This task could sit with a few different stakeholders, each of whom has their own priorities and objectives. Who do you make responsible for designing your employee share scheme?",
        "choices": [
           {
             "label": "The People Ops team",
             "feedback": "(benchmarking to market standard, feeding into feedback)",
-            "value": "progressive"
+            "value": "progressive",
+            "image":"9.1"
           },
           {
             "label": "The Finance Team",
             "value": "typical",
-            "feedback": ""
+            "feedback": "",
+            "image":"9.2"
          },
          {
             "label": "I'll do it myself as founder",
-            "value": "conservative"
+            "value": "conservative",
+            "image":"9.3"
           }
        ]
     },
     {
-       "id": 9,
+       "id": 10,
        "title":"Communicating your share scheme to employees",
        "body":"After many hours of planning and design, the employee share scheme is ready to be rolled out. When announcing it, how much detail do you include?@",
        "image": "10",
@@ -250,7 +275,7 @@
        ]
     },
     {
-      "id": 10,
+      "id": 11,
       "title":"Negotiating option pools and equity",
       "body":"You’re deep in the fundraising process, and discussing terms with prospective investors. They’re offering investment based on a pre-money valuation, which will significantly dilute the value of your equity, but includes a sizeable increase to your employee option pool.@#What do you do?",
       "image": "11",
@@ -280,7 +305,7 @@
       ]
    },
    {
-      "id": 11,
+      "id": 12,
       "title":"Equity and employee motivation",
       "body":"Two years after launching your employee share scheme, you conduct a staff survey and learn that nobody describes themselves as highly motivated by equity – a disappointing discovery.#How do you respond?",
       "image": "12",
@@ -306,7 +331,7 @@
       ]
    },
    {
-      "id": 12,
+      "id": 13,
       "title":"Running your first secondary",
       "body":"You are four years into building your company and things are going well. You've just secured terms for another big round, and one of the investors is happy for some of their equity to come in the form of a secondary sale.@#Who's invited to take part?",
       "image": "13",

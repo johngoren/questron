@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { fadeInLettersAndButtons, bouncyAnimation } from '../effects/effects';
 import { getDecisionIcon } from '../helpers/iconUtils';
-import { getDecisionText, getDecisionTitle } from '../story/game';
+import { getDecisionText, getDecisionTitle, getDecisionIconFilename } from '../story/game';
 
 export default function Decision(props) {
     const choiceNum = props.choiceNum;
@@ -10,7 +10,8 @@ export default function Decision(props) {
  
     if (choiceNum != null) {
         const title = getDecisionTitle(choiceNum, index);
-        const icon = getDecisionIcon(choiceNum, index, title, isAnimatingExit);
+        const iconFilename = getDecisionIconFilename(choiceNum, index);
+        const icon = getDecisionIcon(iconFilename, title, isAnimatingExit);
         const body = getDecisionText(choiceNum, index);
         const fadingAnimationClassName = getFadingAnimationClass(isAnimatingExit);
 
