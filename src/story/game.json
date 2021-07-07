@@ -225,18 +225,19 @@
        "choices": [
           {
             "label": "The People Ops team",
-            "feedback": "(benchmarking to market standard, feeding into feedback)",
+            "feedback": "Entrusting this task to your People Ops team shows your commitment to designing a progressive, employee-first scheme. People Ops will prioritise benchmarking the scheme against market standard and ensuring employee feedback is incorporated.",
             "value": "progressive",
             "image":"9.1"
           },
           {
             "label": "The Finance Team",
             "value": "typical",
-            "feedback": "",
+            "feedback": "Finance teams are often responsible for designing employee share schemes because of their position within the business – this risk-averse department will ensure the scheme incentivises employees without compromising business financials.",
             "image":"9.2"
          },
          {
             "label": "I'll do it myself as founder",
+            "feedback": "Designing the employee share scheme yourself puts you in total control of the setup. This is a sensible choice if you have previous experience in this area, otherwise it could be a bigger headache than you bargained for.",
             "value": "conservative",
             "image":"9.3"
           }

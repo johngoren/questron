@@ -1,4 +1,4 @@
-import { getQuestionForId, getChoice } from '../story/game';
+import { getQuestionForId, getChoice, getChoicesForIndex, getDecision } from '../story/game';
 import ReactGA from 'react-ga';
 
 export const EVENT_CATEGORY_NEW_QUESTION_REACHED = "Question viewed";
@@ -31,7 +31,10 @@ export function getReportForNewQuestionReached(questionId) {
     }
 }
 
-export function getReportForAnswerChosen(answerText, questionId) {
+export function getReportForAnswerChosen(choiceNum, questionId) {
+    const choice = getDecision(choiceNum, questionId);
+    const answerText = choice.title;
+
     return {
         "eventCategory": EVENT_CATEGORY_NEW_ANSWER_CHOSEN,
         "eventAction": ACTION_ANSWER_CHOSEN,
