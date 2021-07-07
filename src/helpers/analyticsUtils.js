@@ -24,10 +24,10 @@ export function getReportForNewQuestionReached(questionId) {
     const question = getQuestionForId(questionId);
     const title = question.title;
     return {
-        "eventCategory": EVENT_CATEGORY_NEW_QUESTION_REACHED,
-        "eventAction": ACTION_NEW_QUESTION_REACHED,
-        "eventLabel": `${LABEL_NEW_QUESTION_REACHED}: ${questionId}`,
-        "eventValue": title
+        "category": EVENT_CATEGORY_NEW_QUESTION_REACHED,
+        "action": ACTION_NEW_QUESTION_REACHED,
+        "label": `${LABEL_NEW_QUESTION_REACHED}: ${questionId}`,
+        "value": title
     }
 }
 
@@ -36,19 +36,19 @@ export function getReportForAnswerChosen(choiceNum, questionId) {
     const answerText = choice.title;
 
     return {
-        "eventCategory": EVENT_CATEGORY_NEW_ANSWER_CHOSEN,
+        "category": EVENT_CATEGORY_NEW_ANSWER_CHOSEN,
         "eventAction": ACTION_ANSWER_CHOSEN,
-        "eventLabel": `${LABEL_ANSWER_CHOSEN} for question ${questionId}: ${answerText}`,
-        "eventValue": answerText
+        "label": `${LABEL_ANSWER_CHOSEN} for question ${questionId}: ${answerText}`,
+        "value": answerText
     }
 }
 
 export function getReportForScoreAwarded(score) {
     return {
-        eventCategory: EVENT_CATEGORY_SCORE_AWAWRDED,
+        category: EVENT_CATEGORY_SCORE_AWAWRDED,
         eventAction: ACTION_SCORE_AWARDED,
-        eventLabel: `${LABEL_SCORE_AWARDED}: ${score}`,
-        eventValue: score
+        label: `${LABEL_SCORE_AWARDED}: ${score}`,
+        value: score
     }
 }
 
@@ -75,8 +75,8 @@ function send(params) {
 
 /**
  * ga('send', 'event', {
-  'eventCategory': 'Category',
+  'category': 'Category',
   'eventAction': 'Action',
-  'eventLabel': 'Label'
+  'label': 'Label'
 });
  */
