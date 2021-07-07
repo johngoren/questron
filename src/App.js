@@ -5,6 +5,11 @@ import ProgressBlocks from './ui/ProgressBlocks';
 import { getInitialAnswerState, isGameOver } from './story/game';
 import { DELAY_MS_BEFORE_NEXT_QUESTION } from './constants/settings';
 import { WELCOME_SCREEN, SITUATION_SCREEN, DECISION_SCREEN, SCORE_SCREEN } from './constants/modes';
+import ReactGA from 'react-ga';
+
+const trackingId = "UA-277910246";
+
+ReactGA.initialize(trackingId);
 
 function App() {
   const [mode, setMode] = useState(WELCOME_SCREEN);

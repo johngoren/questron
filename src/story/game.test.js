@@ -96,7 +96,7 @@ test('Removes widowed text from headlines', () => {
 test('Reports about a new question reached', () => {
     const questionId = 1;
     const report = analyticsUtils.reportUserReachedNewQuestion(questionId);
-    expect(report.eventCategory).toEqual(analyticsUtils.EVENT_CATEGORY);    // "Capdesk Startup Game"
+    expect(report.eventCategory).toEqual(analyticsUtils.EVENT_CATEGORY_NEW_QUESTION_REACHED);    // "Capdesk Startup Game"
     expect(report.eventAction).toEqual(analyticsUtils.ACTION_NEW_QUESTION_REACHED);
     expect(report.eventValue).toEqual("Welcome to the Capdesk startup simulator");
 })
@@ -108,6 +108,6 @@ test('Reports about a choice made', () => {
 test('Reports about a score awarded', () => {
     const score = "progressive";
     const report = analyticsUtils.getReportForScoreAwarded(score);
-    expect(report.eventCategory).toEqual(analyticsUtils.EVENT_CATEGORY);
+    expect(report.eventCategory).toEqual(analyticsUtils.EVENT_CATEGORY_SCORE_AWAWRDED);
     expect(report.eventValue).toEqual("progressive");
 })
