@@ -23,6 +23,15 @@ export function getSceneForIndex(index) {
   }
 }
 
+export function getQuestionForId(questionId) {
+  try {
+    return gameScript.scenes.filter(scene => scene.id === questionId)[0];
+  }
+  catch(e) {
+    throw e;
+  }
+}
+
 export function getMaxIndex() {
   return gameScript.scenes.length;
 }
