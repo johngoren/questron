@@ -10,7 +10,7 @@ export const ACTION_ANSWER_CHOSEN = "answerChosen";
 export const ACTION_SCORE_AWARDED = "scoreAwarded";
 
 export const LABEL_NEW_QUESTION_REACHED = "User reached new question";
-export const LABEL_ANSWER_CHOSEN = "User chose answer";
+export const LABEL_ANSWER_CHOSEN = "Answered";
 export const LABEL_SCORE_AWARDED = "User was awarded score";
 
 // https://levelup.gitconnected.com/using-google-analytics-with-react-3d98d709399b
@@ -27,7 +27,7 @@ export function getReportForNewQuestionReached(questionId) {
         "category": EVENT_CATEGORY_NEW_QUESTION_REACHED,
         "action": ACTION_NEW_QUESTION_REACHED,
         "label": `${LABEL_NEW_QUESTION_REACHED}: ${questionId}`,
-        "value": title
+        "value": parseInt(questionId)
     }
 }
 
@@ -37,18 +37,17 @@ export function getReportForAnswerChosen(choiceNum, questionId) {
 
     return {
         "category": EVENT_CATEGORY_NEW_ANSWER_CHOSEN,
-        "eventAction": ACTION_ANSWER_CHOSEN,
-        "label": `${LABEL_ANSWER_CHOSEN} for question ${questionId}: ${answerText}`,
-        "value": answerText
+        "action": ACTION_ANSWER_CHOSEN,
+        "label": `${LABEL_ANSWER_CHOSEN} question ${questionId}: ${answerText}`,
+        "value": parseInt(questionId)
     }
 }
 
 export function getReportForScoreAwarded(score) {
     return {
         category: EVENT_CATEGORY_SCORE_AWAWRDED,
-        eventAction: ACTION_SCORE_AWARDED,
-        label: `${LABEL_SCORE_AWARDED}: ${score}`,
-        value: score
+        action: ACTION_SCORE_AWARDED,
+        label: `${LABEL_SCORE_AWARDED}: ${score}`
     }
 }
 
