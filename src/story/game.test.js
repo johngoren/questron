@@ -36,11 +36,11 @@ test('Identifies correct index for displaying the score screen', () => {
     let gameIsOver = game.isGameOver(0);
     expect(gameIsOver).toBeFalsy();
 
-    const scoreScreenIndex = 12;
+    const scoreScreenIndex = 13;
     gameIsOver=game.isGameOver(scoreScreenIndex);
     expect(gameIsOver).toBeTruthy();
 
-    const lastQuestionIndex = 11;
+    const lastQuestionIndex = 12;
     gameIsOver=game.isGameOver(lastQuestionIndex);
     expect(gameIsOver).toBeFalsy();
 })
