@@ -5,11 +5,9 @@ import ProgressBlocks from './ui/ProgressBlocks';
 import { getInitialAnswerState, isGameOver } from './story/game';
 import { DELAY_MS_BEFORE_NEXT_QUESTION } from './constants/settings';
 import { WELCOME_SCREEN, SITUATION_SCREEN, DECISION_SCREEN, SCORE_SCREEN } from './constants/modes';
-import ReactGA from 'react-ga';
+import { initStats, reportUserReachedNewQuestion, reportUserChoseAnswer } from './helpers/analyticsUtils';
 
-const trackingId = "UA-277910246";
-
-ReactGA.initialize(trackingId);
+initStats();
 
 function App() {
   const [mode, setMode] = useState(WELCOME_SCREEN);
@@ -33,6 +31,8 @@ function App() {
 
   function onUserMakesChoice(choiceNum) {
     if (choiceNum != null) {
+      const questionId = index + 1;
+      reportUserChoseAnswer(choiceNum, questionId);
       setIsAnimatingExit(false);  
       setActiveChoice(choiceNum);
       setNewMode(DECISION_SCREEN);  
@@ -49,6 +49,7 @@ function App() {
         completion();
         updateAnswerRecords(activeChoice);
         const newIndex = index +1;
+        reportUserReachedNewQuestion(newIndex);
         if (isGameOver(newIndex)) {
           setNewMode(SCORE_SCREEN);
         }

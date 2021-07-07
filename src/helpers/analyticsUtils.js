@@ -13,6 +13,12 @@ export const LABEL_NEW_QUESTION_REACHED = "User reached new question";
 export const LABEL_ANSWER_CHOSEN = "User chose answer";
 export const LABEL_SCORE_AWARDED = "User was awarded score";
 
+// https://levelup.gitconnected.com/using-google-analytics-with-react-3d98d709399b
+export function initStats() {
+    const trackingId = "UA-277910246-1";
+    ReactGA.initialize(trackingId);    
+}
+
 
 export function getReportForNewQuestionReached(questionId) {
     const question = getQuestionForId(questionId);

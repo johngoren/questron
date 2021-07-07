@@ -1,5 +1,6 @@
 import { calculatePlayerScore, getPlayerScoreTitle, getPlayerScoreDescription } from "../story/game"
 import { getRankIcon } from "../helpers/iconUtils";
+import { reportUserWasAwardedScore } from "../helpers/analyticsUtils";
 
 export default function ScoreScreen(props) {
     const score = calculatePlayerScore(props.answers);
@@ -16,6 +17,8 @@ function ScoreResult(props) {
     const title = getPlayerScoreTitle(props.score);
     const bannerGraphic = getRankIcon(props.score);
     const body = getPlayerScoreDescription(props.score);
+
+    reportUserWasAwardedScore(title);
 
     return <div>
         <div className="flexHorizontal">
