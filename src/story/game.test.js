@@ -93,21 +93,31 @@ test('Removes widowed text from headlines', () => {
 
 // Analytics
 
+test('Get question for ID', () => {
+    const questionId = 1;
+    const question = game.getQuestionForId(questionId);
+    expect(question).toBeTruthy();
+    expect(question.title).toContain("Welcome");
+})
+
 test('Reports about a new question reached', () => {
     const questionId = 1;
-    const report = analyticsUtils.reportUserReachedNewQuestion(questionId);
+    const report = analyticsUtils.getReportForNewQuestionReached(questionId);
+    expect(report).toBeTruthy();
     expect(report.eventCategory).toEqual(analyticsUtils.EVENT_CATEGORY_NEW_QUESTION_REACHED);    // "Capdesk Startup Game"
     expect(report.eventAction).toEqual(analyticsUtils.ACTION_NEW_QUESTION_REACHED);
     expect(report.eventValue).toEqual("Welcome to the Capdesk startup simulator");
 })
 
 test('Reports about a choice made', () => {
-
+    const choice = game.getDecision(0, 1);
+    expect(choice.label).toContain("CEO");
 })
 
 test('Reports about a score awarded', () => {
     const score = "progressive";
     const report = analyticsUtils.getReportForScoreAwarded(score);
+    expect(report).toBeTruthy();
     expect(report.eventCategory).toEqual(analyticsUtils.EVENT_CATEGORY_SCORE_AWAWRDED);
     expect(report.eventValue).toEqual("progressive");
 })

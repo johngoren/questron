@@ -16,27 +16,30 @@ export const LABEL_SCORE_AWARDED = "User was awarded score";
 
 export function getReportForNewQuestionReached(questionId) {
     const question = getQuestionForId(questionId);
+    const title = question.title;
     return {
-        eventCategory: EVENT_CATEGORY_NEW_QUESTION_REACHED,
-        eventAction: ACTION_NEW_QUESTION_REACHED,
-        eventLabel: question.title
+        "eventCategory": EVENT_CATEGORY_NEW_QUESTION_REACHED,
+        "eventAction": ACTION_NEW_QUESTION_REACHED,
+        "eventLabel": `${LABEL_NEW_QUESTION_REACHED}: ${questionId}`,
+        "eventValue": title
     }
 }
 
-export function getReportForAnswerChosen(answer, questionId) {
-    const decision = getDecision();
+export function getReportForAnswerChosen(answerText, questionId) {
     return {
-        eventCategory: EVENT_CATEGORY_NEW_ANSWER_CHOSEN,
-        eventAction: ACTION_ANSWER_CHOSEN
-        // TODO
+        "eventCategory": EVENT_CATEGORY_NEW_ANSWER_CHOSEN,
+        "eventAction": ACTION_ANSWER_CHOSEN,
+        "eventLabel": `${LABEL_ANSWER_CHOSEN} for question ${questionId}: ${answerText}`,
+        "eventValue": answerText
     }
 }
 
 export function getReportForScoreAwarded(score) {
     return {
         eventCategory: EVENT_CATEGORY_SCORE_AWAWRDED,
-        eventAction: ACTION_SCORE_AWARDED
-        // TODO
+        eventAction: ACTION_SCORE_AWARDED,
+        eventLabel: `${LABEL_SCORE_AWARDED}: ${score}`,
+        eventValue: score
     }
 }
 

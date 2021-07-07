@@ -25,6 +25,9 @@ export function getSceneForIndex(index) {
 
 export function getQuestionForId(questionId) {
   try {
+    if (questionId < 1) {
+      throw Error(`QuestionId ${questionId} was out of range`);
+    }
     return gameScript.scenes.filter(scene => scene.id === questionId)[0];
   }
   catch(e) {
@@ -84,6 +87,18 @@ function getChoice(index, choiceNum) {
     return choices[choiceNum];
   }
   throw Error("Was asked for a choice, but was missing information.");
+}
+
+export function getDecision(choiceNum, questionId) {
+  if (choiceNum != null && questionId != null) {
+    const question = getQuestionForId(questionId);
+    if (question != null) {
+      const choices = question.choices;
+      return choices[choiceNum]; // TODO: double check that this index is right  
+    }
+    throw Error(`Question ${questionId} came back null so I couldn't find choices`);
+  }
+  throw Error("Was asked for a decision, but was missing information.");
 }
 
 export function getChoicesForIndex(index) {
