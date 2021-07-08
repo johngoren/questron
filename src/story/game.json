@@ -2,7 +2,7 @@
    "scenes": [
     {
        "id": 1,
-       "title":"Welcome to the Capdesk startup simulator",
+       "title":"Welcome to the Game of Equity",
        "body":"You've got a billion dollar idea and a plan for turning it into a reality, so you're starting your own business. What role will you take?",
        "choices":[
           {

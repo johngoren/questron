@@ -1,4 +1,4 @@
-import { getQuestionForId, getChoice, getChoicesForIndex, getDecision } from '../story/game';
+import { getQuestionForId, getDecision } from '../story/game';
 import ReactGA from 'react-ga';
 
 export const EVENT_CATEGORY_NEW_QUESTION_REACHED = "Question viewed";
@@ -53,22 +53,22 @@ export function getReportForScoreAwarded(score) {
 
 export function reportUserReachedNewQuestion(questionId) {
     const report = getReportForNewQuestionReached(questionId);
-    send(report);
+    submit(report);
 }
 
 export function reportUserChoseAnswer(answer, questionId) {
     const report = getReportForAnswerChosen(answer, questionId);
-    send(report);
+    submit(report);
 }
 
 export function reportUserWasAwardedScore(score) {
     const report = getReportForScoreAwarded(score);
-    send(report);
+    submit(report);
 }
 
 
 
-function send(params) {
+function submit(params) {
     ReactGA.event(params);
 }
 

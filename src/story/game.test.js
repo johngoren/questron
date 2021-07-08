@@ -106,7 +106,7 @@ test('Reports about a new question reached', () => {
     expect(report).toBeTruthy();
     expect(report.eventCategory).toEqual(analyticsUtils.EVENT_CATEGORY_NEW_QUESTION_REACHED);    // "Capdesk Startup Game"
     expect(report.eventAction).toEqual(analyticsUtils.ACTION_NEW_QUESTION_REACHED);
-    expect(report.eventValue).toEqual("Welcome to the Capdesk startup simulator");
+    expect(report.eventValue).toEqual("Welcome to the Game of Equity");
 })
 
 test('Reports about a choice made', () => {
