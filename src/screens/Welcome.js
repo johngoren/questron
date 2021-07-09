@@ -1,5 +1,3 @@
-import { getNumberIcon } from "../helpers/iconUtils"
-
 export default function WelcomeScreen(props) {
 
     return <div className="welcome">

@@ -43,7 +43,7 @@ function App() {
   }
 
   function onClickNext(completion) {
-    setIsAnimatingExit(true); // TODO: This state will also animate the block flying into place.
+    setIsAnimatingExit(true); 
 
     setTimeout(() => {
         completion();
@@ -88,9 +88,19 @@ function App() {
       setNewMode(SITUATION_SCREEN);
   } 
 
+  function getAppLayoutClassFromMode(mode) {
+    if (mode === WELCOME_SCREEN) {
+      return "App welcomeScreen";
+    }
+    else {
+      return "App";
+    }
+  }
+
+  const appClass = getAppLayoutClassFromMode(mode);
   
   return (
-    <div className="App">
+    <div className={appClass}>
       <ProgressBlocks
         mode={mode}
         answers={answers}            

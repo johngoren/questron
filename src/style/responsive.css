@@ -97,6 +97,11 @@
     .text {
       font-size: 16px;
     }
+
+    .App {
+      padding-left: 90px;
+    }
+
   }
   
   @media (max-height: 850px) {
