@@ -99,3 +99,12 @@
     }
   }
   
+  @media (max-height: 850px) {
+    .journey img {
+      width: 75px;
+    }
+
+    .journey span {
+      height: 40px !important;
+    }
+  }
