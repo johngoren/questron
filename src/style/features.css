@@ -73,15 +73,15 @@
   }
 
   .welcome .graphicBlock {
-    height: 20vh;
+    height: 20vmin;
   }
 
   .welcome .logo {
-    height: 30vh;
+    height: 30vmin;
   }
 
   .welcome .play img {
-    height: 20vh;
+    height: 20vmin;
 
   }
 
