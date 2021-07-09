@@ -121,6 +121,10 @@
       min-height: auto !important;
     }
 
+    .App-container {
+      font-size: 24px !important;
+    }
+
   
 
   }

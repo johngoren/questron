@@ -5,6 +5,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.App-container {
+  font-size: calc(8px + 2vmin);
+}
+
 h1 {
     font-family: "Trim Poster Lanky";
     color: var(--aqua);
