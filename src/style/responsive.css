@@ -100,11 +100,27 @@
   }
   
   @media (max-height: 850px) {
+
     .journey img {
-      width: 75px;
+      width:11vh;
     }
 
     .journey span {
-      height: 40px !important;
+      height: 7vh !important;
     }
+
+    .findOutMore a {
+      color: var(--link);
+      font-size: calc(2vmin + 8px);
+    }
+  }
+
+  @media (max-height: 690px) {
+
+    .body {
+      min-height: auto !important;
+    }
+
+  
+
   }

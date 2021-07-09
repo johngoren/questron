@@ -29,10 +29,6 @@
     flex-direction: column;
   }
 
-  /* .journey span {
-    height: 65px;
-  } */
-  
   .journeyIsLeaving {
     position: relative;
     animation-name: journeysEnd;
@@ -45,19 +41,6 @@
     transition: 1s;
   }
 
-  
-  /**
-  Lists
-  */
-  
-  ul {
-    list-style-type: none;
-  }
-  
-  /**
-  Journey boxes
-  */
-  
   .journey img {
     width: 100px;
     height: auto;
@@ -66,6 +49,16 @@
 
   .journey li {
     color: #fff;  
+  }
+  
+
+  
+  /**
+  Lists
+  */
+  
+  ul {
+    list-style-type: none;
   }
   
 
