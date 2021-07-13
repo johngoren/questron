@@ -6,7 +6,8 @@ const NEW_PARAGRAPH = "<br/><br/>";
 export function prepareText(text) {
     if (text === null) { return PLACEHOLDER; }
 
-    const spans = spannifyForFading(text);
+    const noOrphans = deOrphan(text);
+    const spans = spannifyForFading(noOrphans);
     const parsed = parse(spans);
     return parsed;
 }
@@ -61,4 +62,18 @@ export function spannifyForFading(text) {
 export function addLinebreaksToText(text) {
     const withLineBreaks = text.replace("#", NEW_PARAGRAPH);
     return parse(withLineBreaks);
+}
+
+function deOrphan(text) {
+    const split = text.split(" ");
+    return split.map((word, index) => {
+        switch(index) {
+            case 0:
+                return word;
+            case split.length -1:
+                return `\xa0${word}`;   // nbsp
+            default:
+                return ` ${word}`;
+        }
+    }).join('');
 }
