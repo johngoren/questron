@@ -70,7 +70,8 @@
   /* Styles */
   
     .banner img {
-      display: none;
+      width: 20vh !important;
+      height: 20vh !important;
     }
   
   }

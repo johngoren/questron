@@ -105,7 +105,7 @@
          },
          {
             "label":"Employees must spend at least two days per week in the office",
-            "feedback":"Smart decision – combining remote and in-office work gives your team flexibility while also allowing for face-to-face meetings and collaboration.",
+            "feedback":"Smart decision — combining remote and in-office work gives your team flexibility while also allowing for face-to-face meetings and collaboration.",
             "value":null,
             "image":"4.3"
          }
@@ -146,7 +146,7 @@
       "choices":[
          {
             "label":"Hire a People Operations Manager",
-            "feedback":"Dedicated People Operations resource in a team of 25 is a bold move - it shows your dedication to improving staff happiness at work.",
+            "feedback":"Dedicated People Operations resource in a team of 25 is a bold move  it shows your dedication to improving staff happiness at work.",
             "value":null,
             "image":"6"
          },
@@ -343,7 +343,7 @@
       "choices":[
          {
             "label":"You and any other Founders",
-            "feedback":"At this point, you and your Co-Founders (if you have any) have arguably sacrificed more than anyone else to make this business succeed – it's only right that you are the first to see the material dividends of your hard work.#It's also an opportunity to split with your Co-Founders, should they want to cash out and move on.",
+            "feedback":"At this point, you and your Co-Founders (if you have any) have arguably sacrificed more than anyone else to make this business succeed — it's only right that you are the first to see the material dividends of your hard work.#It's also an opportunity to split with your Co-Founders, should they want to cash out and move on.",
             "value":"conservative",
             "image": "13.1"
          },
