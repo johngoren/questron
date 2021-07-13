@@ -89,7 +89,8 @@
     .footer {
       padding-bottom: 110px;
     }
-  
+
+
   
   }
 
@@ -104,14 +105,16 @@
 
   }
   
-  @media (max-height: 850px) {
+  /** Scale down for squat screens */
+
+  @media (max-height: 1050px) {
 
     .journey img {
-      width:11vh;
+      width:14vh;
     }
 
     .journey span {
-      height: 7vh !important;
+      height: 7vh;
     }
 
     .findOutMore a {
@@ -123,18 +126,31 @@
   @media (max-height: 690px) {
 
     .body {
-      min-height: auto !important;
+      min-height: auto;
     }
 
     .App-container {
-      padding-top: 0 !important;
-      font-size: 22px !important;
+      padding-top: 0;
+      font-size: 22px;
     }
 
     .banner img {
-      height: 175px !important;
+      height: 175px;
     }
 
   
+  }
 
+  @media (min-height: 1051px) {
+
+    .journey img {
+      width: 150px;
+      height: auto;
+      padding-right: 60px;
+    }
+  
+    .journey span {
+      height: 80px;
+    }
+  
   }

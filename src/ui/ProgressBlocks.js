@@ -22,7 +22,7 @@ function getProgressBlocks(answers) {
         const icon = getIconForAnswer(answer, index);
         const zIndex = 100 - index;
         return (
-            <span key={index} style={{zIndex: zIndex, height: "65px"}}>{icon}</span>
+            <span key={index} style={{zIndex: zIndex}}>{icon}</span>
         )
     });
 }
