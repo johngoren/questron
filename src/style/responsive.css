@@ -75,6 +75,16 @@
     }
   
   }
+
+  @media only screen and (max-width: 768px) {
+    .journey {
+      display: none;
+    }
+
+    .App {
+      padding-left: 0 !important;
+    }
+  }
   
   @media only screen and (max-width: 1280px) {
     
@@ -142,6 +152,10 @@
   
   }
 
+  /**
+  Tall screens
+  */
+
   @media (min-height: 1051px) {
 
     .journey img {
@@ -154,4 +168,16 @@
       height: 80px;
     }
   
+  }
+
+  /**
+  Wide screens
+
+  */
+
+  @media (min-width: 1200px) {
+
+    .decisionOption {
+      padding-right: 3em;
+    }
   }
