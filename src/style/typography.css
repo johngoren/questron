@@ -6,7 +6,7 @@ body {
 }
 
 .App-container {
-  font-size: calc(8px + 2vmin);
+    font-size: calc(8px + 2vmin);
 }
 
 h1 {
@@ -18,7 +18,6 @@ h1 {
     line-height: 100px;
     margin-top: 0;
 }
-
 
 h2 {
   font-family: "Trim Medium";

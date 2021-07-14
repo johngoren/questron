@@ -10,7 +10,6 @@ import Back from '../ui/Back';
 import { WELCOME_SCREEN, SCORE_SCREEN, SITUATION_SCREEN, DECISION_SCREEN } from '../constants/modes';
 import { getSceneForIndex } from '../story/game';
 
-// TODO: UseEffect to 1) move Learn More into proper position, 2) hide if there was none found.
 
 export default function Scene(props) {
     const mode = props.mode;

@@ -42,8 +42,8 @@ function getContentForState(props) {
     }
 
     else {
-        const split = props.body.split("#");
-        const Content = split.map((paragraph, index) => {
+        const paragraphs = props.body.split("#");
+        const Content = paragraphs.map((paragraph, index) => {
             const hasLearnMore = paragraph.includes("@");
             const prepared = prepareText(paragraph, props.onClickMore);
             if (!hasLearnMore) {

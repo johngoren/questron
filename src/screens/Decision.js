@@ -18,7 +18,6 @@ export default function Decision(props) {
         useEffect(            
             function performTeletypeEffect() {
                 fadeInLettersAndButtons();
-                bouncyAnimation();
             }
         );
     
