@@ -11,12 +11,12 @@ export function getNumberIcon(index, isOn) {
     const chapterNum = index + 1
     const filenameNum = getFilenameNumForChapter(chapterNum);
     const isOnSlug = getStateSlug(isOn);
-    const path = `/images/numbers/${filenameNum}-${isOnSlug}.png`;
+    const path = `./images/numbers/${filenameNum}-${isOnSlug}.png`;
     return getImageElementForPath(path, index);
 }
 
 export function getDecisionIcon(iconFilename, title, isAnimatingExit) {
-    let path = `/images/decisions/${iconFilename}`;
+    let path = `./images/decisions/${iconFilename}`;
     const animationClass = getAnimationClassForDecisionBlock(isAnimatingExit);
     return <img className={animationClass} src={path} alt={title} />
 }
@@ -53,6 +53,6 @@ function getFilenameNumForChapter(rawNum) {
 }
 
 export function getRankIcon(keyword) {
-    const path = `/images/result-${keyword}.png`;
+    const path = `./images/result-${keyword}.png`;
     return getImageElementForPath(path, keyword);
 }
