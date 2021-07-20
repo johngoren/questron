@@ -6,6 +6,7 @@ import { getInitialAnswerState, isGameOver } from './story/game';
 import { DELAY_MS_BEFORE_NEXT_QUESTION } from './constants/settings';
 import { WELCOME_SCREEN, SITUATION_SCREEN, DECISION_SCREEN, SCORE_SCREEN } from './constants/modes';
 import { initStats, reportUserReachedNewQuestion, reportUserChoseAnswer } from './helpers/analyticsUtils';
+import { Social } from './helpers/social';
 
 initStats();
 
@@ -124,6 +125,7 @@ function App() {
           onClickMore={() => onClickMore()}
       />
       </header>
+      <Social/>
     </div>
   );
 }

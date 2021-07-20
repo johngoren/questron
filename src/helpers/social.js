@@ -2,38 +2,38 @@
 
 export function Social(props) {
     return (
-        <div>
+        <div className="social">
             <Capdesk/>
-            <div className="socialGroup">
+            <ul>
                 <LinkedIn/>
                 <Twitter/>
                 <Facebook/>
-            </div>            
+            </ul>            
         </div>
     )
 }
 
 export function Capdesk(props) {
     return (
-        <a href="https://www.capdesk.com"><img src="/images/social/capdesk.svg"/></a>
+        <li className="capdesk"><a href="https://www.capdesk.com"></a></li>
     )
 }
 
 export function LinkedIn(props) {
     return (
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.thegameofequity.com&title=The%20Game%20of%20Equity&summary=&source="><img src="/images/social/linkedin.svg"/></a>
+        <li className="linkedin"><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.thegameofequity.com&title=The%20Game%20of%20Equity&summary=&source="></a></li>
     )
 }
 
 export function Twitter(props) {
     return (
-        <a href="https://twitter.com/intent/tweet?text=Check%20out%20The%20Game%20of%20Equity%3A%20https%3A//www.thegameofequity.com%0A"><img src="/images/social/twitter.svg"/></a>
+        <li className="twitter"><a href="https://twitter.com/intent/tweet?text=The%20Game%20of%20Equity%3A%20https%3A//www.thegameofequity.com%0A"></a></li>
     )
 }
 
 export function Facebook(props) {
     return (
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.thegameofequity.com"><img src="/images/social/facebook.svg"/></a>
+        <li className="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.thegameofequity.com"></a></li>
     )
 }
 

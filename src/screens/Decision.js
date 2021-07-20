@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { fadeInLettersAndButtons, bouncyAnimation } from '../effects/effects';
+import { fadeInLettersAndButtons } from '../effects/effects';
 import { getDecisionIcon } from '../helpers/iconUtils';
 import { getDecisionText, getDecisionTitle, getDecisionIconFilename } from '../story/game';
 

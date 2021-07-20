@@ -132,3 +132,63 @@
   .scoreGraphic img {
     max-width: 60vmin;
   }
+
+  /**
+  Social
+  */
+
+  .social {
+    position: absolute;
+    top: 2em;
+    right: 4em;
+    list-style-type: none;
+  }
+
+  .social li {
+    width: 75px;
+    height: 75px;
+    background-repeat: no-repeat;
+  }
+
+  .social li:hover {
+    background-repeat: no-repeat;
+  }
+
+  .facebook {
+    background: url('facebook-normal.svg');
+  }
+  
+  .twitter {
+    background: url('twitter-normal.svg');  
+  }
+
+  .twitter:hover {
+    background: url('twitter-hover.svg');
+  }
+
+  .capdesk {
+    background: url('capdesk-logo-normal.svg');
+  }
+
+  .facebook:hover {
+    background: url('facebook-hover.svg');
+  }
+
+  .capdesk:hover {
+    background: url('capdesk-logo-hover.svg');
+  }
+
+  .linkedin {
+    background: url('linkedin-normal.svg');
+  }
+
+  .linkedin:hover {
+    background: url('linkedin-hover.svg');
+  }
+
+
+
+  .social ul::before {
+    content: "SHARE";
+    color: var(--aqua);
+  }
