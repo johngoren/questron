@@ -142,6 +142,13 @@
     top: 2em;
     right: 4em;
     list-style-type: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .social ul {
+    background: var(--accent);
+    border-radius: 4em;
   }
 
   .social li {
@@ -187,8 +194,8 @@
   }
 
 
-
   .social ul::before {
     content: "SHARE";
     color: var(--aqua);
-  }
+    font-size: smaller;
+ }

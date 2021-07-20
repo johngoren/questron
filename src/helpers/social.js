@@ -15,25 +15,25 @@ export function Social(props) {
 
 export function Capdesk(props) {
     return (
-        <li className="capdesk"><a href="https://www.capdesk.com"></a></li>
+        <a href="https://www.capdesk.com"><li className="capdesk"></li></a>
     )
 }
 
 export function LinkedIn(props) {
     return (
-        <li className="linkedin"><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.thegameofequity.com&title=The%20Game%20of%20Equity&summary=&source="></a></li>
+       <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.thegameofequity.com&title=The%20Game%20of%20Equity&summary=&source="> <li className="linkedin"/></a>
     )
 }
 
 export function Twitter(props) {
     return (
-        <li className="twitter"><a href="https://twitter.com/intent/tweet?text=The%20Game%20of%20Equity%3A%20https%3A//www.thegameofequity.com%0A"></a></li>
+      <a href="https://twitter.com/intent/tweet?text=The%20Game%20of%20Equity%3A%20https%3A//www.thegameofequity.com%0A"><li className="twitter"/></a>
     )
 }
 
 export function Facebook(props) {
     return (
-        <li className="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.thegameofequity.com"></a></li>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.thegameofequity.com"><li className="facebook"/></a>
     )
 }
 
