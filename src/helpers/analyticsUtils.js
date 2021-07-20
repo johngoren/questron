@@ -1,5 +1,5 @@
 import { getQuestionForId, getDecision } from '../story/game';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 
 export const EVENT_CATEGORY_NEW_QUESTION_REACHED = "Question viewed";
 export const EVENT_CATEGORY_NEW_ANSWER_CHOSEN = "Choice made";
@@ -15,8 +15,8 @@ export const LABEL_SCORE_AWARDED = "User was awarded score";
 
 // https://levelup.gitconnected.com/using-google-analytics-with-react-3d98d709399b
 export function initStats() {
-    const trackingId = "UA-277910246-1";
-    ReactGA.initialize(trackingId);    
+    const measurementId = "G-SJSEFE24W0";
+    ReactGA.initialize(measurementId);    
 }
 
 
@@ -51,7 +51,7 @@ export function getReportForScoreAwarded(score) {
     }
 }
 
-export function reportUserReachedNewQuestion(questionId) {
+export function reportUserReachedNewQuestion(questionId) {  
     const report = getReportForNewQuestionReached(questionId);
     submit(report);
 }
