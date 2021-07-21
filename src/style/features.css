@@ -152,6 +152,11 @@
     margin-inline-start: 0;
     margin-inline-end: 0;
     padding-inline-start: 0;
+    padding-top: 7px;
+  }
+
+  .social ul.company {
+    margin-bottom: 12px;
   }
 
   .social ul.others {
@@ -166,6 +171,7 @@
     background-position: center;
   }
 
+
   .social li:hover {
     background-repeat: no-repeat;
     background-position: center;
@@ -177,6 +183,7 @@
   
   .twitter {
     background: url('twitter-normal.svg');  
+    margin: 0 0 -16px 0;
   }
 
   .twitter:hover {
@@ -197,6 +204,7 @@
 
   .linkedin {
     background: url('linkedin-normal.svg');
+    margin: 0 0 -16px 0;
   }
 
   .linkedin:hover {
