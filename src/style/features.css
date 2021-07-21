@@ -147,6 +147,14 @@
   }
 
   .social ul {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 0;
+  }
+
+  .social ul.others {
     background: var(--accent);
     border-radius: 4em;
   }
@@ -155,10 +163,12 @@
     width: 75px;
     height: 75px;
     background-repeat: no-repeat;
+    background-position: center;
   }
 
   .social li:hover {
     background-repeat: no-repeat;
+    background-position: center;
   }
 
   .facebook {
@@ -194,8 +204,10 @@
   }
 
 
-  .social ul::before {
+  .social ul.others::before {
     content: "SHARE";
     color: var(--aqua);
     font-size: smaller;
- }
+    position: relative;
+    top: 7px;
+  }

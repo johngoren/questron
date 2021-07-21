@@ -3,8 +3,10 @@
 export function Social(props) {
     return (
         <div className="social">
-            <Capdesk/>
-            <ul>
+            <ul className="company">
+                <Capdesk/>
+            </ul>
+            <ul className="others">
                 <LinkedIn/>
                 <Twitter/>
                 <Facebook/>
