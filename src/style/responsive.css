@@ -180,4 +180,8 @@
     .decisionOption {
       padding-right: 3em;
     }
+
+    .social {
+      display: flex;
+    }
   }

@@ -47,7 +47,7 @@ export function getReportForScoreAwarded(score) {
     return {
         category: EVENT_CATEGORY_SCORE_AWAWRDED,
         action: ACTION_SCORE_AWARDED,
-        label: `${LABEL_SCORE_AWARDED}: ${score}`
+        label: score
     }
 }
 

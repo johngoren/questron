@@ -103,11 +103,10 @@ test('Get question for ID', () => {
 test('Reports about a new question reached', () => {
     const questionId = 1;
     const report = analyticsUtils.getReportForNewQuestionReached(questionId);
-    console.log(report);
     expect(report).toBeTruthy();
     expect(report.category).toEqual(analyticsUtils.EVENT_CATEGORY_NEW_QUESTION_REACHED);    // "Capdesk Startup Game"
     expect(report.action).toEqual(analyticsUtils.ACTION_NEW_QUESTION_REACHED);
-    expect(report.value).toEqual("Welcome to the Game of Equity");
+    expect(report.value).toEqual(1);
 })
 
 test('Reports about a choice made', () => {
@@ -119,6 +118,5 @@ test('Reports about a score awarded', () => {
     const score = "progressive";
     const report = analyticsUtils.getReportForScoreAwarded(score);
     expect(report).toBeTruthy();
-    expect(report.category).toEqual(analyticsUtils.EVENT_CATEGORY_SCORE_AWARDED);
-    expect(report.value).toEqual("progressive");
+    expect(report.label).toEqual("progressive");
 })

@@ -142,7 +142,7 @@
     top: 2em;
     right: 4em;
     list-style-type: none;
-    display: flex;
+    display: none;
     flex-direction: column;
   }
 
