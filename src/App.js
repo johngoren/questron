@@ -72,27 +72,23 @@ function App() {
       }, DELAY_MS_BEFORE_NEXT_QUESTION) 
   }
 
-  function onClickReplay() {
-    window.location.reload();
-  }
+  const onClickReplay = () => window.location.reload();
 
-  function onClickMore() {
-    setIsMore(true);
-  }
+  const onClickMore = () => setIsMore(true);
 
-  function onClickMoreAboutDecision(choiceNum) {
+  const onClickMoreAboutDecision = (choiceNum) => {
     setIsMore(true);
     setIsMoreAboutDecision(choiceNum);
   }
 
-  function onClickBack() {
+  const onClickBack = () => {
     setIsMore(false);
     setHasTeletyped(true);
   }
 
   // MARK: Mode
 
-  function getAppLayoutClassFromMode(mode) {
+  const getAppLayoutClassFromMode = (mode) => {
     if (mode === WELCOME_SCREEN) {
       return "App welcomeScreen";
     }
