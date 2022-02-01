@@ -23,19 +23,19 @@ export function acme(props) {
 
 export function LinkedIn(props) {
     return (
-       <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.thegameofequity.com&title=The%20Game%20of%20Equity&summary=&source="> <li className="linkedin"/></a>
+       <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//github.com/johngoren"> <li className="linkedin"/></a>
     )
 }
 
 export function Twitter(props) {
     return (
-      <a href="https://twitter.com/intent/tweet?text=The%20Game%20of%20Equity%3A%20https%3A//www.thegameofequity.com%0A"><li className="twitter"/></a>
+      <a href="https://twitter.com/intent/tweet?text=ACMEy%3A%20https%3A//github.com/johngoren%0A"><li className="twitter"/></a>
     )
 }
 
 export function Facebook(props) {
     return (
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.thegameofequity.com"><li className="facebook"/></a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//github.com/johngoren"><li className="facebook"/></a>
     )
 }
 
