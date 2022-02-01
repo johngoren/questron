@@ -1,3 +1,3 @@
-# Capquest
+# Questron
 
-Web app built in ReactJS.
+Animated interactive quiz built in ReactJS.
