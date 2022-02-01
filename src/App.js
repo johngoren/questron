@@ -24,7 +24,6 @@ function App() {
   function setNewMode(mode) {
     setMode(mode);
   }
-  
 
   function onUserMakesChoice(choiceNum) {
     if (choiceNum != null) {
@@ -38,8 +37,6 @@ function App() {
       throw new Error("User's choice was null.");
     }
   }
-
-  
   
   function updateAnswerRecords(choiceIndex) {
     const newAnswers = answers;
@@ -67,7 +64,6 @@ function App() {
     document.getElementById('audio').play();
     setNewMode(SITUATION_SCREEN);
   }
-
 
   function onClickNext(completion) {
     setIsAnimatingExit(true); 
