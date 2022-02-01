@@ -4,7 +4,7 @@ export function Social(props) {
     return (
         <div className="social">
             <ul className="company">
-                <Capdesk/>
+                <acme/>
             </ul>
             <ul className="others">
                 <LinkedIn/>
@@ -15,9 +15,9 @@ export function Social(props) {
     )
 }
 
-export function Capdesk(props) {
+export function acme(props) {
     return (
-        <a href="https://www.capdesk.com"><li className="capdesk"></li></a>
+        <a href="https://www.acme.com"><li className="acme"></li></a>
     )
 }
 

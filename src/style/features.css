@@ -190,16 +190,16 @@
     background: url('twitter-hover.svg');
   }
 
-  .capdesk {
-    background: url('capdesk-logo-normal.svg');
+  .acme {
+    background: url('acme-logo-normal.svg');
   }
 
   .facebook:hover {
     background: url('facebook-hover.svg');
   }
 
-  .capdesk:hover {
-    background: url('capdesk-logo-hover.svg');
+  .acme:hover {
+    background: url('acme-logo-hover.svg');
   }
 
   .linkedin {

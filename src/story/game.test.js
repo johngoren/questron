@@ -104,7 +104,7 @@ test('Reports about a new question reached', () => {
     const questionId = 1;
     const report = analyticsUtils.getReportForNewQuestionReached(questionId);
     expect(report).toBeTruthy();
-    expect(report.category).toEqual(analyticsUtils.EVENT_CATEGORY_NEW_QUESTION_REACHED);    // "Capdesk Startup Game"
+    expect(report.category).toEqual(analyticsUtils.EVENT_CATEGORY_NEW_QUESTION_REACHED);    // "acme Startup Game"
     expect(report.action).toEqual(analyticsUtils.ACTION_NEW_QUESTION_REACHED);
     expect(report.value).toEqual(1);
 })

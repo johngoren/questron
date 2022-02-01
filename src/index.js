@@ -11,7 +11,7 @@ if (PREVIEW_MODE) {
   password = prompt("Enter your password");
 }
 
-if (password === "capdesk" || !PREVIEW_MODE) {
+if (password === "acme" || !PREVIEW_MODE) {
   ReactDOM.render(
     <React.StrictMode>
       <App />

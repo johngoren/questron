@@ -208,7 +208,7 @@ export function getRankEntry(keyword) {
 // "scenes": [
 //   {
 //      "id": 0,
-//      "title":"Welcome to the Capdesk startup simulator",
+//      "title":"Welcome to the acme startup simulator",
 //      "body":"You've got a billion dollar idea and a plan for turning it into a reality, so you're starting your own business. What role will you take?",
 //      "choices":[
 //         {

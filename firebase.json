@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "capdesk-quest",
+    "site": "acme-quest",
     "public": "build",
     "ignore": [
       "firebase.json",
