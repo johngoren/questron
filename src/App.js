@@ -24,11 +24,7 @@ function App() {
   function setNewMode(mode) {
     setMode(mode);
   }
-
-  function onClickWelcome() {
-    document.getElementById('audio').play();
-    setNewMode(SITUATION_SCREEN);
-  }
+  
 
   function onUserMakesChoice(choiceNum) {
     if (choiceNum != null) {
@@ -42,6 +38,36 @@ function App() {
       throw new Error("User's choice was null.");
     }
   }
+
+  
+  
+  function updateAnswerRecords(choiceIndex) {
+    const newAnswers = answers;
+    newAnswers[index] = choiceIndex;
+    setAnswers(newAnswers);
+  }
+
+  function clearForNextQuestion() {
+      setHasTeletyped(false);
+      setNewMode(SITUATION_SCREEN);
+  } 
+
+  function getAppLayoutClassFromMode(mode) {
+    if (mode === WELCOME_SCREEN) {
+      return "App welcomeScreen";
+    }
+    else {
+      return "App";
+    }
+  }
+  
+  // MARK: Click handlers
+
+  function onClickWelcome() {
+    document.getElementById('audio').play();
+    setNewMode(SITUATION_SCREEN);
+  }
+
 
   function onClickNext(completion) {
     setIsAnimatingExit(true); 
@@ -77,28 +103,10 @@ function App() {
     setIsMore(false);
     setHasTeletyped(true);
   }
-  
-  function updateAnswerRecords(choiceIndex) {
-    const newAnswers = answers;
-    newAnswers[index] = choiceIndex;
-    setAnswers(newAnswers);
-  }
-
-  function clearForNextQuestion() {
-      setHasTeletyped(false);
-      setNewMode(SITUATION_SCREEN);
-  } 
-
-  function getAppLayoutClassFromMode(mode) {
-    if (mode === WELCOME_SCREEN) {
-      return "App welcomeScreen";
-    }
-    else {
-      return "App";
-    }
-  }
 
   const appClass = getAppLayoutClassFromMode(mode);
+  
+  // MARK: Render
   
   return (
     <div className={appClass}>
