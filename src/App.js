@@ -49,14 +49,7 @@ function App() {
       setNewMode(SITUATION_SCREEN);
   } 
 
-  function getAppLayoutClassFromMode(mode) {
-    if (mode === WELCOME_SCREEN) {
-      return "App welcomeScreen";
-    }
-    else {
-      return "App";
-    }
-  }
+ 
   
   // MARK: Click handlers
 
@@ -100,10 +93,20 @@ function App() {
     setHasTeletyped(true);
   }
 
+  // MARK: Mode
+
+  function getAppLayoutClassFromMode(mode) {
+    if (mode === WELCOME_SCREEN) {
+      return "App welcomeScreen";
+    }
+    else {
+      return "App";
+    }
+  }
   const appClass = getAppLayoutClassFromMode(mode);
-  
+
   // MARK: Render
-  
+
   return (
     <div className={appClass}>
       <ProgressBlocks
