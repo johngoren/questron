@@ -21,11 +21,9 @@ function App() {
   const [answers, setAnswers] = useState(initialAnswerState);
   const [hasTeletyped, setHasTeletyped] = useState(false);
 
-  function setNewMode(mode) {
-    setMode(mode);
-  }
+  const setNewMode = (mode) => setMode(mode);
 
-  function onUserMakesChoice(choiceNum) {
+  const onUserMakesChoice = (choiceNum) => {
     if (choiceNum != null) {
       const questionId = index + 1;
       reportUserChoseAnswer(choiceNum, questionId);
@@ -38,27 +36,26 @@ function App() {
     }
   }
   
-  function updateAnswerRecords(choiceIndex) {
+  const updateAnswerRecords = (choiceIndex) => {
     const newAnswers = answers;
     newAnswers[index] = choiceIndex;
     setAnswers(newAnswers);
   }
 
-  function clearForNextQuestion() {
+  const clearForNextQuestion = () => {
       setHasTeletyped(false);
       setNewMode(SITUATION_SCREEN);
   } 
 
- 
-  
+   
   // MARK: Click handlers
 
-  function onClickWelcome() {
+  const onClickWelcome = () => {
     document.getElementById('audio').play();
     setNewMode(SITUATION_SCREEN);
   }
 
-  function onClickNext(completion) {
+  const onClickNext = (completion) => {
     setIsAnimatingExit(true); 
 
     setTimeout(() => {
